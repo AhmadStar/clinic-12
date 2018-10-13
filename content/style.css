@@ -1,0 +1,18 @@
+
+.row .col-sm-9 {    
+    float: none;
+}
+
+.row .navbar-header {
+    float: right;
+}
+
+.row .navbar-nav {
+    float: right;
+    margin: 0;
+}
+
+
+.row .navbar-right {
+    float: left!important;
+}

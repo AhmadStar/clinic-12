@@ -1,0 +1,545 @@
+[30-Sep-2018 20:25:22 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:25:25 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:25:30 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:25:57 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:26:09 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:27:14 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:27:16 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:27:18 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[30-Sep-2018 20:27:21 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 19
+[01-Oct-2018 09:35:07 UTC] PHP Fatal error:  Call to undefined method Consume::_doctor_list() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 136
+[01-Oct-2018 09:35:08 UTC] PHP Fatal error:  Call to undefined method Consume::_doctor_list() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 136
+[01-Oct-2018 09:35:22 UTC] PHP Fatal error:  Call to undefined method Consume::_doctor_list() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 136
+[01-Oct-2018 09:35:43 UTC] PHP Fatal error:  Call to undefined method Consume::_doctor_list() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 136
+[01-Oct-2018 09:36:30 UTC] PHP Fatal error:  Call to undefined method Consume::_doctor_list() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 136
+[01-Oct-2018 09:36:44 UTC] PHP Fatal error:  Call to undefined method Consume::_doctor_list() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 136
+[01-Oct-2018 10:02:18 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 16
+[01-Oct-2018 10:04:05 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 16
+[01-Oct-2018 10:05:32 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 17
+[01-Oct-2018 10:05:44 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 17
+[01-Oct-2018 10:15:19 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 18
+[01-Oct-2018 10:19:15 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 18
+[01-Oct-2018 10:19:30 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 18
+[01-Oct-2018 11:09:02 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 20
+[01-Oct-2018 11:15:31 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 19
+[01-Oct-2018 11:21:35 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 19
+[01-Oct-2018 11:23:41 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 19
+[01-Oct-2018 11:27:28 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/repository/sidebar/income.php on line 19
+[01-Oct-2018 11:56:48 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[01-Oct-2018 11:56:52 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[01-Oct-2018 11:57:19 UTC] PHP Parse error:  syntax error, unexpected 'tr' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 4
+[01-Oct-2018 11:58:00 UTC] PHP Parse error:  syntax error, unexpected 'clinicname' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 5
+[01-Oct-2018 11:58:10 UTC] PHP Parse error:  syntax error, unexpected 'clinicname' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 5
+[01-Oct-2018 11:59:05 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 6
+[01-Oct-2018 11:59:21 UTC] PHP Parse error:  syntax error, unexpected 'tr' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 6
+[01-Oct-2018 12:00:52 UTC] PHP Parse error:  syntax error, unexpected 'clinicname' (T_STRING) in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[01-Oct-2018 14:02:37 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/home.php on line 28
+[01-Oct-2018 14:02:44 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/home.php on line 28
+[01-Oct-2018 14:03:28 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/home.php on line 28
+[01-Oct-2018 14:04:01 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/controllers/home.php on line 28
+[01-Oct-2018 17:45:13 UTC] PHP Fatal error:  Cannot redeclare Doctor::check() in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 577
+[01-Oct-2018 18:10:34 UTC] PHP Fatal error:  Call to a member function where() on array in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 592
+[01-Oct-2018 18:18:19 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 592
+[01-Oct-2018 18:18:34 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 592
+[01-Oct-2018 21:22:15 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/patient/list.php on line 7
+[01-Oct-2018 21:43:48 UTC] PHP Parse error:  syntax error, unexpected 'Home' (T_STRING) in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 26
+[01-Oct-2018 21:43:52 UTC] PHP Parse error:  syntax error, unexpected 'Home' (T_STRING) in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 26
+[01-Oct-2018 21:43:54 UTC] PHP Parse error:  syntax error, unexpected 'Home' (T_STRING) in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 26
+[01-Oct-2018 21:44:55 UTC] PHP Parse error:  syntax error, unexpected 'tr' (T_STRING) in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 26
+[01-Oct-2018 21:46:21 UTC] PHP Parse error:  syntax error, unexpected 'UsersList' (T_STRING) in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 26
+[02-Oct-2018 09:23:19 UTC] PHP Parse error:  syntax error, unexpected 'GroupName' (T_STRING) in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 11
+[02-Oct-2018 09:23:39 UTC] PHP Parse error:  syntax error, unexpected 'GroupName' (T_STRING) in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 11
+[02-Oct-2018 22:27:22 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/repository/nav.php on line 15
+[02-Oct-2018 22:33:10 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 34
+[02-Oct-2018 22:35:03 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 34
+[03-Oct-2018 12:31:25 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/footer.php on line 8
+[03-Oct-2018 12:31:29 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/footer.php on line 8
+[03-Oct-2018 12:32:02 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/footer.php on line 8
+[03-Oct-2018 13:58:47 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:58:56 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:58:59 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:01 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:34 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:38 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:39 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:41 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:42 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 13:59:44 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:04 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:06 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:07 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:08 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:08 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:09 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:09 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:10 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:11 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:11 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:12 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:12 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:02:13 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:06 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:08 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:09 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:10 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:11 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:11 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:12 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:13 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:13 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:14 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:14 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:15 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:16 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[03-Oct-2018 14:03:25 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/lab/confirm_delete.php on line 10
+[05-Oct-2018 20:20:19 UTC] PHP Fatal error:  Call to undefined method Incomes::get() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 31
+[05-Oct-2018 20:20:26 UTC] PHP Fatal error:  Call to undefined method Incomes::get() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 31
+[05-Oct-2018 20:20:40 UTC] PHP Fatal error:  Call to undefined method Incomes::save() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 249
+[05-Oct-2018 20:22:40 UTC] PHP Fatal error:  Call to undefined method Incomes::get() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 31
+[05-Oct-2018 22:35:19 UTC] PHP Fatal error:  Call to undefined method Incomes::get() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 31
+[05-Oct-2018 22:47:26 UTC] PHP Fatal error:  Call to undefined method Incomes::save() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 249
+[05-Oct-2018 22:55:04 UTC] PHP Fatal error:  Call to undefined method Incomes::save_income() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 253
+[05-Oct-2018 22:56:11 UTC] PHP Fatal error:  Class 'Incomes' not found in /home/ct15bms6antr/clinic/system/core/Loader.php on line 303
+[05-Oct-2018 23:00:14 UTC] PHP Fatal error:  Call to undefined method Incomes::load() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 99
+[05-Oct-2018 23:36:05 UTC] PHP Fatal error:  Call to undefined method Incomes::delete() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 162
+[05-Oct-2018 23:40:46 UTC] PHP Fatal error:  Call to undefined function post() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 150
+[05-Oct-2018 23:40:58 UTC] PHP Fatal error:  Call to undefined function post() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 150
+[05-Oct-2018 23:46:58 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:02 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:02 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:03 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:03 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:03 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:03 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[05-Oct-2018 23:47:03 UTC] PHP Fatal error:  Call to undefined function debug_to_console() in /home/ct15bms6antr/clinic/application/controllers/income.php on line 156
+[06-Oct-2018 00:06:27 UTC] PHP Parse error:  syntax error, unexpected 'a' (T_STRING) in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 284
+[06-Oct-2018 00:06:57 UTC] PHP Parse error:  syntax error, unexpected 'a' (T_STRING) in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 284
+[06-Oct-2018 00:07:02 UTC] PHP Parse error:  syntax error, unexpected 'a' (T_STRING) in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 284
+[06-Oct-2018 00:20:03 UTC] PHP Parse error:  syntax error, unexpected '$data' (T_VARIABLE) in /home/ct15bms6antr/clinic/application/controllers/doctor.php on line 287
+[06-Oct-2018 00:30:36 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/doctor/list_income.php on line 7
+[06-Oct-2018 00:30:38 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/doctor/list_income.php on line 7
+[06-Oct-2018 00:51:15 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ct15bms6antr/clinic/application/views/income/list.php on line 37
+[07-Oct-2018 09:33:26 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/account/users.php on line 1
+[07-Oct-2018 09:33:43 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:33:53 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:34:52 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:36:17 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:36:53 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/account/users.php on line 1
+[07-Oct-2018 09:37:15 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:37:28 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:37:34 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:38:03 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:38:38 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:38:38 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:38:42 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:38:43 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:39:59 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:40:15 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:40:16 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:48:01 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:51:56 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:52:58 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:53:02 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:53:08 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:53:17 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:53:42 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:53:49 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:53:54 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:54:29 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:54:37 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:54:41 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:54:52 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 09:55:34 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 14:55:18 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 14:55:39 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 14:56:08 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 14:56:09 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 14:56:49 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 14:56:52 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 15:02:13 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 15:02:40 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 15:02:59 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/controllers/consume.php on line 627
+[07-Oct-2018 16:20:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/controllers/drug.php on line 457
+[07-Oct-2018 18:28:47 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 18:29:21 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 18:29:43 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 18:31:08 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[07-Oct-2018 18:32:09 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/home/cp/admin.php on line 2
+[08-Oct-2018 16:36:54 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:36:57 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:36:57 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:36:58 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:36:59 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:36:59 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:00 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:00 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:01 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:03 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:05 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:05 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:06 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:06 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:07 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:08 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 16:37:08 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 7
+[08-Oct-2018 17:08:33 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:35 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:36 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:37 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:37 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:38 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:38 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:08:39 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:09:15 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:09:17 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:09:17 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:09:18 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:09:18 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 17:09:19 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/consume/confirm_delete.php on line 31
+[08-Oct-2018 18:47:50 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS) in /home/ct15bms6antr/clinic/application/views/account/add_user.php on line 65
+[08-Oct-2018 18:47:58 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS) in /home/ct15bms6antr/clinic/application/views/account/add_user.php on line 65
+[08-Oct-2018 18:48:04 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS) in /home/ct15bms6antr/clinic/application/views/account/add_user.php on line 65
+[08-Oct-2018 18:48:39 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS) in /home/ct15bms6antr/clinic/application/views/account/add_user.php on line 65
+[08-Oct-2018 19:06:39 UTC] PHP Parse error:  syntax error, unexpected '':'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/xray/edit.php on line 6
+[08-Oct-2018 19:08:32 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ct15bms6antr/clinic/application/views/xray/edit.php on line 6
+[08-Oct-2018 19:16:56 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS) in /home/ct15bms6antr/clinic/application/views/lab/new.php on line 27
+[08-Oct-2018 20:04:59 UTC] PHP Parse error:  syntax error, unexpected 'GroupName' (T_STRING) in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 11
+[08-Oct-2018 20:05:37 UTC] PHP Parse error:  syntax error, unexpected 'GroupName' (T_STRING) in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 11
+[08-Oct-2018 20:08:55 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING) in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 11
+[08-Oct-2018 20:26:37 UTC] PHP Parse error:  syntax error, unexpected 'roles' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 36
+[08-Oct-2018 20:26:38 UTC] PHP Parse error:  syntax error, unexpected 'roles' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 36
+[08-Oct-2018 20:30:39 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/account/add_group.php on line 8
+[08-Oct-2018 20:38:31 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ct15bms6antr/clinic/application/views/income/list.php on line 3
+[08-Oct-2018 20:46:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 20:47:05 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 20:47:32 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 20:47:42 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 20:49:05 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 20:49:33 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 20:49:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ct15bms6antr/clinic/application/views/income/list.php on line 74
+[08-Oct-2018 23:12:47 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/doctors.php on line 43
+[08-Oct-2018 23:13:46 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/doctors.php on line 43
+[08-Oct-2018 23:15:27 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[08-Oct-2018 23:15:47 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 20:16:16 UTC] PHP Fatal error:  Call to a member function result_array() on null in /home/ct15bms6antr/clinic/application/models/patient_doctor.php on line 68
+[09-Oct-2018 20:17:48 UTC] PHP Fatal error:  Call to a member function result_array() on null in /home/ct15bms6antr/clinic/application/models/patient_doctor.php on line 68
+[09-Oct-2018 20:17:53 UTC] PHP Fatal error:  Call to a member function result_array() on null in /home/ct15bms6antr/clinic/application/models/patient_doctor.php on line 68
+[09-Oct-2018 20:23:09 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/patient/waiting.php on line 36
+[09-Oct-2018 20:23:29 UTC] PHP Fatal error:  Call to a member function load() on null in /home/ct15bms6antr/clinic/application/views/patient/waiting.php on line 19
+[09-Oct-2018 20:24:01 UTC] PHP Fatal error:  Call to a member function load() on null in /home/ct15bms6antr/clinic/application/views/patient/waiting.php on line 19
+[09-Oct-2018 20:34:45 UTC] PHP Fatal error:  Call to a member function get_user_by_id() on null in /home/ct15bms6antr/clinic/application/controllers/patient.php on line 283
+[09-Oct-2018 20:36:02 UTC] PHP Fatal error:  Call to a member function get_doctor() on null in /home/ct15bms6antr/clinic/application/controllers/patient.php on line 284
+[09-Oct-2018 20:36:04 UTC] PHP Fatal error:  Call to a member function get_doctor() on null in /home/ct15bms6antr/clinic/application/controllers/patient.php on line 284
+[09-Oct-2018 20:36:39 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/doctors.php on line 43
+[09-Oct-2018 20:38:03 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 20:40:30 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 20:41:33 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 20:42:04 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 20:52:53 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:08 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:16 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:16 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:17 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:17 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:36 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:53:52 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:27 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:44 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:50 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:50 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:50 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:50 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:51 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:51 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:55 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:56 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:54:59 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:55:00 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:57:30 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:57:34 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:57:42 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:57:44 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:57:46 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 20:57:48 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 21:00:37 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 21:00:40 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[09-Oct-2018 21:03:06 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:08 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:09 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:09 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:10 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:11 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:11 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:12 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:13 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:13 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:30 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:32 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:33 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:33 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:34 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:34 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:03:35 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:49 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:52 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:52 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:53 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:54 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:54 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:55 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:55 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:56 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:57 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:57 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:58 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:58 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:04:59 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:00 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:00 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:01 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:01 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:02 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:02 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:03 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:04 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:05:04 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 11
+[09-Oct-2018 21:06:42 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 21:06:46 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[09-Oct-2018 21:06:55 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/incomes.php on line 171
+[10-Oct-2018 21:00:16 UTC] PHP Fatal error:  Call to a member function get_doctor() on null in /home/ct15bms6antr/clinic/application/controllers/patient.php on line 201
+[11-Oct-2018 12:55:38 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:55:42 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:55:46 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:55:48 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:55:48 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:55:52 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:55:55 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:41 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:49 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:51 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:52 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:52 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:53 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:57:57 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:21 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:23 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:23 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:24 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:25 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:26 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:26 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:27 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:28 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:28 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:29 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:30 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:30 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:47 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:48 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:48 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:49 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:50 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:50 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:51 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:52 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:52 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:53 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 12:58:54 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:10 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:12 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:13 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:13 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:14 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:15 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:15 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:16 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:17 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:17 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:18 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:19 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:19 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:20 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:22 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:22 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:23 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:24 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:24 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:25 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:08:26 UTC] PHP Fatal error:  Call to undefined function trp() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:24 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:25 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:26 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:27 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:27 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:28 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:09:29 UTC] PHP Fatal error:  Call to undefined function trP() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 8
+[11-Oct-2018 13:11:21 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:22 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:23 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:23 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:24 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:25 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:25 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:26 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:27 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:28 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:11:29 UTC] PHP Fatal error:  Call to undefined function tr() in /home/ct15bms6antr/clinic/application/views/report/add.php on line 12
+[11-Oct-2018 13:18:40 UTC] PHP Parse error:  syntax error, unexpected 'Write' (T_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 13:18:49 UTC] PHP Parse error:  syntax error, unexpected 'Write' (T_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 13:18:53 UTC] PHP Parse error:  syntax error, unexpected 'Write' (T_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 14:19:47 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 65
+[11-Oct-2018 14:20:28 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 65
+[11-Oct-2018 14:20:33 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 65
+[11-Oct-2018 14:21:14 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 65
+[11-Oct-2018 14:21:57 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 65
+[11-Oct-2018 16:25:47 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:26:21 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:27:56 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:28:04 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:30:23 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:31:17 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:31:20 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:31:24 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:33:46 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:33:53 UTC] PHP Fatal error:  Call to undefined function rrP() in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 47
+[11-Oct-2018 16:46:06 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 58
+[11-Oct-2018 17:01:59 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:03:21 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:03:30 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:03:48 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:06:08 UTC] PHP Parse error:  syntax error, unexpected '"..."' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:06:15 UTC] PHP Parse error:  syntax error, unexpected '"..."' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:07:40 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:08:13 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:08:29 UTC] PHP Parse error:  syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:10:18 UTC] PHP Parse error:  syntax error, unexpected 'tr' (T_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:16:23 UTC] PHP Parse error:  syntax error, unexpected 'tr' (T_STRING) in /home/ct15bms6antr/clinic/application/views/patient/panel/comments.php on line 23
+[11-Oct-2018 17:38:21 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:23 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:25 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:25 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:26 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:26 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:26 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:26 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:27 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:28 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:28 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:28 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:28 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:38:28 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:14 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:14 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:14 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:14 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:14 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:14 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:55 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:58 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:58 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:58 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:39:59 UTC] PHP Parse error:  syntax error, unexpected '"<th>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 7
+[11-Oct-2018 17:46:29 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:32 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:33 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:34 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:35 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:36 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:36 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:36 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:46:37 UTC] PHP Parse error:  syntax error, unexpected 'trP' (T_STRING), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 6
+[11-Oct-2018 17:49:00 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:04 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:05 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:15 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:15 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:15 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:15 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:16 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:16 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:23 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:23 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:23 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:24 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:24 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 17:49:24 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/lab/result.php on line 4
+[11-Oct-2018 18:01:43 UTC] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND) in /home/ct15bms6antr/clinic/application/views/patient/panel/drugs.php on line 104
+[11-Oct-2018 18:01:45 UTC] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND) in /home/ct15bms6antr/clinic/application/views/patient/panel/drugs.php on line 104
+[11-Oct-2018 18:39:35 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 18:39:38 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 18:39:38 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 18:39:39 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 18:39:39 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 18:39:39 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 18:39:40 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 4
+[11-Oct-2018 19:35:24 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:28 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:33 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:40 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:46 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:46 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:46 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:46 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:50 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:50 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:50 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:50 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:56 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:56 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:56 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:56 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:58 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:58 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 19:35:58 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 20:34:09 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/doctors.php on line 57
+[11-Oct-2018 20:34:11 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/ct15bms6antr/clinic/application/models/doctors.php on line 57
+[11-Oct-2018 20:42:24 UTC] PHP Fatal error:  Cannot use object of type Patient_doctor as array in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 61
+[11-Oct-2018 20:44:12 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 56
+[11-Oct-2018 20:45:23 UTC] PHP Fatal error:  Cannot use object of type Doctors as array in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 56
+[11-Oct-2018 20:47:14 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 60
+[11-Oct-2018 20:47:37 UTC] PHP Fatal error:  Cannot use object of type Doctors as array in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 60
+[11-Oct-2018 20:49:31 UTC] PHP Fatal error:  Cannot use object of type Doctors as array in /home/ct15bms6antr/clinic/application/views/patient/panel.php on line 5
+[11-Oct-2018 21:00:18 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 21:00:22 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:09:37 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ct15bms6antr/clinic/application/views/patient/ticket.php on line 19
+[11-Oct-2018 22:30:59 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:01 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:02 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:05 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:05 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:06 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:06 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:07 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:07 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:07 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:57 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:58 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:31:59 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:00 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:00 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:01 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:01 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:27 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:28 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:40 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:32:42 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:33:35 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:33:36 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:33:38 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:33:38 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:33:39 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:33:39 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:41:57 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:41:59 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:42:01 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:45:59 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:46:01 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:46:03 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:46:03 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:46:03 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:46:10 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:46:17 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ct15bms6antr/clinic/application/views/drug/result.php on line 14
+[11-Oct-2018 22:51:32 UTC] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND) in /home/ct15bms6antr/clinic/application/views/patient/panel/drugs.php on line 60
+[11-Oct-2018 22:51:33 UTC] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND) in /home/ct15bms6antr/clinic/application/views/patient/panel/drugs.php on line 60
+[11-Oct-2018 22:51:35 UTC] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND) in /home/ct15bms6antr/clinic/application/views/patient/panel/drugs.php on line 60
+[12-Oct-2018 08:26:20 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting ',' or ';' in /home/ct15bms6antr/clinic/application/views/patient/panel/drugs.php on line 105
