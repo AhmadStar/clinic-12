@@ -222,7 +222,7 @@ class Diagnose extends CI_Controller {
         $data['error']=validation_errors();
       }
     }    
-    $data['title'] = tr('NewDiagnose');    
+    $data['title'] = tr('NewDiagnose');
       
     $data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
     $path='diagnose/new';
