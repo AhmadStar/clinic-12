@@ -245,6 +245,66 @@ class Nurse extends CI_Controller {
   }
 
   
+  /*
+   * 
+   */
+  public function new_schedule()
+  {
+    if (!$this->bitauth->logged_in())
+    {
+      $this->session->set_userdata('redir', current_url());
+      redirect('account/login');
+    }
+    if(!$this->bitauth->has_role('admin'))
+    {
+      $this->_no_access();
+      return;
+    }
+    
+    if($this->input->post())
+    {
+      $this->form_validation->set_rules(array(
+        array( 'field' => 'nurse_id','label' => 'Nurse Name', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'work_date','label' => 'Work Date', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'work_hours', 'label' => 'Work Hours', 'rules' => 'trim|has_no_schar', ),
+        array( 'field' => 'hour_price', 'label' => 'Hour Price', 'rules' => 'required|trim|has_no_schar', ),
+      ));
+      if($this->form_validation->run() == TRUE)
+      {
+        
+        unset($_POST['submit']);
+        $nurse=$this->input->post();          
+        $this->load->model('nurses');        
+        $data_to_store = array(
+                    'nurse_id' => $this->input->post('nurse_id'),
+                    'work_date' => $this->input->post('work_date'),
+                    'work_hours' => $this->input->post('work_hours'),
+                    'hour_price' => $this->input->post('hour_price'),
+                );
+        $this->nurses->save_nurse_schedule($data_to_store);
+        unset($_POST);
+        $data['script'] = '<script>alert("'. html_escape($this->nurses->nurse_id). ' has been registered successfuly.");</script>';
+        redirect('nurse');
+      }else{
+        $data['error']=validation_errors();
+      }
+    }    
+    $data['title'] = tr('NewNurseSchedule');      
+      
+    $data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
+    $path='nurse/new_schedule';
+    $data['nurse_list']=$this->_nurse_list();  
+    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+    {
+        $this->load->view($path, $data);
+    }else{
+        $data['includes']=array($path);
+        $this->load->view('header',$data);
+        $this->load->view('index',$data);
+        $this->load->view('footer',$data);
+    }
+  }    
+    
 
   public function _no_access()
   {
@@ -260,49 +320,66 @@ class Nurse extends CI_Controller {
         $this->load->view('footer', $data);
     }
   }
-//    
-//    /**
-//   * _id_type_options()
-//   * returns the array of type
-//   */
-//  public function type_options()
-//  {
-//    return array('0'=> tr('IncomeType'),
-//                 'static'=>'معاينة ثابتة',
-//                 'normal'=>'معاينة عادية',);
-//  }    
-//    
-//  /**
-//   * _doctor_list()
-//   * returns a list of doctor to assign the patient to.
-//   */ 
-//  public function _doctor_list()
-//  {
-//    $this->load->model('doctors');
-//    $doctors = $this->doctors->get();
-//    $doctor_list['0']= tr('DoctorName');
-//    foreach ($doctors as $doctor) 
-//    {
-//      $doctor_list[$doctor->id]=  html_escape($doctor->name.', '.$doctor->address.', '.$doctor->phone);
-//    }
-//    return $doctor_list;
-//  }
-//    
-///**
-//   * _patient_list()
-//   * returns a list of doctor to assign the patient to.
-//   */ 
-//  public function _patient_list()
-//  {
-//    $this->load->model('patients');
-//    $patients = $this->patients->get();
-//    $patient_list['0']= tr('PatientName');
-//    foreach ($patients as $patient) 
-//    {
-//      $patient_list[$patient->patient_id]=  html_escape($patient->first_name.', '.$patient->last_name.', '.$patient->address);
-//    }
-//    return $patient_list;
-//  }    
+  
+/**
+   * _patient_list()
+   * returns a list of doctor to assign the patient to.
+   */ 
+  public function _nurse_list()
+  {
+    $this->load->model('nurses');
+    $nurses = $this->nurses->get_all_test();
+    $nurse_list['0']= tr('NurseName');
+    foreach ($nurses as $nurse) 
+    { 
+       html_escape($nurse->name);
+      $nurse_list[$nurse->id]=  html_escape($nurse->name.','.$nurse->address);
+    }
+    return $nurse_list;
+  }
+    
+    
+ public function nurseschedule($nurse_id=0 , $limit = 12,$page = 1)
+  {
+    if (!$this->bitauth->logged_in())
+    {
+      $this->session->set_userdata('redir', current_url());
+      redirect('account/login');
+    }
+    if(!$this->bitauth->has_role('pharmacy'))
+    {
+      $this->_no_access();
+      return;
+    }
+    
+    $this->load->model('nurses');    
+    
+    $data['nurseschedules'] = $this->nurses->get_all_nurse_schedule($nurse_id);      
+      
+    $data['title'] = tr('NurseSceduleList');      
+    $data['navActiveId']='navbarLiDrug';
+    
+    $data['page'] = (int)$page;
+    $data['per_page'] = (int)$limit;
+    $this->load->library('pagination');
+    $this->load->library('my_pagination');
+    $config['base_url'] = site_url('nurse/nurseschedule/'.$nurse_id.'/'.$data['per_page']);
+    $config['total_rows'] = count($data['nurseschedules']);
+    $config['per_page'] = $data['per_page'];
+    $this->my_pagination->initialize($config); 
+    $data['pagination']=$this->my_pagination->create_links();        
+    $path='nurse/nurse_schedule';
+//    print_r($data['nurseschedules']);
+    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+    {
+        $this->load->view($path, $data);
+    }else{
+        $data['includes']=array($path);
+        $this->load->view('header',$data);
+        $this->load->view('index',$data);
+        $this->load->view('footer',$data);
+    }
+  }    
     
     
     

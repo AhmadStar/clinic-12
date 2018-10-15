@@ -23,10 +23,10 @@ if($nurses)
     {
         $actions = '';
         if($this->bitauth->has_role('pharmacy'))
-        {
-          $actions .= anchor('nurse/edit/'.$_nurse['id'], '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Nurse'));
+        {          
+          $actions .= anchor('nurse/Edit/'.$_nurse['id'], '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Nurse'));
           $actions .= anchor('nurse/delete/'.$_nurse['id'], '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete nurse'));
-          /*$actions .= anchor('nurse/check/'.$_nurse['id'], '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Check Availability'));*/
+          $actions .= anchor('nurse/nurseschedule/'.$_nurse['id'], '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Edit Nurse'));    
         }
         echo '<tr id="nurse'.$_nurse['id'].'">'.
                             

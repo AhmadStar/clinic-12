@@ -20,6 +20,11 @@
             <td>
               <i class="small material-icons materialsidebar" style = "margin-right: 3px">add_box</i> </span><?php echo anchor('nurse/new_nurse',tr('NewNurse'));?>
             </td>
+          </tr>
+          <tr>
+            <td>
+              <i class="small material-icons materialsidebar" style = "margin-right: 3px">add_box</i> </span><?php echo anchor('nurse/new_schedule',tr('NewNurseSchedule'));?>
+            </td>
           </tr>                   
         </tbody>
       </table>
