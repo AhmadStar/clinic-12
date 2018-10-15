@@ -130,7 +130,7 @@ class Nurse extends CI_Controller {
   /**
    * Patient::edit()
    */
-  public function delete($income_id=0)
+  public function delete($nurse_id=0)
   {
     if (!$this->bitauth->logged_in())
     {
@@ -142,8 +142,8 @@ class Nurse extends CI_Controller {
       $this->_no_access();
       return;
     }
-    $this->load->model('incomes');
-    $data['income'] = $this->incomes->get_one_income($income_id);
+    $this->load->model('nurses');
+    $data['nurse'] = $this->nurses->get_one_nurse($nurse_id);
     
     if($this->input->post())
     {         
@@ -152,14 +152,14 @@ class Nurse extends CI_Controller {
         array( 'field' => 'del', 'label' => '', 'rules' => 'required|trim|has_no_schar', ),
       ));
       if($this->form_validation->run() == TRUE&&
-         $this->input->post('id') == $income_id)          
+         $this->input->post('id') == $nurse_id)          
       {        
         //check if patient form already loaded from this app -> should be checked with session
         $session_check=$this->session->userdata(current_url());
         $this->session->unset_userdata(current_url());
-        if($session_check && $session_check[0]==$income_id)
+        if($session_check && $session_check[0]==$nurse_id)
         {
-                $this->incomes->delete_income($income_id);
+                $this->nurses->delete_nurse($nurse_id);
                 echo 'ok';
                 return;
             
@@ -173,13 +173,13 @@ class Nurse extends CI_Controller {
         return;
       }
     }
-    $this->session->set_userdata(current_url(),array($income_id));
+    $this->session->set_userdata(current_url(),array($nurse_id));
 //    $data['income']=$this->incomes;
     //$data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
     //$data['includes']=array('drug/delete');
       
 //    print_r($data);
-    $this->load->view('income/confirm_delete',$data);
+    $this->load->view('nurse/confirm_delete',$data);
     //$this->load->view('header',$data);
     //$this->load->view('index',$data);
     //$this->load->view('footer',$data);

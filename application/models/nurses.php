@@ -154,7 +154,7 @@ class Nurses extends CI_Model {
     * @param int $id - section id
     * @return boolean
     */
-	function delete_income($id){
+	function delete_nurse($id){
 		$this->db->where('id', $id);
 		$this->db->delete('nurses'); 
 	}
