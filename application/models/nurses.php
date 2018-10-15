@@ -101,6 +101,29 @@ class Nurses extends CI_Model {
 //		return $query->result_array();
 //    }
     
+    public function get_all_test()
+    {
+		$this->db->select('*');        
+		$this->db->from('nurses');                                                            
+		$query = $this->db->get();		
+		return $query->result();
+    }
+    
+    public function get_all_nurse_schedule($id)
+    {
+        
+		$this->db->select('*');
+
+		$this->db->from('schedule');                                        
+
+        $this->db->where('schedule.nurse_id', $id);
+         
+		$query = $this->db->get();
+		
+		return $query->result();
+    }
+    
+    
     public function get_all_nurses()
     {
 		$this->db->select('*');        
@@ -126,6 +149,18 @@ class Nurses extends CI_Model {
     public function save_nurse($data)
     {
 		$insert = $this->db->insert('nurses', $data);
+	    return $insert;
+	}
+    
+    
+    /**
+    * Store the new item into the database
+    * @param array $data - associative array with data to store
+    * @return boolean 
+    */
+    public function save_nurse_schedule($data)
+    {
+		$insert = $this->db->insert('schedule', $data);
 	    return $insert;
 	}
     
