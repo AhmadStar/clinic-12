@@ -30,7 +30,7 @@ class Nurse extends CI_Controller {
       
     $data['nurses'] = $this->nurses->get_all_nurses();
       
-    $data['title'] = tr('NurseList');  
+    $data['title'] = tr('NursesList');  
     $data['navActiveId']='navbarLiDrug';
     
     $data['page'] = (int)$page;
@@ -73,7 +73,7 @@ class Nurse extends CI_Controller {
     }
     $this->load->model('nurses');
     $data['nurse'] = $this->nurses->get_one_nurse($nurse_id);
-    print_r($data['nurse']);
+    //print_r($data['nurse']);
     if($this->input->post())
     {
       $this->form_validation->set_rules(array(
@@ -229,7 +229,7 @@ class Nurse extends CI_Controller {
         $data['error']=validation_errors();
       }
     }    
-    $data['title'] = tr('NewNurses');      
+    $data['title'] = tr('NewNurse');      
       
     $data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
     $path='nurse/new';
