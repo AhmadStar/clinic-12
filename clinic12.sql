@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2018 at 11:32 AM
+-- Generation Time: Oct 15, 2018 at 06:16 PM
 -- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `drugs` (
   `num` int(11) NOT NULL DEFAULT '0',
   `memo` text,
   PRIMARY KEY (`drug_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `drugs`
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `drug_patient` (
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `drug_patient`
@@ -363,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `success` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`login_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=195 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=201 ;
 
 --
 -- Dumping data for table `logins`
@@ -563,7 +563,38 @@ INSERT INTO `logins` (`login_id`, `ip_address`, `user_id`, `time`, `success`) VA
 (191, 0, 1, '2018-10-13 08:13:46', 1),
 (192, 0, 1, '2018-10-13 17:24:26', 1),
 (193, 0, 1, '2018-10-13 18:28:18', 1),
-(194, 0, 1, '2018-10-13 19:03:51', 1);
+(194, 0, 1, '2018-10-13 19:03:51', 1),
+(195, 0, 1, '2018-10-14 08:43:59', 0),
+(196, 0, 1, '2018-10-14 08:44:02', 1),
+(197, 0, 1, '2018-10-14 16:08:50', 1),
+(198, 0, 1, '2018-10-15 04:39:00', 1),
+(199, 0, 1, '2018-10-15 05:30:18', 1),
+(200, 0, 1, '2018-10-15 13:28:47', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nurses`
+--
+
+CREATE TABLE IF NOT EXISTS `nurses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `age` int(11) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `address` mediumtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `nurses`
+--
+
+INSERT INTO `nurses` (`id`, `name`, `age`, `phone`, `address`) VALUES
+(1, 'Rhaf', 23, '2544', 'rhaf'),
+(2, '???', 25, '55', '????'),
+(3, 'تقى', 5, '55', 'دمشق'),
+(4, 'gg', 55, '575', 'ee');
 
 -- --------------------------------------------------------
 
@@ -787,7 +818,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `password_last_set`, `password_never_expires`, `remember_me`, `activation_code`, `active`, `forgot_code`, `forgot_generated`, `enabled`, `last_login`, `last_login_ip`) VALUES
-(1, 'admin', '$2a$08$glVINo.dWbH7voqyOzZ4YeyZOUTGSy3jxYXzNLrVPaWJj9ZLesoCy', '2018-09-19 18:00:15', 0, '6878a7fdad4a5aea216f1f66ae1becfac6a62285', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-13 22:03:51', 0),
+(1, 'admin', '$2a$08$glVINo.dWbH7voqyOzZ4YeyZOUTGSy3jxYXzNLrVPaWJj9ZLesoCy', '2018-09-19 18:00:15', 0, '6878a7fdad4a5aea216f1f66ae1becfac6a62285', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-15 16:28:44', 0),
 (2, 'ahmad', '$2a$08$30kc9L1nLO/sUVG2ExwUs..LqI5C/mMwoVzxPPWk0G1fTeS6T9jhW', '2018-09-19 18:01:15', 0, '6ac3c5aa0002289b0ba7bef6fc38c256869a86c8', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-02 17:38:48', 83919838),
 (3, 'mossab', '$2a$08$5JnDGg5bCUFvYYVsZSf24uUj/skPcMwferFknI8ar7bBFUDsUESrC', '2018-10-08 10:31:44', 0, '', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-08 10:32:04', 83923213);
 
@@ -831,7 +862,7 @@ CREATE TABLE IF NOT EXISTS `xrays` (
   `price` decimal(10,0) NOT NULL,
   `memo` text,
   PRIMARY KEY (`xray_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `xrays`
