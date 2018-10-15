@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 15, 2018 at 06:16 PM
+-- Generation Time: Oct 15, 2018 at 11:23 PM
 -- Server version: 5.6.12-log
--- PHP Version: 5.4.16
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -591,10 +591,8 @@ CREATE TABLE IF NOT EXISTS `nurses` (
 --
 
 INSERT INTO `nurses` (`id`, `name`, `age`, `phone`, `address`) VALUES
-(1, 'Rhaf', 23, '2544', 'rhaf'),
-(2, '???', 25, '55', '????'),
 (3, 'تقى', 5, '55', 'دمشق'),
-(4, 'gg', 55, '575', 'ee');
+(4, 'ريم', 22, '0943434343', 'دمشق');
 
 -- --------------------------------------------------------
 
@@ -753,6 +751,30 @@ CREATE TABLE IF NOT EXISTS `returned_drugs` (
   KEY `drug_id` (`drug_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedule`
+--
+
+CREATE TABLE IF NOT EXISTS `schedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nurse_id` int(11) NOT NULL,
+  `work_date` date NOT NULL,
+  `work_hours` int(11) NOT NULL,
+  `hour_price` int(11) NOT NULL,
+  `day_fare` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`id`, `nurse_id`, `work_date`, `work_hours`, `hour_price`, `day_fare`) VALUES
+(1, 3, '2018-10-16', 11, 145, 0),
+(2, 3, '2018-10-06', 44, 150, 0);
 
 -- --------------------------------------------------------
 
