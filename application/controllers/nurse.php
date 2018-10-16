@@ -545,4 +545,73 @@ class Nurse extends CI_Controller {
     }
   }
     
+ public function editschedule($id=0)
+  {     
+    if (!$this->bitauth->logged_in())
+    {
+      $this->session->set_userdata('redir', current_url());
+      redirect('account/login');
+    }
+    if(!$this->bitauth->has_role('admin'))
+    {
+      $this->_no_access();
+      return;
+    }
+    $this->load->model('nurses');
+    $data['schedule'] = $this->nurses->get_one_schedule($id);
+    //print_r($data['nurse']);
+    if($this->input->post())
+    {
+      $this->form_validation->set_rules(array(
+//        array( 'field' => 'nurse_id','label' => 'Nurse ID', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'work_date','label' => 'Work Date', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'work_hours','label' => 'Work Hours', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'hour_price','label' => 'Hour Price', 'rules' => 'required|trim|has_no_schar', ),
+
+      ));
+      if($this->form_validation->run() == TRUE)
+      {
+        //check if patient form already loaded from this app -> should be checked with session
+        $session_check=$this->session->userdata(current_url());
+        $this->session->unset_userdata(current_url());
+        if($session_check && $session_check[0]==$id)
+        {
+            unset($_POST['submit']);
+            $nurse=$this->input->post();
+            $this->load->model('nurses');
+             $data_to_store = array(
+//                    'nurse_id' => $this->input->post('nurse_id'),                   
+                    'work_date' => $this->input->post('work_date'),
+                    'work_hours' => $this->input->post('work_hours'),
+                    'hour_price' => $this->input->post('hour_price'),
+                );
+            $this->nurses->update_schedule($id,$data_to_store);
+            
+            unset($_POST);
+            $data['script'] = '<script>alert("'. html_escape($this->nurses->name). ' has been updated successfuly.");</script>';
+            redirect('nurse');
+        }else{
+          //user may have sent the form to a url other than the original
+          $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
+        }
+      }else{
+        $data['error']=validation_errors();
+      }
+    }      
+      
+    $this->session->set_userdata(current_url(),array($id));    
+    $data['title'] = tr('EditNurse');    
+    
+      $path='nurse/editschedule';
+    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+    {
+        $this->load->view($path, $data);
+    }else{
+        $data['includes']=array($path);
+        $this->load->view('header',$data);
+        $this->load->view('index',$data);
+        $this->load->view('footer',$data);
+    }
+  }
+    
 }
