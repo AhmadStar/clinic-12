@@ -481,8 +481,7 @@ class Nurse extends CI_Controller {
   } 
     
  public function editincentive($id=0)
-  {
-     echo $id;
+  {     
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
@@ -499,7 +498,7 @@ class Nurse extends CI_Controller {
     if($this->input->post())
     {
       $this->form_validation->set_rules(array(
-        array( 'field' => 'nurse_id','label' => 'Nurse ID', 'rules' => 'required|trim|has_no_schar', ),
+//        array( 'field' => 'nurse_id','label' => 'Nurse ID', 'rules' => 'required|trim|has_no_schar', ),
         array( 'field' => 'amount','label' => 'Incentive Amount', 'rules' => 'required|trim|has_no_schar', ),
 
       ));
@@ -508,13 +507,13 @@ class Nurse extends CI_Controller {
         //check if patient form already loaded from this app -> should be checked with session
         $session_check=$this->session->userdata(current_url());
         $this->session->unset_userdata(current_url());
-        if($session_check && $session_check[0]==$nurse_id)
+        if($session_check && $session_check[0]==$id)
         {
             unset($_POST['submit']);
             $nurse=$this->input->post();
             $this->load->model('nurses');
              $data_to_store = array(
-                    'nurse_id' => $this->input->post('nurse_id'),                   
+//                    'nurse_id' => $this->input->post('nurse_id'),                   
                     'amount' => $this->input->post('amount'),                   
                 );
             $this->nurses->update_incentive($id,$data_to_store);
