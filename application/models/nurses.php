@@ -123,6 +123,15 @@ class Nurses extends CI_Model {
 		return $query->result();
     }
     
+    public function get_one_schedule($id)
+    {
+		$this->db->select('*');        
+		$this->db->from('schedule');
+    $this->db->where('schedule.id', $id);
+		$query = $this->db->get();		
+		return $query->result();
+    }
+
     public function get_all_nurse_incentive($id)
     {
         
@@ -237,6 +246,12 @@ class Nurses extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->update('incentives', $data);
 	}
+    
+    function update_schedule($id, $data)
+    {
+		$this->db->where('id', $id);
+		$this->db->update('schedule', $data);
+}
     
         /**
     * Delete section

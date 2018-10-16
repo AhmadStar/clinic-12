@@ -13,12 +13,18 @@ if($nurseschedules)
   foreach($nurseschedules as $_nurse_schedule)
   {
     if($i>=(int)$start&&$i<(int)$start+(int)$per_page)
-    {        
+    { 
+        $actions = '';
+        if($this->bitauth->has_role('pharmacy'))
+        {          
+          $actions .= anchor('nurse/editschedule/'.$_nurse_schedule->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Schedule'));
+        }
         echo '<tr id="Doctor'.$_nurse_schedule->id.'">'.
           '<td>'.html_escape($_nurse_schedule->id).'</td>'.
           '<td>'.html_escape($_nurse_schedule->work_date).'</td>'.              
           '<td>'.html_escape($_nurse_schedule->work_hours).'</td>'.          
-          '<td>'.html_escape($_nurse_schedule->hour_price).'</td>'.          
+          '<td>'.html_escape($_nurse_schedule->hour_price).'</td>'.
+          '<td class="hidden-print">'.$actions.'</td>'.
         '</tr>';
     }
     $i++;
