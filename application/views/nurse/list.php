@@ -1,6 +1,8 @@
-<legend class="legend_colour">- <?php echo trP('NursesList');?></legend>
+<legend class="legend_colour">-
+    <?php echo trP('NursesList');?>
+</legend>
 <div class="hidden-print">
-<?php echo anchor('nurse/new_nurse', tr('NewNurse'),array('class'=>'btn btn-info'))?>
+    <?php echo anchor('nurse/new_nurse', tr('NewNurse'),array('class'=>'btn btn-info'))?>
 </div>
 
 <?php //pagination should be added if have time.
@@ -26,7 +28,8 @@ if($nurses)
         {          
           $actions .= anchor('nurse/Edit/'.$_nurse['id'], '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Nurse'));
           $actions .= anchor('nurse/delete/'.$_nurse['id'], '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete nurse'));
-          $actions .= anchor('nurse/nurseschedule/'.$_nurse['id'], '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Edit Nurse'));    
+          $actions .= anchor('nurse/nurseschedule/'.$_nurse['id'], '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Nurse Hours Work'));
+          $actions .= anchor('nurse/nurseincentive/'.$_nurse['id'], '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Nurse Incentives'));
         }
         echo '<tr id="nurse'.$_nurse['id'].'">'.
                             
@@ -43,24 +46,25 @@ if($nurses)
   echo '</tbody></table></div>'.$pagination."</div>";
   ?>
 <script>
-    $(document).ready(function(){ 
-        $('#nurse_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Delete nurse'){
-               e.preventDefault();
-               $.get($(this).attr('href'),'',function(data){
-                   $('#tmpDiv').html(data);
-               });
+    $(document).ready(function() {
+        $('#nurse_list_table a').on('click', function(e) {
+            if ($(this).attr('title') == 'Delete nurse') {
+                e.preventDefault();
+                $.get($(this).attr('href'), '', function(data) {
+                    $('#tmpDiv').html(data);
+                });
             }
         });
-        $('#nurse_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Check Availability'){
-               e.preventDefault();
-               $.get($(this).attr('href'),'',function(data){
-                   $('#tmpDiv').html(data);
-               });
+        $('#nurse_list_table a').on('click', function(e) {
+            if ($(this).attr('title') == 'Check Availability') {
+                e.preventDefault();
+                $.get($(this).attr('href'), '', function(data) {
+                    $('#tmpDiv').html(data);
+                });
             }
         });
     });
+
 </script>
 <!-- <?php
 }

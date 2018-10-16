@@ -123,6 +123,29 @@ class Nurses extends CI_Model {
 		return $query->result();
     }
     
+    public function get_all_nurse_incentive($id)
+    {
+        
+		$this->db->select('*');
+
+		$this->db->from('incentives');                                        
+
+        $this->db->where('incentives.nurse_id', $id);
+         
+		$query = $this->db->get();
+		
+		return $query->result();
+    }
+    
+    public function get_one_incentive($id)
+    {
+		$this->db->select('*');        
+		$this->db->from('incentives');
+        $this->db->where('incentives.id', $id);
+		$query = $this->db->get();		
+		return $query->result();
+    }
+    
     
     public function get_all_nurses()
     {
@@ -165,6 +188,32 @@ class Nurses extends CI_Model {
 	}
     
     /**
+    * Store the new item into the database
+    * @param array $data - associative array with data to store
+    * @return boolean 
+    */
+    public function save_nurse_incentive($data)
+    {
+		$insert = $this->db->insert('incentives', $data);
+	    return $insert;
+	}
+    
+    /*
+    * sum all nurse incentives
+    * @param nurse id
+    * @return sum all intencetives value
+    */
+    public function get_sum_of_nurse_incentives($id)
+    {		
+        $this->db->select_sum('incentives.amount');        
+		$this->db->from('incentives');
+        $this->db->where('incentives.nurse_id', $id);         
+		$query = $this->db->get();
+		
+		return $query->result_array();
+    }
+    
+    /**
     * Update section
     * @param array $data - associative array with data to store
     * @return boolean
@@ -183,6 +232,11 @@ class Nurses extends CI_Model {
 //		}
 	}
     
+    function update_incentive($id, $data)
+    {
+		$this->db->where('id', $id);
+		$this->db->update('incentives', $data);
+	}
     
         /**
     * Delete section
@@ -193,6 +247,8 @@ class Nurses extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('nurses'); 
 	}
+    
+    
         
     
         
