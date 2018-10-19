@@ -13,7 +13,8 @@ if($nurseincentives)
 {
   echo "<div>".$pagination."<div class='table-responsive'><table id='nurse_list_table' class='table table-bordered table-striped'><thead><tr>
            <th>".tr('ID')."</th>
-           <th>".tr('IncentiveAmount')."</th>                               
+           <th>".tr('IncentiveAmount')."</th>
+           <th></th>
        </tr></thead><tbody>";
   $start = ($page-1) * $per_page;
   $i=0;
