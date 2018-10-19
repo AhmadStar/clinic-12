@@ -57,7 +57,8 @@
       }
   </script>
 <?php
-  if(($this->bitauth->has_role('pharmacy'))&&$status_code>1)
+//  if(($this->bitauth->has_role('pharmacy'))&&$status_code>1)
+  if(($this->bitauth->has_role('pharmacy')))
   {
     echo '<div class="hidden-print">'.anchor('drug/search', tr('AssignAnDrug'),array('id'=>'addDrug','class'=>'btn btn-info')).'</div>';
     //searchbox for drug + result

@@ -24,6 +24,42 @@ class Comments extends MY_Model {
     public $comment;
     
     /*
+     * PPressure body
+     * @var string
+     */
+    public $spressur;
+    
+    /*
+     * SPressue body
+     * @var string
+     */
+    public $ppressure;
+    
+    /*
+     * hrate body
+     * @var string
+     */
+    public $hrate;
+    
+    /*
+     * heate body
+     * @var string
+     */
+    public $heate;
+    
+    /*
+     * oxidation body
+     * @var string
+     */
+    public $oxidation;
+    
+    /*
+     * oxidation body
+     * @var string
+     */
+    public $nbreathing;
+    
+    /*
      * Type of comment. reserved for future use. defualt val is 1
      * @var small int
      */

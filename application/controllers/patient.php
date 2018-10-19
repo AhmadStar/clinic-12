@@ -295,8 +295,8 @@ class Patient extends CI_Controller {
 
 
     $this->load->model('comments');
-    $comments = 'unauthorized';
-    if($this->patient_doctor->doctor_id==0)
+//    $comments = 'unauthorized';
+//    if($this->patient_doctor->doctor_id==0)
       $comments=$this->comments->get_by_fkey('patient_doctor_id',$this->patient_doctor->patient_doctor_id,'desc',0);
     
     $this->load->model('drug_patient');

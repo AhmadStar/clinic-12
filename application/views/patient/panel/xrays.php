@@ -61,7 +61,8 @@
       }
   </script>
 <?php
-  if(($this->bitauth->has_role('xray'))&&$status_code>1)
+  if(($this->bitauth->has_role('xray')))
+//  if(($this->bitauth->has_role('xray'))&&$status_code>1)
   {
       
      echo '<div class="hidden-print">'.anchor('xray/search', tr('AssignAnXray'),array('id'=>'addXray','class'=>'btn btn-info')).'</div>';    
