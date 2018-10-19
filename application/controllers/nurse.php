@@ -102,10 +102,10 @@ class Nurse extends CI_Controller {
             
             unset($_POST);
             $data['script'] = '<script>alert("'. html_escape($this->nurses->name). ' has been updated successfuly.");</script>';
-            redirect('nurse');
+//            redirect('nurse');
         }else{
           //user may have sent the form to a url other than the original
-          $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
+          $data['error'] = '<div class="alert alert-danger">Form URLLL Error</div>';
         }
       }else{
         $data['error']=validation_errors();

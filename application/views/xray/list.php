@@ -50,8 +50,7 @@ if($xrays)
         });
     });
 </script>
-<!--
+
 <?php
 }
-echo '<div class="hidden-print">'.anchor('xray/new_xray', tr('RegisterNewX-ray'),array('class'=>'hidden-print')).'</div>';
-?>-->
+?>

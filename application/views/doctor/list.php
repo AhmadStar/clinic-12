@@ -62,8 +62,7 @@ if($doctors)
         });
     });
 </script>
-<!--
+
 <?php
 }
-echo '<div class="hidden-print">'.anchor('doctor/new_doctor', tr('NewDoctor'),array('class'=>'hidden-print')).'</div>';
-?>-->
+?>

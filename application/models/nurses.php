@@ -164,6 +164,23 @@ class Nurses extends CI_Model {
 		return $query->result_array();
     }
     
+//    function get_all_nurses($query)
+//	{
+//		$this->db->select("*");
+//		$this->db->from("nurses");
+//		if($query != '')
+//		{
+//			$this->db->like('name', $query);
+//			$this->db->or_like('age', $query);
+//			$this->db->or_like('phone', $query);
+//			$this->db->or_like('address', $query);			
+//		}
+////		$this->db->order_by('CustomerID', 'DESC');
+//		$query =  $this->db->get();
+//        return $query->result_array();
+//	}
+    
+    
     public function get_one_nurse($id)
     {
 		$this->db->select('*');        

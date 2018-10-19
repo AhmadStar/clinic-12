@@ -66,7 +66,6 @@ if($nurses)
     });
 
 </script>
-<!-- <?php
+ <?php
 }
-echo '<div class="col-md-6">'.anchor('nurse/new_nurse', tr('Newnurses'),array('class'=>'form-control btn btn-info')).'</div>';
-?> -->
+?> 

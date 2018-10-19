@@ -66,8 +66,7 @@ if($consumes)
         });
     });
 </script>
-<!--
+
 <?php
 }
-echo '<div class="hidden-print">'.anchor('consume/new_consume', tr('NewConsume'),array('class'=>'hidden-print')).'</div>';
-?>-->
+?>

@@ -50,8 +50,7 @@ if($tests)
         });
     });
 </script>
-<!--
+
 <?php
 }
-echo '<div class="hidden-print">'.anchor('test/new_test', tr('RegisterNewTest'),array('class'=>'hidden-print')).'</div>';
-?>-->
+?>
