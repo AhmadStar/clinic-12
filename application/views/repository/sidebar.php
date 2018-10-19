@@ -59,6 +59,8 @@
         include_once 'sidebar/patient.php';
       if ($this->bitauth->has_role('patient'))
         include_once 'sidebar/nurse.php';
+      if ($this->bitauth->has_role('patient'))
+        include_once 'sidebar/dailyincome.php';
     ?>
     <script></script>
   </div>
