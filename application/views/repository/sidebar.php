@@ -43,6 +43,8 @@
         include_once 'sidebar/income.php';
       if ($this->bitauth->has_role('doctor'))
         include_once 'sidebar/doctor.php';
+      if ($this->bitauth->has_role('patient'))
+        include_once 'sidebar/nurse.php';
       if ($this->bitauth->has_role('doctor'))
         include_once 'sidebar/diagnose.php';
       if ($this->bitauth->has_role('pharmacy'))
@@ -56,9 +58,7 @@
       if ($this->bitauth->has_role('guest'))
         include_once 'sidebar/guest.php';
       if ($this->bitauth->has_role('patient'))
-        include_once 'sidebar/patient.php';
-      if ($this->bitauth->has_role('patient'))
-        include_once 'sidebar/nurse.php';
+        include_once 'sidebar/patient.php';      
       if ($this->bitauth->has_role('patient'))
         include_once 'sidebar/dailyincome.php';
     ?>
