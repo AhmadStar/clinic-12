@@ -6,7 +6,8 @@ if($nurseschedules)
            <th>".tr('ID')."</th>
            <th>".tr('Date')."</th>
            <th>".tr('WorkHours')."</th>           
-           <th>".tr('HourPrice')."</th>                               
+           <th>".tr('HourPrice')."</th>
+           <th></th>
        </tr></thead><tbody>";
   $start = ($page-1) * $per_page;
   $i=0;
