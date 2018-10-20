@@ -53,7 +53,9 @@ if($drugs)
                 $('#drugGroup tbody').append('<tr class="unpaid text-danger"><td></td><td></td><td></td><td></td><td>Unpaid:</td><td id="unpaid">'+data.find('.actions a:first').attr('tc')+'</td><td></td></tr>');
                 $('#drugGroup tbody').append('<tr class="tc text-info hidden"><td></td><td></td><td></td><td></td><td>Total:</td><td id="tc">'+data.find('.actions a:first').attr('tc')+'</td><td></td></tr>');
             }
-            alert('Drug has been assigned to the patient successfully');
+//            alert('Drug has been assigned to the patient successfully');
+            alert('<?php trP('HasBeenAdded')?><?php trP('Drug')?><?php trP('Successfuly')?>');
+              
             $('#drugGroup tr > td> a').on('click',drugItemsAction);
           }
         });

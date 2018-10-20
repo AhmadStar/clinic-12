@@ -57,7 +57,7 @@
       }
   </script>
 <?php
-  if(($this->bitauth->has_role('lab'))&&$status_code>1)
+  if(($this->bitauth->has_role('lab')))
   {
     echo '<div class="hidden-print">'.anchor('test/search', tr('AssignATest'),array('id'=>'addTest','class'=>'btn btn-info')).'</div>';  
     //searchbox for drug + result
@@ -67,6 +67,7 @@
     echo form_input('test_id','','id="test_id"');
     echo form_input('patient_id',$patient->patient_id,'id="patient_id"');
     echo form_input('no_of_item','','id="test_no_of_item"');
+    echo form_input('result','','id="result"');
     echo form_input('total_cost','','id="test_total_cost"');
     echo form_input('memo','','id="memo"');
     echo form_close().'</div>';
@@ -79,8 +80,9 @@
           <th>#</th>
           <th><?php trP('EnglishName')?></th>
           <th><?php trP('ArabicName')?></th>
-          <th><?php trP('UnitPrice')?></th>
-          <th><?php trP('Quantity')?></th>
+<!--          <th><?php trP('UnitPrice')?></th>-->
+<!--          <th><?php trP('Quantity')?></th>-->
+          <th><?php trP('result')?></th>
           <th><?php trP('TotalCost')?></th>  
           <th></th>
       </tr>
@@ -95,8 +97,9 @@
         echo '<tr id="dpi'.$test->lab_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->lab->test_name_en.'</td>'.
             '<td>'.$this->lab->test_name_ar.'</td>'.
-            '<td>'.$this->lab->price.'</td>'.
-            '<td>'.$test->no_of_item.'</td>'.
+//            '<td>'.$this->lab->price.'</td>'.
+//            '<td>'.$test->no_of_item.'</td>'.
+            '<td>'.$test->result.'</td>'.
             '<td>'.$test->total_cost.'</td>';
         if(!($test->user_id_discharge&&$test->discharge_date))
         {

@@ -41,6 +41,12 @@ class Xray_patient extends My_Model {
      */
     public $no_of_item;
     
+     /*
+     * xresult of 
+     * @var string
+     */
+    public $xresult;
+    
     /*
      * Price of drug
      * @var decimal(10,0)
