@@ -24,83 +24,28 @@ class Nurses extends CI_Model {
      * Item Name in English.
      * @var string
      */
-    public $Name;
+    public $name;
     
     /**
      * Count
      * @var int
      */
-    public $Age;
+    public $age;
     
     /*
      * Doctor id
      * @var int
      */
-    public $Phone;
+    public $phone;
     
     
     /*
      * Patient id
      * @var int
      */
-    public $Address;
+    public $address;
 
-    
-    
-//    public function get_all_doctor_incomes($id)
-//    {
-//        
-//		$this->db->select('incomes.type');
-//        $this->db->select('incomes.amount');
-//        $this->db->select('incomes.date');
-//        $this->db->select('incomes.doctor_id');
-//        $this->db->select('incomes.patient_id');
-//        $this->db->select('incomes.id');
-//
-//		$this->db->from('incomes');
-//                                           
-////		$this->db->join('user', 'user_section.user_id = user.id', 'left');
-////        $this->db->join('section', 'user_section.section_id = section.id', 'left');
-//
-//        $this->db->where('incomes.doctor_id', $id);
-//         
-//		$query = $this->db->get();
-//		
-//		return $query->result_array();
-//    }
-//    
-//    public function get_sum_of_doctor_incomes($id)
-//    {		
-//        $this->db->select_sum('incomes.amount');        
-//		$this->db->from('incomes');
-//        $this->db->where('incomes.doctor_id', $id);         
-//		$query = $this->db->get();
-//		
-//		return $query->result_array();
-//    }
-//    
-//    public function get_sum_static_doctor_incomes($id)
-//    {		
-//        $this->db->select_sum('incomes.amount');        
-//		$this->db->from('incomes');
-//        $this->db->where('incomes.doctor_id', $id);         
-//        $this->db->like('incomes.type', 'static');         
-//		$query = $this->db->get();
-//		
-//		return $query->result_array();
-//    }
-//    
-//    public function get_sum_normal_doctor_incomes($id)
-//    {		
-//        $this->db->select_sum('incomes.amount');        
-//		$this->db->from('incomes');
-//        $this->db->where('incomes.doctor_id', $id);         
-//        $this->db->like('incomes.type', 'normal');         
-//		$query = $this->db->get();
-//		
-//		return $query->result_array();
-//    }
-    
+
     public function get_all_test()
     {
 		$this->db->select('*');        
@@ -164,21 +109,6 @@ class Nurses extends CI_Model {
 		return $query->result_array();
     }
     
-//    function get_all_nurses($query)
-//	{
-//		$this->db->select("*");
-//		$this->db->from("nurses");
-//		if($query != '')
-//		{
-//			$this->db->like('name', $query);
-//			$this->db->or_like('age', $query);
-//			$this->db->or_like('phone', $query);
-//			$this->db->or_like('address', $query);			
-//		}
-////		$this->db->order_by('CustomerID', 'DESC');
-//		$query =  $this->db->get();
-//        return $query->result_array();
-//	}
     
     
     public function get_one_nurse($id)
@@ -248,14 +178,6 @@ class Nurses extends CI_Model {
     {
 		$this->db->where('id', $id);
 		$this->db->update('nurses', $data);
-//		$report = array();
-//		$report['error'] = $this->db->_error_number();
-//		$report['message'] = $this->db->_error_message();
-//		if($report !== 0){
-//			return true;
-//		}else{
-//			return false;
-//		}
 	}
     
     function update_incentive($id, $data)

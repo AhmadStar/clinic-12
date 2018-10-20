@@ -181,16 +181,10 @@ class Consume extends CI_Controller {
         $this->session->unset_userdata(current_url());
         if($session_check && $session_check[0]==$consume_id)
         {
-            //$this->load->model('drug_patient');
-            //$this->drug_patient->get_by_fkey('drug_id',$consume_id);
-            //if(!$this->drug_patient->drug_patient_id){
-                $this->consumes->delete();
-                echo 'ok';
-                return;
-            //}else{
-              //  echo 'nok';
-            //    return;
-            //}
+            $this->consumes->delete();
+            echo 'ok';
+            return;
+           
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = 'mismatch';
@@ -203,12 +197,8 @@ class Consume extends CI_Controller {
     }
     $this->session->set_userdata(current_url(),array($consume_id));
     $data['consume']=$this->consumes;
-    //$data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
-    //$data['includes']=array('drug/delete');
     $this->load->view('consume/confirm_delete',$data);
-    //$this->load->view('header',$data);
-    //$this->load->view('index',$data);
-    //$this->load->view('footer',$data);
+
   }
   
   /*
@@ -292,9 +282,7 @@ class Consume extends CI_Controller {
   {
     $this->load->model('doctors');
     $doctors = $this->doctors->get();
-//    $this->load->helper('site'); 
     $doctor_list['0']=tr('DoctorName');
-//    $doctor_list['0']='';
     foreach ($doctors as $doctor) 
     {
       $doctor_list[$doctor->id]=  html_escape($doctor->name.', '.$doctor->address.', '.$doctor->phone);

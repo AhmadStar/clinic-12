@@ -319,7 +319,6 @@ class Account extends CI_Controller
     $data['groups']=$groups;
     $data['user']=$this->bitauth->get_user_by_id($user_id);
     $data['id_type_options'] = $this->_id_type_options();
-    //$data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
     $path='account/edit_user';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -418,8 +417,7 @@ class Account extends CI_Controller
         unset($_POST['submit']);
         $this->bitauth->add_group($this->input->post());
         echo '<script>alert("Groups added successfully");</script>';
-        //return;
-        redirect('account/groups');
+        //redirect('account/groups');
       }
 
     }
@@ -537,7 +535,6 @@ class Account extends CI_Controller
         }
       }      
       $data['title'] = tr('EditGroup')."  ".$group->name;    
-      //$data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
       $data['bitauth']=$this->bitauth;
       $data['roles']=$roles;
       $data['group']=$group;
@@ -587,11 +584,9 @@ class Account extends CI_Controller
     if($this->bitauth->deactivate($user_id))
     {
       echo 'true';
-      //$this->load->view('account/activation_successful');
       return;
     }
     echo 'false';
-    //$this->load->view('account/activation_failed');
   }
 
   public function checkAuth($perm_key=0) {

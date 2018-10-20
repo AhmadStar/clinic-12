@@ -102,8 +102,9 @@ class Dailyincome extends CI_Controller {
             $this->dailyincomes->update_dailyincome($dailyincome_id,$data_to_store);
             
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->dailyincomes->name). ' has been updated successfuly.");</script>';
-            redirect('dailyincome');
+//            echo $this->dailyincomes->doctor_id;
+            $data['script'] = '<script>alert("'. html_escape($this->dailyincomes->doctor_id). ' has been updated successfuly.");</script>';
+           // redirect('dailyincome');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -223,8 +224,8 @@ class Dailyincome extends CI_Controller {
                 );
         $this->dailyincomes->save_dailyincome($data_to_store);
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->dailyincome->doctor_id). ' has been registered successfuly.");</script>';
-        redirect('dailyincome');
+        $data['script'] = '<script>alert("'. html_escape($this->dailyincomes->doctor_id). ' has been registered successfuly.");</script>';
+       // redirect('dailyincome');
       }else{
         $data['error']=validation_errors();
       }
