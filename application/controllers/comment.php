@@ -24,16 +24,6 @@ class Comment extends CI_Controller {
       redirect('account/login');
     }
 
-    // $this->load->model('comments');
-//     
-    // $data['comments'] = $this->comments->get_by_fkey('patient_id',$patient_id,$limit, ($page-1)*$limit);
-    // $data['title'] = 'Comments List';
-    // $data['navActiveId']='navbarLiPatient';
-    // $data['includes']=array('comments/list');
-//     
-    // $this->load->view('header',$data);
-    // $this->load->view('index',$data);
-    // $this->load->view('footer',$data);
   }
   
   /*
@@ -67,15 +57,11 @@ class Comment extends CI_Controller {
         array( 'field' => 'heate', 'label' => 'heate', 'rules' => 'required|trim|has_no_schar', ),
         array( 'field' => 'oxidation', 'label' => 'oxidation', 'rules' => 'required|trim|has_no_schar', ),
       ));
-        
-//        echo $patient_doctor_id."Ahmad";
-//      if($this->form_validation->run() == TRUE && 
-//         $this->input->post('patient_doctor_id')== $patient_doctor_id)
+
       if($this->form_validation->run())
       {
         $this->patient_doctor->load($patient_doctor_id);
-//        if($this->patient_doctor->user_id!=$this->session->userdata('ba_user_id'))
-//          return;
+
         $this->comments->patient_doctor_id=$this->input->post('patient_doctor_id');
         $this->comments->comment=$this->input->post('comment');
         $this->comments->spressur=$this->input->post('spressur');
@@ -87,23 +73,14 @@ class Comment extends CI_Controller {
         $this->comments->create_date=now();
         $this->comments->last_edit_time=now();
         $this->comments->save();
-//        $this->comments->load($this->comments->comment_id);
-//        $data['comment']=$this->comments;
-//        $this->load->view('patient/comment',$data);
+
         redirect('patient/panel/'.$this->input->post('patient_id'));
       }else{
           echo "for validation error";
           echo "---";
           echo $this->input->post('patient_doctor_id');
           echo $this->input->post('patient_id');
-//          echo $this->input->post('comment');
-//          echo $this->input->post('spressur');
-//          echo $this->input->post('ppressure');
-//          echo $this->input->post('hrate');
-//          echo $this->input->post('heate');
-//          echo $this->input->post('oxidation');
-//          echo $this->input->post('nbreathing');
-          
+         
       }
     }
   }
@@ -137,8 +114,7 @@ class Comment extends CI_Controller {
       {
         $this->comments->load($comment_id);
         $this->patient_doctor->load($this->comments->patient_doctor_id);
-//        if($this->patient_doctor->user_id!=$this->session->userdata('ba_user_id'))
-//          return;
+/
         $this->comments->comment=$this->input->post('comment');
         $this->comments->last_edit_time=now();
         $this->comments->save();

@@ -3,8 +3,7 @@
 <?php echo anchor('doctor/new_doctor', tr('NewDoctor'),array('class'=>'btn btn-info'))?>
 </div>
 <div class="hidden-print">
-<?php echo anchor('doctor/new_doctor', tr('NewDoctor'),array('class'=>'btn btn-info'))?>
-</div>
+
 <?php //pagination should be added if have time.
 if($doctors)
 {
