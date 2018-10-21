@@ -73,6 +73,7 @@
     echo form_input('xray_id','','id="xray_id"');
     echo form_input('patient_id',$patient->patient_id,'id="patient_id"');
     echo form_input('no_of_item','','id="xray_no_of_item"');
+    echo form_input('xresult','','id="xresult"');
     echo form_input('total_cost','','id="xray_total_cost"');
     echo form_input('memo','','id="memo"');
     echo form_close().'</div>';
@@ -85,9 +86,12 @@
           <th>#</th>
          <th><?php trP('EnglishName')?></th>
          <th><?php trP('ArabicName')?></th>
+         <th><?php trP('Xresult')?></th>
+<!--
          <th><?php trP('UnitPrice')?></th>
          <th><?php trP('Quantity')?></th>
          <th><?php trP('TotalCost')?></th>  
+-->
          <th></th>
       </tr>
     </thead>
@@ -101,9 +105,10 @@
         echo '<tr id="dpi'.$xray->xray_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->xrays->xray_name_en.'</td>'.
             '<td>'.$this->xrays->xray_name_ar.'</td>'.
-            '<td>'.$this->xrays->price.'</td>'.
-            '<td>'.$xray->no_of_item.'</td>'.
-            '<td>'.$xray->total_cost.'</td>';
+//            '<td>'.$this->xrays->price.'</td>'.
+//            '<td>'.$xray->no_of_item.'</td>'.
+//            '<td>'.$xray->total_cost.'</td>';
+            '<td>'.$xray->xresult.'</td>';
         if(!($xray->user_id_discharge&&$xray->discharge_date))
         {
             $unpaid+=$xray->total_cost;

@@ -41,6 +41,12 @@ class Lab_patient extends My_Model {
      */
     public $no_of_item;
     
+    /**
+     * Number of assigned item.
+     * @var int
+     */
+    public $result;
+    
     /*
      * Price of drug
      * @var decimal(10,0)

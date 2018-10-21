@@ -18,6 +18,7 @@ if($xrays)
       '<td>'.html_escape($xray->xray_name_ar).'</td>'.
       '<td>'.html_escape($xray->price).'</td>'.
       '<td><input type="number" name="no_of_item" value="1"/></td>'.
+      '<td><input type="text" name="xresult"/></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
   }?>
@@ -29,6 +30,7 @@ if($xrays)
         var tr = $(this).parent().parent();
         $('#xray_id').val(tr.find('td:first').text());
         $('#xray_no_of_item').val(tr.find('input[name="no_of_item"]').val());
+        $('#xresult').val(tr.find('input[name="xresult"]').val());
         $('#xray_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
         
         $.post($('#addXrayForm').attr('action'),$('#addXrayForm').serialize(),function(data){
@@ -53,7 +55,7 @@ if($xrays)
                 $('#xrayGroup tbody').append('<tr class="xray_unpaid text-danger"><td></td><td></td><td></td><td></td><td>Unpaid:</td><td id="xray_unpaid">'+data.find('.actions a:first').attr('tc')+'</td><td></td></tr>');
                 $('#xrayGroup tbody').append('<tr class="xray_tc text-info hidden"><td></td><td></td><td></td><td></td><td>Total:</td><td id="xray_tc">'+data.find('.actions a:first').attr('tc')+'</td><td></td></tr>');
             }
-            alert('Xray has been assigned to the patient successfully');
+            alert('<?php trP('HasBeenAdded')?><?php trP('Xray')?><?php trP('Successfuly')?>');  
             $('#xrayGroup tr > td> a').on('click',xrayItemsAction);
           }
         });
