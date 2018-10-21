@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 15, 2018 at 11:23 PM
+-- Generation Time: Oct 21, 2018 at 08:52 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -32,29 +32,54 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `patient_doctor_id` int(11) NOT NULL,
   `comment` text NOT NULL,
+  `spressur` int(11) NOT NULL,
+  `ppressure` int(11) NOT NULL,
+  `hrate` int(11) NOT NULL,
+  `heate` int(11) NOT NULL,
+  `oxidation` int(11) NOT NULL,
+  `nbreathing` int(11) NOT NULL,
   `comment_type` smallint(6) NOT NULL DEFAULT '1' COMMENT 'for future use, 1 is default',
   `create_date` int(11) NOT NULL,
   `last_edit_time` int(11) NOT NULL,
   PRIMARY KEY (`comment_id`),
   KEY `patient_doctor_id` (`patient_doctor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`comment_id`, `patient_doctor_id`, `comment`, `comment_type`, `create_date`, `last_edit_time`) VALUES
-(1, 15, 'dsadas d', 1, 1539206086, 1539206086),
-(2, 15, 'ملاحظة تانية', 1, 1539206100, 1539206100),
-(3, 4, 'هاذ تعليق من الطبيب', 1, 1539239993, 1539239993),
-(4, 13, 'ystyidtyi', 1, 1539246131, 1539246131),
-(5, 1, 'Test', 1, 1539264097, 1539264097),
-(6, 1, 'asd', 1, 1539297053, 1539297053),
-(7, 18, 'التشخيص التهاب قصبات', 1, 1539344838, 1539344838),
-(8, 5, 'kjl', 1, 1539358706, 1539358706),
-(9, 5, 'kjl', 1, 1539358707, 1539358707),
-(10, 5, 'kjl', 1, 1539358707, 1539358707),
-(11, 7, 'dsas', 1, 1539469571, 1539469571);
+INSERT INTO `comments` (`comment_id`, `patient_doctor_id`, `comment`, `spressur`, `ppressure`, `hrate`, `heate`, `oxidation`, `nbreathing`, `comment_type`, `create_date`, `last_edit_time`) VALUES
+(1, 15, 'dsadas d', 0, 0, 0, 0, 0, 0, 1, 1539206086, 1539206086),
+(2, 15, 'ملاحظة تانية', 0, 0, 0, 0, 0, 0, 1, 1539206100, 1539206100),
+(3, 4, 'هاذ تعليق من الطبيب', 0, 0, 0, 0, 0, 0, 1, 1539239993, 1539239993),
+(4, 13, 'ystyidtyi', 0, 0, 0, 0, 0, 0, 1, 1539246131, 1539246131),
+(5, 1, 'Test', 0, 0, 0, 0, 0, 0, 1, 1539264097, 1539264097),
+(6, 1, 'asd', 0, 0, 0, 0, 0, 0, 1, 1539297053, 1539297053),
+(7, 18, 'التشخيص التهاب قصبات', 0, 0, 0, 0, 0, 0, 1, 1539344838, 1539344838),
+(8, 5, 'kjl', 0, 0, 0, 0, 0, 0, 1, 1539358706, 1539358706),
+(9, 5, 'kjl', 0, 0, 0, 0, 0, 0, 1, 1539358707, 1539358707),
+(10, 5, 'kjl', 0, 0, 0, 0, 0, 0, 1, 1539358707, 1539358707),
+(11, 7, 'dsas', 0, 0, 0, 0, 0, 0, 1, 1539469571, 1539469571),
+(12, 5, 'dsa', 0, 0, 0, 0, 0, 0, 1, 1539782613, 1539782613),
+(13, 20, 'csada', 0, 0, 0, 0, 0, 0, 1, 1539784367, 1539784367),
+(14, 13, 'dasdas', 0, 0, 0, 0, 0, 0, 1, 1539784566, 1539784566),
+(15, 10, 'بسيبسي', 0, 0, 0, 0, 0, 0, 1, 1539784856, 1539784856),
+(16, 20, 'test', 120, 60, 0, 0, 0, 0, 1, 1539786498, 1539786498),
+(17, 20, 'test', 120, 80, 0, 0, 0, 0, 1, 1539786521, 1539786521),
+(18, 20, 'test 120', 120, 80, 0, 0, 0, 0, 1, 1539786695, 1539786695),
+(19, 20, 'test harte rate', 120, 80, 85, 0, 0, 0, 1, 1539787328, 1539787328),
+(20, 20, 'heate dasdkjh sadkjsda', 120, 80, 70, 37, 0, 0, 1, 1539787552, 1539787552),
+(21, 20, 'oxidation', 100, 0, 60, 33, 17, 0, 1, 1539788244, 1539788244),
+(22, 20, 'nbreathing', 120, 80, 60, 37, 99, 12, 1, 1539788395, 1539788395),
+(23, 16, 'اختبار', 140, 90, 60, 38, 99, 14, 1, 1539790794, 1539790794),
+(24, 0, 'dasd', 3, 4, 5, 6, 7, 8, 1, 1539794233, 1539794233),
+(25, 0, 'Test', 1, 2, 3, 4, 5, 6, 1, 1539794346, 1539794346),
+(26, 19, 'تعليق', 9, 8, 7, 6, 5, 4, 1, 1539794899, 1539794899),
+(27, 19, 'تعليق اخيرااا', 1, 2, 3, 4, 5, 6, 1, 1539795117, 1539795117),
+(28, 19, 'dashdkj ahsdkja hskjdhak jsdhkjas hdkjahskdjhaskj dhkjshdkjas hdkjahdkjashdkjh', 1, 1, 2, 1, 1, 1, 1, 1539796891, 1539796891),
+(29, 6, 'تعليق', 2, 5, 5, 5, 5, 5, 1, 1539812246, 1539812246),
+(30, 20, 'هذ تعليق', 120, 80, 60, 38, 95, 12, 1, 1539863147, 1539863147);
 
 -- --------------------------------------------------------
 
@@ -84,6 +109,173 @@ INSERT INTO `consumes` (`id`, `name`, `count`, `doctor_id`, `date`, `price`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customers`
+--
+
+CREATE TABLE IF NOT EXISTS `customers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL DEFAULT '',
+  `phone` varchar(50) NOT NULL DEFAULT '',
+  `address` varchar(50) NOT NULL DEFAULT '',
+  `city` varchar(50) NOT NULL DEFAULT '',
+  `country` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=123 ;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `FirstName`, `LastName`, `phone`, `address`, `city`, `country`) VALUES
+(1, 'Carine ', 'Schmitt', '40.32.2555', '54, rue Royale', 'Nantes', 'France'),
+(2, 'Jean', 'King', '7025551838', '8489 Strong St.', 'Las Vegas', 'USA'),
+(3, 'Peter', 'Ferguson', '03 9520 4555', '636 St Kilda Road', 'Melbourne', 'Australia'),
+(4, 'Janine ', 'Labrune', '40.67.8555', '67, rue des Cinquante Otages', 'Nantes', 'France'),
+(5, 'Jonas ', 'Bergulfsen', '07-98 9555', 'Erling Skakkes gate 78', 'Stavern', 'Norway'),
+(6, 'Susan', 'Nelson', '4155551450', '5677 Strong St.', 'San Rafael', 'USA'),
+(7, 'Zbyszek ', 'Piestrzeniewicz', '(26) 642-7555', 'ul. Filtrowa 68', 'Warszawa', 'Poland'),
+(8, 'Roland', 'Keitel', '+49 69 66 90 2555', 'Lyonerstr. 34', 'Frankfurt', 'Germany'),
+(9, 'Julie', 'Murphy', '6505555787', '5557 North Pendale Street', 'San Francisco', 'USA'),
+(10, 'Kwai', 'Lee', '2125557818', '897 Long Airport Avenue', 'NYC', 'USA'),
+(11, 'Diego ', 'Freyre', '(91) 555 94 44', 'C/ Moralzarzal, 86', 'Madrid', 'Spain'),
+(12, 'Christina ', 'Berglund', '0921-12 3555', 'Berguvsvägen  8', 'Luleå', 'Sweden'),
+(13, 'Jytte ', 'Petersen', '31 12 3555', 'Vinbæltet 34', 'Kobenhavn', 'Denmark'),
+(14, 'Mary ', 'Saveley', '78.32.5555', '2, rue du Commerce', 'Lyon', 'France'),
+(15, 'Eric', 'Natividad', '+65 221 7555', 'Bronz Sok.', 'Singapore', 'Singapore'),
+(16, 'Jeff', 'Young', '2125557413', '4092 Furth Circle', 'NYC', 'USA'),
+(17, 'Kelvin', 'Leong', '2155551555', '7586 Pompton St.', 'Allentown', 'USA'),
+(18, 'Juri', 'Hashimoto', '6505556809', '9408 Furth Circle', 'Burlingame', 'USA'),
+(19, 'Wendy', 'Victorino', '+65 224 1555', '106 Linden Road Sandown', 'Singapore', 'Singapore'),
+(20, 'Veysel', 'Oeztan', '+47 2267 3215', 'Brehmen St. 121', 'Bergen', 'Norway  '),
+(21, 'Keith', 'Franco', '2035557845', '149 Spinnaker Dr.', 'New Haven', 'USA'),
+(22, 'Isabel ', 'de Castro', '(1) 356-5555', 'Estrada da saúde n. 58', 'Lisboa', 'Portugal'),
+(23, 'Martine ', 'Rancé', '20.16.1555', '184, chaussée de Tournai', 'Lille', 'France'),
+(24, 'Marie', 'Bertrand', '(1) 42.34.2555', '265, boulevard Charonne', 'Paris', 'France'),
+(25, 'Jerry', 'Tseng', '6175555555', '4658 Baden Av.', 'Cambridge', 'USA'),
+(26, 'Julie', 'King', '2035552570', '25593 South Bay Ln.', 'Bridgewater', 'USA'),
+(27, 'Mory', 'Kentary', '+81 06 6342 5555', '1-6-20 Dojima', 'Kita-ku', 'Japan'),
+(28, 'Michael', 'Frick', '2125551500', '2678 Kingston Rd.', 'NYC', 'USA'),
+(29, 'Matti', 'Karttunen', '90-224 8555', 'Keskuskatu 45', 'Helsinki', 'Finland'),
+(30, 'Rachel', 'Ashworth', '(171) 555-1555', 'Fauntleroy Circus', 'Manchester', 'UK'),
+(31, 'Dean', 'Cassidy', '+353 1862 1555', '25 Maiden Lane', 'Dublin', 'Ireland'),
+(32, 'Leslie', 'Taylor', '6175558428', '16780 Pompton St.', 'Brickhaven', 'USA'),
+(33, 'Elizabeth', 'Devon', '(171) 555-2282', '12, Berkeley Gardens Blvd', 'Liverpool', 'UK'),
+(34, 'Yoshi ', 'Tamuri', '(604) 555-3392', '1900 Oak St.', 'Vancouver', 'Canada'),
+(35, 'Miguel', 'Barajas', '6175557555', '7635 Spinnaker Dr.', 'Brickhaven', 'USA'),
+(36, 'Julie', 'Young', '6265557265', '78934 Hillside Dr.', 'Pasadena', 'USA'),
+(37, 'Brydey', 'Walker', '+612 9411 1555', 'Suntec Tower Three', 'Singapore', 'Singapore'),
+(38, 'Frédérique ', 'Citeaux', '88.60.1555', '24, place Kléber', 'Strasbourg', 'France'),
+(39, 'Mike', 'Gao', '+852 2251 1555', 'Bank of China Tower', 'Central Hong Kong', 'Hong Kong'),
+(40, 'Eduardo ', 'Saavedra', '(93) 203 4555', 'Rambla de Cataluña, 23', 'Barcelona', 'Spain'),
+(41, 'Mary', 'Young', '3105552373', '4097 Douglas Av.', 'Glendale', 'USA'),
+(42, 'Horst ', 'Kloss', '0372-555188', 'Taucherstraße 10', 'Cunewalde', 'Germany'),
+(43, 'Palle', 'Ibsen', '86 21 3555', 'Smagsloget 45', 'Århus', 'Denmark'),
+(44, 'Jean ', 'Fresnière', '(514) 555-8054', '43 rue St. Laurent', 'Montréal', 'Canada'),
+(45, 'Alejandra ', 'Camino', '(91) 745 6555', 'Gran Vía, 1', 'Madrid', 'Spain'),
+(46, 'Valarie', 'Thompson', '7605558146', '361 Furth Circle', 'San Diego', 'USA'),
+(47, 'Helen ', 'Bennett', '(198) 555-8888', 'Garden House', 'Cowes', 'UK'),
+(48, 'Annette ', 'Roulet', '61.77.6555', '1 rue Alsace-Lorraine', 'Toulouse', 'France'),
+(49, 'Renate ', 'Messner', '069-0555984', 'Magazinweg 7', 'Frankfurt', 'Germany'),
+(50, 'Paolo ', 'Accorti', '011-4988555', 'Via Monte Bianco 34', 'Torino', 'Italy'),
+(51, 'Daniel', 'Da Silva', '+33 1 46 62 7555', '27 rue du Colonel Pierre Avia', 'Paris', 'France'),
+(52, 'Daniel ', 'Tonini', '30.59.8555', '67, avenue de l''Europe', 'Versailles', 'France'),
+(53, 'Henriette ', 'Pfalzheim', '0221-5554327', 'Mehrheimerstr. 369', 'Köln', 'Germany'),
+(54, 'Elizabeth ', 'Lincoln', '(604) 555-4555', '23 Tsawassen Blvd.', 'Tsawassen', 'Canada'),
+(55, 'Peter ', 'Franken', '089-0877555', 'Berliner Platz 43', 'München', 'Germany'),
+(56, 'Anna', 'O''Hara', '02 9936 8555', '201 Miller Street', 'North Sydney', 'Australia'),
+(57, 'Giovanni ', 'Rovelli', '035-640555', 'Via Ludovico il Moro 22', 'Bergamo', 'Italy'),
+(58, 'Adrian', 'Huxley', '+61 2 9495 8555', 'Monitor Money Building', 'Chatswood', 'Australia'),
+(59, 'Marta', 'Hernandez', '6175558555', '39323 Spinnaker Dr.', 'Cambridge', 'USA'),
+(60, 'Ed', 'Harrison', '+41 26 425 50 01', 'Rte des Arsenaux 41 ', 'Fribourg', 'Switzerland'),
+(61, 'Mihael', 'Holz', '0897-034555', 'Grenzacherweg 237', 'Genève', 'Switzerland'),
+(62, 'Jan', 'Klaeboe', '+47 2212 1555', 'Drammensveien 126A', 'Oslo', 'Norway  '),
+(63, 'Bradley', 'Schuyler', '+31 20 491 9555', 'Kingsfordweg 151', 'Amsterdam', 'Netherlands'),
+(64, 'Mel', 'Andersen', '030-0074555', 'Obere Str. 57', 'Berlin', 'Germany'),
+(65, 'Pirkko', 'Koskitalo', '981-443655', 'Torikatu 38', 'Oulu', 'Finland'),
+(66, 'Catherine ', 'Dewey', '(02) 5554 67', 'Rue Joseph-Bens 532', 'Bruxelles', 'Belgium'),
+(67, 'Steve', 'Frick', '9145554562', '3758 North Pendale Street', 'White Plains', 'USA'),
+(68, 'Wing', 'Huang', '5085559555', '4575 Hillside Dr.', 'New Bedford', 'USA'),
+(69, 'Julie', 'Brown', '6505551386', '7734 Strong St.', 'San Francisco', 'USA'),
+(70, 'Mike', 'Graham', '+64 9 312 5555', '162-164 Grafton Road', 'Auckland  ', 'New Zealand'),
+(71, 'Ann ', 'Brown', '(171) 555-0297', '35 King George', 'London', 'UK'),
+(72, 'William', 'Brown', '2015559350', '7476 Moss Rd.', 'Newark', 'USA'),
+(73, 'Ben', 'Calaghan', '61-7-3844-6555', '31 Duncan St. West End', 'South Brisbane', 'Australia'),
+(74, 'Kalle', 'Suominen', '+358 9 8045 555', 'Software Engineering Center', 'Espoo', 'Finland'),
+(75, 'Philip ', 'Cramer', '0555-09555', 'Maubelstr. 90', 'Brandenburg', 'Germany'),
+(76, 'Francisca', 'Cervantes', '2155554695', '782 First Street', 'Philadelphia', 'USA'),
+(77, 'Jesus', 'Fernandez', '+34 913 728 555', 'Merchants House', 'Madrid', 'Spain'),
+(78, 'Brian', 'Chandler', '2155554369', '6047 Douglas Av.', 'Los Angeles', 'USA'),
+(79, 'Patricia ', 'McKenna', '2967 555', '8 Johnstown Road', 'Cork', 'Ireland'),
+(80, 'Laurence ', 'Lebihan', '91.24.4555', '12, rue des Bouchers', 'Marseille', 'France'),
+(81, 'Paul ', 'Henriot', '26.47.1555', '59 rue de l''Abbaye', 'Reims', 'France'),
+(82, 'Armand', 'Kuger', '+27 21 550 3555', '1250 Pretorius Street', 'Hatfield', 'South Africa'),
+(83, 'Wales', 'MacKinlay', '64-9-3763555', '199 Great North Road', 'Auckland', 'New Zealand'),
+(84, 'Karin', 'Josephs', '0251-555259', 'Luisenstr. 48', 'Münster', 'Germany'),
+(85, 'Juri', 'Yoshido', '6175559555', '8616 Spinnaker Dr.', 'Boston', 'USA'),
+(86, 'Dorothy', 'Young', '6035558647', '2304 Long Airport Avenue', 'Nashua', 'USA'),
+(87, 'Lino ', 'Rodriguez', '(1) 354-2555', 'Jardim das rosas n. 32', 'Lisboa', 'Portugal'),
+(88, 'Braun', 'Urs', '0452-076555', 'Hauptstr. 29', 'Bern', 'Switzerland'),
+(89, 'Allen', 'Nelson', '6175558555', '7825 Douglas Av.', 'Brickhaven', 'USA'),
+(90, 'Pascale ', 'Cartrain', '(071) 23 67 2555', 'Boulevard Tirou, 255', 'Charleroi', 'Belgium'),
+(91, 'Georg ', 'Pipps', '6562-9555', 'Geislweg 14', 'Salzburg', 'Austria'),
+(92, 'Arnold', 'Cruz', '+63 2 555 3587', '15 McCallum Street', 'Makati City', 'Philippines'),
+(93, 'Maurizio ', 'Moroni', '0522-556555', 'Strada Provinciale 124', 'Reggio Emilia', 'Italy'),
+(94, 'Akiko', 'Shimamura', '+81 3 3584 0555', '2-2-8 Roppongi', 'Minato-ku', 'Japan'),
+(95, 'Dominique', 'Perrier', '(1) 47.55.6555', '25, rue Lauriston', 'Paris', 'France'),
+(96, 'Rita ', 'Müller', '0711-555361', 'Adenauerallee 900', 'Stuttgart', 'Germany'),
+(97, 'Sarah', 'McRoy', '04 499 9555', '101 Lambton Quay', 'Wellington', 'New Zealand'),
+(98, 'Michael', 'Donnermeyer', ' +49 89 61 08 9555', 'Hansastr. 15', 'Munich', 'Germany'),
+(99, 'Maria', 'Hernandez', '2125558493', '5905 Pompton St.', 'NYC', 'USA'),
+(100, 'Alexander ', 'Feuer', '0342-555176', 'Heerstr. 22', 'Leipzig', 'Germany'),
+(101, 'Dan', 'Lewis', '2035554407', '2440 Pompton St.', 'Glendale', 'USA'),
+(102, 'Martha', 'Larsson', '0695-34 6555', 'Åkergatan 24', 'Bräcke', 'Sweden'),
+(103, 'Sue', 'Frick', '4085553659', '3086 Ingle Ln.', 'San Jose', 'USA'),
+(104, 'Roland ', 'Mendel', '7675-3555', 'Kirchgasse 6', 'Graz', 'Austria'),
+(105, 'Leslie', 'Murphy', '2035559545', '567 North Pendale Street', 'New Haven', 'USA'),
+(106, 'Yu', 'Choi', '2125551957', '5290 North Pendale Street', 'NYC', 'USA'),
+(107, 'Martín ', 'Sommer', '(91) 555 22 82', 'C/ Araquil, 67', 'Madrid', 'Spain'),
+(108, 'Sven ', 'Ottlieb', '0241-039123', 'Walserweg 21', 'Aachen', 'Germany'),
+(109, 'Violeta', 'Benitez', '5085552555', '1785 First Street', 'New Bedford', 'USA'),
+(110, 'Carmen', 'Anton', '+34 913 728555', 'c/ Gobelas, 19-1 Urb. La Florida', 'Madrid', 'Spain'),
+(111, 'Sean', 'Clenahan', '61-9-3844-6555', '7 Allen Street', 'Glen Waverly', 'Australia'),
+(112, 'Franco', 'Ricotti', '+39 022515555', '20093 Cologno Monzese', 'Milan', 'Italy'),
+(113, 'Steve', 'Thompson', '3105553722', '3675 Furth Circle', 'Burbank', 'USA'),
+(114, 'Hanna ', 'Moos', '0621-08555', 'Forsterstr. 57', 'Mannheim', 'Germany'),
+(115, 'Alexander ', 'Semenov', '+7 812 293 0521', '2 Pobedy Square', 'Saint Petersburg', 'Russia'),
+(116, 'Raanan', 'Altagar,G M', '+ 972 9 959 8555', '3 Hagalim Blv.', 'Herzlia', 'Israel'),
+(117, 'José Pedro ', 'Roel', '(95) 555 82 82', 'C/ Romero, 33', 'Sevilla', 'Spain'),
+(118, 'Rosa', 'Salazar', '2155559857', '11328 Douglas Av.', 'Philadelphia', 'USA'),
+(119, 'Sue', 'Taylor', '4155554312', '2793 Furth Circle', 'Brisbane', 'USA'),
+(120, 'Thomas ', 'Smith', '(171) 555-7555', '120 Hanover Sq.', 'London', 'UK'),
+(121, 'Valarie', 'Franco', '6175552555', '6251 Ingle Ln.', 'Boston', 'USA'),
+(122, 'Tony', 'Snowden', '+64 9 5555500', 'Arenales 1938 3''A''', 'Auckland  ', 'New Zealand');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dailyincome`
+--
+
+CREATE TABLE IF NOT EXISTS `dailyincome` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `doctor_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `dailyincome`
+--
+
+INSERT INTO `dailyincome` (`id`, `doctor_id`, `date`, `amount`) VALUES
+(1, 7, '2018-10-12', 999),
+(2, 5, '2018-10-06', 99);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `diagnoses`
 --
 
@@ -93,14 +285,7 @@ CREATE TABLE IF NOT EXISTS `diagnoses` (
   `diagnose_name_ar` mediumtext NOT NULL,
   `description` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `diagnoses`
---
-
-INSERT INTO `diagnoses` (`id`, `diagnose_name_en`, `diagnose_name_ar`, `description`) VALUES
-(4, 'يسيسش', 'يسيسش', 'يشسيشسيش');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -173,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `drug_patient` (
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `drug_patient`
@@ -191,7 +376,21 @@ INSERT INTO `drug_patient` (`drug_patient_id`, `drug_id`, `patient_id`, `user_id
 (12, 5, 18, 1, 1539344894, 1, '2000', NULL, NULL, ''),
 (13, 5, 12, 1, 1539347945, 1, '2000', NULL, NULL, ''),
 (14, 5, 12, 1, 1539347945, 1, '2000', NULL, NULL, ''),
-(15, 5, 8, 1, 1539469592, 1, '2000', NULL, NULL, '');
+(15, 5, 8, 1, 1539469592, 1, '2000', NULL, NULL, ''),
+(16, 5, 13, 1, 1539784574, 1, '2000', NULL, NULL, ''),
+(17, 5, 5, 1, 1539796260, 1, '2000', NULL, NULL, ''),
+(18, 5, 20, 1, 1539807836, 1, '2000', NULL, NULL, ''),
+(19, 5, 9, 1, 1539812254, 1, '2000', NULL, NULL, ''),
+(20, 5, 20, 1, 1540036257, 1, '2000', NULL, NULL, ''),
+(21, 5, 20, 1, 1540036331, 1, '2000', NULL, NULL, ''),
+(22, 5, 20, 1, 1540036375, 99, '198000', NULL, NULL, ''),
+(23, 5, 20, 1, 1540036401, 1, '2000', NULL, NULL, ''),
+(24, 5, 20, 1, 1540036424, 1, '2000', NULL, NULL, ''),
+(25, 5, 20, 1, 1540036726, 1, '2000', NULL, NULL, ''),
+(26, 5, 20, 1, 1540036867, 1, '2000', NULL, NULL, ''),
+(27, 5, 20, 1, 1540036924, 1, '2000', NULL, NULL, ''),
+(28, 5, 19, 1, 1540052768, 1, '2000', NULL, NULL, ''),
+(29, 5, 16, 1, 1540056965, 1, '2000', NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -221,6 +420,28 @@ INSERT INTO `groups` (`group_id`, `name`, `description`, `roles`) VALUES
 (7, 'Receptionist', '', 64),
 (8, 'Patient', '', 128),
 (9, 'اختبار', 'هذه العملية عمليه اختبار', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `incentives`
+--
+
+CREATE TABLE IF NOT EXISTS `incentives` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nurse_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `incentives`
+--
+
+INSERT INTO `incentives` (`id`, `nurse_id`, `amount`) VALUES
+(1, 3, 99999),
+(2, 3, 2000),
+(3, 3, 2000);
 
 -- --------------------------------------------------------
 
@@ -291,7 +512,7 @@ CREATE TABLE IF NOT EXISTS `lab` (
 --
 
 INSERT INTO `lab` (`test_id`, `test_name_en`, `test_name_ar`, `category`, `price`, `memo`) VALUES
-(6, 'test', 'تحليل دم', 'نوع التحليل', '2000', 'ملخص عن التحليل'),
+(6, 'test', 'تحليل دم', 'نوع التحليل', '2001', 'ملخص عن التحليل'),
 (7, 'cbc', 'تعداد عام وصيغة', '', '1400', ''),
 (8, 'ASLO', 'ASL0', 'hem', '1000', ''),
 (9, 'glocous', 'سكر', '', '1000', 'على الريق\nعشوائي');
@@ -322,32 +543,70 @@ CREATE TABLE IF NOT EXISTS `lab_patient` (
   `lab_patient_id` int(11) NOT NULL AUTO_INCREMENT,
   `test_id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
+  `no_of_item` int(10) NOT NULL DEFAULT '1',
   `user_id_assign` int(11) NOT NULL,
   `assign_date` int(11) NOT NULL,
-  `no_of_item` int(11) NOT NULL DEFAULT '1',
   `total_cost` decimal(10,0) NOT NULL,
   `user_id_discharge` int(11) DEFAULT NULL,
   `discharge_date` int(11) DEFAULT NULL,
   `memo` text,
+  `result` text NOT NULL,
   PRIMARY KEY (`lab_patient_id`),
   KEY `test_id` (`test_id`),
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
 
 --
 -- Dumping data for table `lab_patient`
 --
 
-INSERT INTO `lab_patient` (`lab_patient_id`, `test_id`, `patient_id`, `user_id_assign`, `assign_date`, `no_of_item`, `total_cost`, `user_id_discharge`, `discharge_date`, `memo`) VALUES
-(3, 6, 13, 1, 1539279677, 1, '2000', NULL, NULL, ''),
-(4, 8, 13, 1, 1539280212, 1, '1000', 1, 1539280222, ''),
-(5, 6, 10, 1, 1539297138, 1, '2000', NULL, NULL, ''),
-(6, 7, 2, 1, 1539299067, 1, '1400', NULL, NULL, ''),
-(8, 7, 18, 1, 1539345001, 1, '1400', NULL, NULL, ''),
-(9, 8, 12, 1, 1539347267, 1, '1000', NULL, NULL, ''),
-(10, 9, 12, 1, 1539347521, 1, '1000', NULL, NULL, '');
+INSERT INTO `lab_patient` (`lab_patient_id`, `test_id`, `patient_id`, `no_of_item`, `user_id_assign`, `assign_date`, `total_cost`, `user_id_discharge`, `discharge_date`, `memo`, `result`) VALUES
+(3, 6, 13, 1, 1, 1539279677, '2000', NULL, NULL, '', '1'),
+(4, 8, 13, 1, 1, 1539280212, '1000', 1, 1539280222, '', '1'),
+(5, 6, 10, 1, 1, 1539297138, '2000', NULL, NULL, '', '1'),
+(6, 7, 2, 1, 1, 1539299067, '1400', NULL, NULL, '', '1'),
+(8, 7, 18, 1, 1, 1539345001, '1400', NULL, NULL, '', '1'),
+(9, 8, 12, 1, 1, 1539347267, '1000', NULL, NULL, '', '1'),
+(10, 9, 12, 1, 1, 1539347521, '1000', NULL, NULL, '', '1'),
+(11, 8, 20, 1, 1, 1539784380, '1000', NULL, NULL, '', '1'),
+(12, 7, 13, 1, 1, 1539784607, '1400', NULL, NULL, '', '1'),
+(13, 6, 5, 1, 1, 1539784868, '2000', NULL, NULL, '', '1'),
+(14, 6, 20, 1, 1, 1539802012, '1000', 1, 1540036183, '', '1'),
+(15, 6, 20, 1, 1, 1539802049, '1000', NULL, NULL, '', '1'),
+(16, 6, 20, 4, 1, 1539805250, '2000', 1, 1540036181, 'dasdasda', '1'),
+(17, 6, 20, 99, 1, 1539805966, '198000', 1, 1540036181, '', '1'),
+(18, 9, 20, 1, 1, 1539807329, '1000', NULL, NULL, '', '1'),
+(19, 8, 20, 99, 1, 1539807353, '99000', 1, 1540036179, '', '1'),
+(20, 6, 20, 1, 1, 1539808921, '2000', NULL, NULL, '', '1'),
+(21, 8, 20, 1111, 1, 1539808954, '1111000', 1, 1540036175, '', '1'),
+(22, 6, 19, 1, 1, 1539810208, '2000', 1, 1539810223, '', '1'),
+(23, 7, 19, 1, 1, 1539810210, '1400', 1, 1539810224, '', '1'),
+(24, 8, 19, 1, 1, 1539810212, '1000', 1, 1539810225, '', '1'),
+(25, 7, 9, 1, 1, 1539812285, '1400', NULL, NULL, '', '1'),
+(26, 7, 20, 1, 1, 1540036999, '1400', NULL, NULL, '', '1'),
+(27, 6, 20, 1, 1, 1540037032, '2001', NULL, NULL, '', '1'),
+(28, 6, 20, 1, 1, 1540038393, '2001', NULL, NULL, '', '33'),
+(29, 6, 20, 1, 1, 1540039258, '2001', NULL, NULL, '', '99'),
+(30, 6, 20, 1, 1, 1540039355, '2001', NULL, NULL, '', 'هنا نضع نتائج التحليل'),
+(31, 6, 20, 1, 1, 1540039971, '2001', NULL, NULL, '', 'نتيجة تحليل الدم'),
+(32, 6, 20, 1, 1, 1540040668, '2001', NULL, NULL, '', 'يسشيس'),
+(33, 6, 20, 1, 1, 1540040813, '2001', NULL, NULL, '', 'يشسيشسي'),
+(34, 6, 20, 1, 1, 1540041006, '2001', NULL, NULL, '', 'تشيانشتياشسنتي اشنست اينتششنسي شستيشس نتياشسن ياشسن ياشسنتياشسن تياشسنت اي'),
+(35, 6, 20, 1, 1, 1540041207, '2001', NULL, NULL, '', ''),
+(36, 7, 20, 1, 1, 1540041265, '1400', NULL, NULL, '', ''),
+(37, 7, 19, 1, 1, 1540052793, '1400', 1, 1540052833, '', ''),
+(38, 6, 19, 1, 1, 1540052813, '2001', 1, 1540052834, '', ''),
+(39, 8, 19, 1, 1, 1540053386, '1000', NULL, NULL, '', 'النتائج المخبرية للتحليل'),
+(40, 9, 19, 1, 1, 1540053549, '1000', NULL, NULL, '', ''),
+(41, 7, 19, 1, 1, 1540053708, '1400', NULL, NULL, '', ''),
+(42, 6, 19, 1, 1, 1540054649, '2001', NULL, NULL, '', ''),
+(43, 7, 19, 1, 1, 1540054707, '1400', NULL, NULL, '', ''),
+(44, 6, 19, 1, 1, 1540054998, '2001', NULL, NULL, '', ''),
+(45, 6, 16, 1, 1, 1540056573, '2001', NULL, NULL, '', 'csdasd as '),
+(46, 6, 15, 1, 1, 1540057570, '2001', NULL, NULL, '', 'يسشي شسي شسي'),
+(47, 7, 15, 1, 1, 1540057574, '1400', NULL, NULL, '', 'يشسي شسي ');
 
 -- --------------------------------------------------------
 
@@ -363,7 +622,7 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `success` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`login_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=201 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=214 ;
 
 --
 -- Dumping data for table `logins`
@@ -569,7 +828,20 @@ INSERT INTO `logins` (`login_id`, `ip_address`, `user_id`, `time`, `success`) VA
 (197, 0, 1, '2018-10-14 16:08:50', 1),
 (198, 0, 1, '2018-10-15 04:39:00', 1),
 (199, 0, 1, '2018-10-15 05:30:18', 1),
-(200, 0, 1, '2018-10-15 13:28:47', 1);
+(200, 0, 1, '2018-10-15 13:28:47', 1),
+(201, 0, 1, '2018-10-16 14:57:21', 1),
+(202, 0, 1, '2018-10-16 14:57:26', 1),
+(203, 0, 1, '2018-10-16 15:23:15', 1),
+(204, 0, 1, '2018-10-17 09:59:47', 1),
+(205, 0, 1, '2018-10-18 08:43:44', 1),
+(206, 0, 1, '2018-10-19 09:36:50', 1),
+(207, 0, 1, '2018-10-19 14:07:22', 1),
+(208, 0, 1, '2018-10-20 08:19:36', 1),
+(209, 0, 1, '2018-10-20 09:20:35', 1),
+(210, 0, 1, '2018-10-20 14:21:23', 1),
+(211, 0, 1, '2018-10-20 17:40:29', 1),
+(212, 0, 1, '2018-10-20 18:13:14', 1),
+(213, 0, 1, '2018-10-21 04:24:04', 1);
 
 -- --------------------------------------------------------
 
@@ -584,15 +856,17 @@ CREATE TABLE IF NOT EXISTS `nurses` (
   `phone` varchar(50) NOT NULL,
   `address` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `nurses`
 --
 
 INSERT INTO `nurses` (`id`, `name`, `age`, `phone`, `address`) VALUES
-(3, 'تقى', 5, '55', 'دمشق'),
-(4, 'ريم', 22, '0943434343', 'دمشق');
+(6, 'ريم علوش', 22, '0994343', 'دمشق / ركن الدين'),
+(7, 'سب', 11, '243423', 'يسبسيب'),
+(8, 'منمت', 88, '0998', 'نتانا'),
+(9, 'تمنت', 89, '0989', 'تاتلت');
 
 -- --------------------------------------------------------
 
@@ -628,21 +902,21 @@ INSERT INTO `patients` (`patient_id`, `first_name`, `last_name`, `fname`, `gende
 (3, 'سمير', 'محمود', 'جميل', 1, 'fsd@fdf.com', '094837462343', 'Damascus', '', 'Tazkara', 844128000, 1538429500, NULL, ''),
 (4, 'احمد', 'رمضان', 'خالد', 1, 'm.shbat@gimal.com', '0988766544', 'جديدة عرطوز', '', 'Tazkara', 781315200, 1538743246, NULL, ''),
 (5, 'عمير', 'عامر', 'ماهر', 1, 'fsd@fdf.com', '0932323232', 'تضامن', '1', 'Passport', 497491200, 1538899410, NULL, 'ملخص '),
-(6, 'عمر', 'علي', 'عمير', 1, 'asdasdas@dsd.com', '094334343', 'دمشق', '11', 'Passport', 497491200, 1538911427, NULL, ''),
+(6, 'عمر', 'علي', 'عمير', 1, 'asdasdas@dsd.com', '0943349343', 'دمشق', '11', 'Passport', 497491200, 1538911427, NULL, ''),
 (7, 'سميرة', 'سمير', 'محمود', 0, 'kdjhkjhk@dskj.com', '0974636553', 'حمص', '11', 'Passport', 465955200, 1538912256, NULL, ''),
 (8, 'ياسين', 'محمود', 'نصوح', 1, 'fsd@fdf.com', '094324234', 'دمشق', '22', 'Passport', 497577600, 1539027813, NULL, 'ملخض'),
-(9, 'ناصر', 'الحلب', 'محمد', 1, 'mon@dsad.com', '0943432423', 'حلب', '1', 'Driver License', 781574400, 1539038474, NULL, ''),
-(10, 'خالد', 'محمد', 'جمال', 1, 'fsd@fdf.com', '4324', 'دمشق', '2', 'Driver License', -2147483648, 1539039198, NULL, ''),
+(9, 'ناصر', 'الحلبي', 'محمد', 1, 'mon@dsad.com', '0943432423', 'حلب', '1', 'Driver License', 781574400, 1539038474, NULL, ''),
+(10, 'خالد', 'محمد', 'جمال', 1, 'fsd@fdf.com', '0934435347', 'دمشق', '2', 'Driver License', 0, 1539039198, NULL, ''),
 (11, 'امير', 'محمد', 'حامد', 1, 'fsd@fdf.com', '099432342', 'دمشق', '1', 'Passport', 497664000, 1539117629, NULL, ''),
-(12, 'dasd', 'das', 'dasd', 1, 'fsd@fdf.com', '093949349', 'sds', '1', 'Tazkara', -2147483648, 1539172465, NULL, ''),
+(12, 'ماجدة', 'محمود', 'جمال', 1, 'fsd@fdf.com', '0939049349', 'sds', '1', 'Tazkara', 0, 1539172465, NULL, ''),
 (13, 'طه', 'علوش', 'عمر', 1, 'emauq@dds.com', '0993623827', 'دمشق', '23', 'Passport', 497750400, 1539204778, NULL, ''),
 (14, 'عمران', 'زياد', 'عامر', 1, 'fsd@fdf.com', '9382382983', 'دمشق', '11', 'Bank ID Card', 150595200, 1539205216, NULL, ''),
 (15, 'عمران', 'زياد', 'عامر', 1, 'fsd@fdf.com', '9382382983', 'دمشق', '11', 'Bank ID Card', 150595200, 1539205283, NULL, ''),
-(16, 'test', 'dasd', 'dasd', 1, 'fsd@fdf.com', '4234', 'asdas', '2', 'Driver License', -2147483648, 1539278696, NULL, ''),
-(17, 'fasdf', 'das', 'as', 1, 'fsd@fdf.com', '980', 'dadas', '11', 'Tazkara', -1553385600, 1539278781, NULL, ''),
+(16, 'جهاد', 'مصطفى', 'محمد', 1, 'fsd@fdf.com', '0934344554', 'asdas', '2', 'Driver License', 0, 1539278696, NULL, ''),
+(17, 'ياسين', 'محمود', 'عماد', 1, 'fsd@fdf.com', '0943543434', 'dadas', '11', 'Tazkara', -1553385600, 1539278781, NULL, ''),
 (18, 'زيد', 'محمد', 'اسامة', 1, 'fsd@fdf.com', '0434242342', 'حلب', '11', 'Passport', 497836800, 1539293612, NULL, ''),
-(19, 'dsad', 'dasd', 'das', 1, 'fsd@fdf.com', '9382382983', 'eqweqweqwe', '22', 'Tazkara', 844992000, 1539295777, NULL, ''),
-(20, 'das', 'das', 'dsa', 1, 'fsd@fdf.com', '9382382983', 'eqweqweqwe', '1', 'Passport', 844992000, 1539299217, NULL, '');
+(19, 'سامر', 'سمير', 'ماهر', 1, 'fsd@fdf.com', '9382382983', 'eqweqweqwe', '22', 'Tazkara', 844992000, 1539295777, NULL, ''),
+(20, 'ريم', 'محمود', 'عادل', 1, 'fsd@fdf.com', '9382382983', 'eqweqweqwe', '1', 'Passport', 844992000, 1539299217, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -668,24 +942,24 @@ CREATE TABLE IF NOT EXISTS `patient_doctor` (
 INSERT INTO `patient_doctor` (`patient_doctor_id`, `patient_id`, `doctor_id`, `visit_date`, `status`) VALUES
 (1, 1, 6, 1539264088, 1),
 (2, 3, 6, 1538863028, 0),
-(3, 10, 4, 1539117548, 2),
+(3, 10, 4, 1539784979, 2),
 (4, 11, 5, 1539239966, 2),
-(5, 12, 5, 1539286661, 2),
-(6, 9, 4, 1539298945, 2),
-(7, 8, 5, 1539469568, 2),
+(5, 12, 5, 1539785002, 2),
+(6, 9, 4, 1539812225, 2),
+(7, 8, 5, 1539784994, 2),
 (8, 7, 5, 1539288497, 1),
-(9, 6, 5, 1539292292, 1),
+(9, 6, 5, 1539784987, 2),
 (10, 5, 7, 1539204650, 0),
 (11, 4, 5, 1539292389, 1),
 (12, 2, 5, 1539299373, 2),
 (13, 13, 5, 1539206217, 1),
 (14, 14, 5, 1539250366, 1),
 (15, 15, 4, 1539206070, 1),
-(16, 16, 5, 1539292169, 1),
-(17, 17, 5, 1539285637, 1),
+(16, 16, 5, 1539784963, 2),
+(17, 17, 5, 1539784948, 2),
 (18, 18, 5, 1539299458, 1),
-(19, 19, 6, 1539297210, 2),
-(20, 20, 6, 1539299372, 2);
+(19, 19, 6, 1539784757, 2),
+(20, 20, 6, 1539784746, 2);
 
 -- --------------------------------------------------------
 
@@ -766,15 +1040,17 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   `hour_price` int(11) NOT NULL,
   `day_fare` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `schedule`
 --
 
 INSERT INTO `schedule` (`id`, `nurse_id`, `work_date`, `work_hours`, `hour_price`, `day_fare`) VALUES
-(1, 3, '2018-10-16', 11, 145, 0),
-(2, 3, '2018-10-06', 44, 150, 0);
+(1, 3, '2017-09-01', 11, 145, 0),
+(2, 3, '2018-10-06', 44, 150, 0),
+(3, 4, '2018-10-16', 12, 150, 0),
+(4, 6, '2018-10-05', 99, 111, 0);
 
 -- --------------------------------------------------------
 
@@ -840,7 +1116,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `password_last_set`, `password_never_expires`, `remember_me`, `activation_code`, `active`, `forgot_code`, `forgot_generated`, `enabled`, `last_login`, `last_login_ip`) VALUES
-(1, 'admin', '$2a$08$glVINo.dWbH7voqyOzZ4YeyZOUTGSy3jxYXzNLrVPaWJj9ZLesoCy', '2018-09-19 18:00:15', 0, '6878a7fdad4a5aea216f1f66ae1becfac6a62285', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-15 16:28:44', 0),
+(1, 'admin', '$2a$08$glVINo.dWbH7voqyOzZ4YeyZOUTGSy3jxYXzNLrVPaWJj9ZLesoCy', '2018-09-19 18:00:15', 0, '6878a7fdad4a5aea216f1f66ae1becfac6a62285', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-21 07:24:04', 0),
 (2, 'ahmad', '$2a$08$30kc9L1nLO/sUVG2ExwUs..LqI5C/mMwoVzxPPWk0G1fTeS6T9jhW', '2018-09-19 18:01:15', 0, '6ac3c5aa0002289b0ba7bef6fc38c256869a86c8', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-02 17:38:48', 83919838),
 (3, 'mossab', '$2a$08$5JnDGg5bCUFvYYVsZSf24uUj/skPcMwferFknI8ar7bBFUDsUESrC', '2018-10-08 10:31:44', 0, '', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-08 10:32:04', 83923213);
 
@@ -891,7 +1167,7 @@ CREATE TABLE IF NOT EXISTS `xrays` (
 --
 
 INSERT INTO `xrays` (`xray_id`, `xray_name_en`, `xray_name_ar`, `category`, `price`, `memo`) VALUES
-(1, 'Backbones', 'صورة للعمود الفقري', 'صنف الصورة', '2000', 'ملخص عن صورة الاشعه');
+(1, 'Backbones', 'صورة للعمود الفقري', 'صنف الصورة', '2001', 'ملخص عن صورة الاشعه');
 
 -- --------------------------------------------------------
 
@@ -926,22 +1202,32 @@ CREATE TABLE IF NOT EXISTS `xray_patient` (
   `user_id_discharge` int(11) DEFAULT NULL,
   `discharge_date` int(11) DEFAULT NULL,
   `memo` text,
+  `xresult` text NOT NULL,
   PRIMARY KEY (`xray_patient_id`),
   KEY `xray_id` (`xray_id`),
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `xray_patient`
 --
 
-INSERT INTO `xray_patient` (`xray_patient_id`, `xray_id`, `patient_id`, `user_id_assign`, `assign_date`, `no_of_item`, `total_cost`, `user_id_discharge`, `discharge_date`, `memo`) VALUES
-(1, 1, 13, 1, 1539207077, 1, '2000', NULL, NULL, ''),
-(2, 1, 11, 1, 1539242825, 1, '2000', NULL, NULL, ''),
-(7, 1, 18, 1, 1539344962, 1, '2000', NULL, NULL, ''),
-(8, 1, 8, 1, 1539469611, 1, '2000', NULL, NULL, '');
+INSERT INTO `xray_patient` (`xray_patient_id`, `xray_id`, `patient_id`, `user_id_assign`, `assign_date`, `no_of_item`, `total_cost`, `user_id_discharge`, `discharge_date`, `memo`, `xresult`) VALUES
+(1, 1, 13, 1, 1539207077, 1, '2000', NULL, NULL, '', ''),
+(2, 1, 11, 1, 1539242825, 1, '2000', NULL, NULL, '', ''),
+(7, 1, 18, 1, 1539344962, 1, '2000', NULL, NULL, '', ''),
+(8, 1, 8, 1, 1539469611, 1, '2000', NULL, NULL, '', ''),
+(9, 1, 5, 1, 1539796285, 1, '2000', NULL, NULL, '', ''),
+(10, 1, 12, 1, 1539796367, 1, '2000', NULL, NULL, '', ''),
+(11, 1, 20, 1, 1539806766, 1, '2000', NULL, NULL, '', ''),
+(12, 1, 19, 1, 1539810276, 1, '2000', NULL, NULL, '', ''),
+(13, 1, 9, 1, 1539812266, 1, '2000', NULL, NULL, '', ''),
+(14, 1, 20, 1, 1540036941, 1, '2001', NULL, NULL, '', ''),
+(15, 1, 20, 1, 1540036980, 1, '2001', NULL, NULL, '', ''),
+(16, 1, 19, 1, 1540052781, 1, '2001', NULL, NULL, '', ''),
+(17, 1, 16, 1, 1540056659, 9, '18009', NULL, NULL, '', 'Ahmad');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
