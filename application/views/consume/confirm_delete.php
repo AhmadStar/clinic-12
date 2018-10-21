@@ -7,7 +7,7 @@
           <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?> <?php echo $consume->name;?></h4>
         </div>
         <div class="modal-body">
-          <? trP('uwdelete')?><strong><?php echo $consume->name;?></strong>.<br/><? trP('Areyousure')?>
+          <?php trP('uwdelete')?><strong><?php echo $consume->name;?></strong>.<br/><?php trP('Areyousure')?>
         </div>
         <div class="modal-footer">
           <?php echo form_open('consume/delete/'.$consume->id);

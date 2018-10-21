@@ -7,7 +7,7 @@
           <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?> <?php echo $drug->drug_name_en;?></h4>
         </div>
         <div class="modal-body">
-          <? trP('uwdelete')?><strong><?php echo $drug->drug_name_en;?></strong>.<br/><? trP('Areyousure')?>
+          <?php trP('uwdelete')?><strong><?php echo $drug->drug_name_en;?></strong>.<br/><?php trP('Areyousure')?>
         </div>
         <div class="modal-footer">
           <?php echo form_open('drug/delete/'.$drug->drug_id);
@@ -28,13 +28,14 @@
           $.post($(this).attr('action'),$(this).serialize(),function(data){
               if(data=='ok'){
                   $('#drug<?php echo $drug->drug_id;?>').remove();
-                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Drug')?><?php trP('Successfuly')?>.');
+                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Drug')?> <?php trP('Successfuly')?>.');
               }else if(data=='nok'){
+                  alert('<?php trP('cannotbedeleted')?> <?php trP('Drug')?> <?php trP('isalreadyassignedtoapatient')?>.');
                   alert('Drug is already assigned to a patient and cannot be deleted.');
               }else if(data=='mismatch'){
-                  alert('Data mismatch');
+                  alert('<?php trP('Datamismatch')?>.');
               }else if(data=='invalid'){
-                  alert('Invalid Data');
+                  alert('<?php trP('InvalidData')?>.');
               }
               $('#modalConfirmDelete<?php echo $drug->drug_id;?>').modal('hide');
           });

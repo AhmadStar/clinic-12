@@ -24,9 +24,13 @@
         </div>
         <?php echo form_close(); ?>
     </div>
+    <div class="pull-right" title="Go to Nurses">
+        
+        <?php echo anchor('nurse/nurseincentive/'.$incentive[0]->nurse_id, '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+    </div>
     <?php
 }else{
-  echo '<div class="alert alert-danger text-center"><h1>Nurse Not Found</h1></div><div class="pull-right" title="Go to Nurses">'.anchor('nurse', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
+  echo '<div class="alert alert-danger text-center"><h1>Nurse Not Found</h1></div><div class="pull-right" title="Go to Nurses">'.anchor('nurse/nurseincentive/'.$incentive[0]->nurset_id, '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
 }
 ?>
 </div>

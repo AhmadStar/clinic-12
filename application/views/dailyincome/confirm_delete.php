@@ -28,9 +28,10 @@
           $.post($(this).attr('action'),$(this).serialize(),function(data){
               if(data=='ok'){
                   $('#dailyincome<?php echo $dailyincome[0]['id'];?>').remove();
-                  alert('<?php trP('HasBeenDeleted')?> <?php trP('DailyIncome')?><?php trP('Successfuly')?>.');
+                  alert('<?php trP('HasBeenDeleted')?> <?php trP('DailyIncome')?> <?php trP('Successfuly')?>.');
               }else if(data=='nok'){
-                  alert('Incmoe is already assigned to a patient and cannot be deleted.');
+                  alert('<?php trP('cannotbedeleted')?> <?php trP('DailyIncome')?> <?php trP('isalreadyassignedtoapatient')?>.');
+                  //alert('Incmoe is already assigned to a patient and cannot be deleted.');
               }else if(data=='mismatch'){
                   alert('Data mismatch');
               }else if(data=='invalid'){

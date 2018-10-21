@@ -37,6 +37,10 @@ if($nurseincentives)
   }
   echo '</tbody></table></div>'.$pagination."</div>";
   ?>
+<div class="pull-right" title="Go to Nurses">
+
+    <?php echo anchor('nurse', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+</div>
 
 <script>
     $(document).ready(function() {

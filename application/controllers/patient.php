@@ -419,8 +419,8 @@ class Patient extends CI_Controller {
           $this->patient_doctor->doctor_id=$doctor;
           if($this->patient_doctor->status==1) $this->patient_doctor->status=0;
           $this->patient_doctor->save();
-          
-          redirect('patient');
+          $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->patients->first_name).' '.html_escape($this->patients->first_name).' '.tr('successfuly').'");</script>';
+          //redirect('patient');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';

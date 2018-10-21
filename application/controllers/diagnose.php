@@ -99,9 +99,10 @@ class Diagnose extends CI_Controller {
                 );
             $this->diagnoses->update_diagnose($diagnose_id,$data_to_store);
             
-            unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->diagnoses->diagnose_name_en). ' has been updated successfuly.");</script>';
-            redirect('diagnose');
+            unset($_POST);+
+                
+            $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '. html_escape($diagnose['diagnose_name_en']).' '.tr('successfuly').'");</script>';
+            //redirect('diagnose');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -216,7 +217,8 @@ class Diagnose extends CI_Controller {
                 );
         $this->diagnoses->save_diagnose($data_to_store);
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->diagnoses->diagnose_name_en). ' has been registered successfuly.");</script>';
+//        $data['script'] = '<script>alert("'. html_escape($this->diagnoses->diagnose_name_en). ' has been registered successfuly.");</script>';
+          $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($diagnose['diagnose_name_en']).' '.tr('successfuly').'");</script>';
         redirect('diagnose');
       }else{
         $data['error']=validation_errors();

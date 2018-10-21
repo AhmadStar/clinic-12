@@ -104,8 +104,9 @@ class Xray extends CI_Controller {
               $this->xrays->$key = $value;
             $this->xrays->save();
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->xrays->xray_name_en). ' has been updated successfuly.");</script>';
-            redirect('xray');
+//            $data['script'] = '<script>alert("'. html_escape($this->xrays->xray_name_en). ' has been updated successfuly.");</script>';
+             $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->xrays->xray_name_en).' '.tr('successfuly').'");</script>';
+            //redirect('xray');
         }else{
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
         }
@@ -210,7 +211,7 @@ class Xray extends CI_Controller {
           $this->xrays->$key = $value;
         $this->xrays->save();
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->xrays->xray_name_en). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($this->xrays->xray_name_en).' '.tr('successfuly').'");</script>';
       }else{
         $data['error']=validation_errors();
       }

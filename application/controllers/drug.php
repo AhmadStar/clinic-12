@@ -120,8 +120,9 @@ class Drug extends CI_Controller {
               $this->drugs->$key = $value;
             $this->drugs->save();
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->drugs->drug_name_en). ' has been updated successfuly.");</script>';
-            redirect('drug');
+
+             $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->drugs->drug_name_en).' '.tr('successfuly').'");</script>';
+           // redirect('drug');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -242,7 +243,7 @@ class Drug extends CI_Controller {
           $this->drugs->$key = $value;
         $this->drugs->save();
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->drugs->drug_name_en). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($this->drugs->drug_name_en).' '.tr('successfuly').'");</script>';
       }else{
         $data['error']=validation_errors();
       }

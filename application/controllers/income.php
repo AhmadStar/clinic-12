@@ -105,8 +105,9 @@ class Income extends CI_Controller {
             $this->incomes->update_income($income_id,$data_to_store);
             
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->incomes->name). ' has been updated successfuly.");</script>';
-            redirect('income');
+
+            $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.tr('IncomeInformation').' '.tr('successfuly').'");</script>';
+           // redirect('income');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -181,15 +182,9 @@ class Income extends CI_Controller {
       }
     }
     $this->session->set_userdata(current_url(),array($income_id));
-//    $data['income']=$this->incomes;
-    //$data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
-    //$data['includes']=array('drug/delete');
-      
-//    print_r($data);
+
     $this->load->view('income/confirm_delete',$data);
-    //$this->load->view('header',$data);
-    //$this->load->view('index',$data);
-    //$this->load->view('footer',$data);
+
   }
   
   /*

@@ -4,10 +4,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?> <?php echo $xray->xray_name_en;?></h4>
+          <h4 class="modal-title" id="myModalLabel"><?php trP('Delete')?> <?php echo $xray->xray_name_en;?></h4>
         </div>
         <div class="modal-body">
-          <? trP('uwdelete')?><strong><?php echo $xray->xray_name_en;?></strong>.<br/><? trP('Areyousure')?>
+          <?php trP('uwdelete')?><strong><?php echo $xray->xray_name_en;?></strong>.<br/><?php trP('Areyousure')?>
         </div>
         <div class="modal-footer">
           <?php echo form_open('xray/delete/'.$xray->xray_id);
@@ -28,13 +28,14 @@
           $.post($(this).attr('action'),$(this).serialize(),function(data){
               if(data=='ok'){
                   $('#xray<?php echo $xray->xray_id;?>').remove();
-                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Xray')?><?php trP('Successfuly')?>.');
+                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Xray')?> <?php trP('Successfuly')?>.');
               }else if(data=='nok'){
-                  alert('Xray is already assigned to a patient and cannot be deleted.');
+                  alert('<?php trP('cannotbedeleted')?> <?php trP('Xray')?> <?php trP('isalreadyassignedtoapatient')?>.');
+                  //alert('Xray is already assigned to a patient and cannot be deleted.');
               }else if(data=='mismatch'){
-                  alert('Data mismatch');
+                  alert('<?php trP('Datamismatch')?>.');
               }else if(data=='invalid'){
-                  alert('Invalid Data');
+                  alert('<?php trP('InvalidData')?>.');
               }
               $('#modalConfirmDelete<?php echo $xray->xray_id;?>').modal('hide');
           });

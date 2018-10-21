@@ -51,6 +51,16 @@ class Doctors extends MY_Model {
 //		return $query->result_array();
 //    }
     
+    public function get_name($id=0) 
+    {
+        $this->db->select('name');
+        $this->db->where('id', $id);
+        $this->db->from('doctors');
+        $query = $this->db->get();
+        
+        return $query->result();      
+         
+    }
     
      public function get_doctor($id=0) 
     {

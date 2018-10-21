@@ -4,10 +4,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?> <?php echo $income[0]['id'];?></h4>
+          <h4 class="modal-title" id="myModalLabel"><?php trP('Delete')?> <?php echo $income[0]['id'];?></h4>
         </div>
         <div class="modal-body">
-          <? trP('uwdelete')?><strong><?php echo $income[0]['doctor_id'];?></strong>.<br/><? trP('Areyousure')?>
+          <?php trP('uwdelete')?><strong><?php trP('Income');?></strong>.<br/><?php trP('Areyousure')?>
         </div>
         <div class="modal-footer">
           <?php echo form_open('income/delete/'.$income[0]['id']);
@@ -28,8 +28,9 @@
           $.post($(this).attr('action'),$(this).serialize(),function(data){
               if(data=='ok'){
                   $('#income<?php echo $income[0]['id'];?>').remove();
-                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Income')?><?php trP('Successfuly')?>.');
+                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Income')?> <?php trP('Successfuly')?>.');
               }else if(data=='nok'){
+                  alert('<?php trP('cannotbedeleted')?> <?php trP('Income')?> <?php trP('isalreadyassignedtoapatient')?>.');
                   alert('Incmoe is already assigned to a patient and cannot be deleted.');
               }else if(data=='mismatch'){
                   alert('Data mismatch');

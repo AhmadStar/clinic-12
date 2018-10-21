@@ -5,8 +5,7 @@
     <div class="col col-md-8 well well-sm">
         <?php echo form_open('nurse/editschedule/'.$schedule[0]->id,array("id"=>"newNurseForm", "role"=>"form",)); ?>
         <fieldset>
-            <legend>-
-                <?php trP('ScheduleInformation')?>:</legend>
+            <legend>- <?php trP('ScheduleInformation')?>:</legend>
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
@@ -25,6 +24,10 @@
             </div>
         </div>
         <?php echo form_close(); ?>
+    </div>
+    <div class="pull-right" title="Go to Schedules">
+        
+        <?php echo anchor('nurse/nurseschedule/'.$schedule[0]->nurse_id, '<span class="glyphicon glyphicon-arrow-left"></span>');?>
     </div>
     <?php
 }else{
