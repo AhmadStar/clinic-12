@@ -16,7 +16,7 @@
                     <div class="col-md-6"><input type="text" name='address' id='adress' value="<?php echo set_value('address', $nurse[0]['address']);?>" class='form-control' placeholder="<?php trP('address')?>" title='address' required /></div>
                 </div>
                 <div class="clearfix"></div>
-                
+
         </fieldset>
         <div class="form-group">
             <div class="col-md-6"><input type="submit" name='submit' id='submit' value=<?php trp('update')?> class="form-control btn btn-info" /></div>
@@ -26,7 +26,12 @@
         </div>
         <?php echo form_close(); ?>
     </div>
+    <div class="pull-right" title="Go to Nurses">
+        
+        <?php echo anchor('nurse', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+    </div>
     <?php
+    
 }else{
   echo '<div class="alert alert-danger text-center"><h1>Nurse Not Found</h1></div><div class="pull-right" title="Go to Nurses">'.anchor('nurse', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
 }

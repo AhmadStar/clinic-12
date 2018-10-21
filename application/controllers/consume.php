@@ -123,8 +123,8 @@ class Consume extends CI_Controller {
               $this->consumes->$key = $value;
             $this->consumes->save();
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->consumes->name). ' has been updated successfuly.");</script>';
-            redirect('consume');
+            $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->consumes->name).' '.tr('successfuly').'");</script>';
+            //redirect('consume');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -235,7 +235,7 @@ class Consume extends CI_Controller {
           $this->consumes->$key = $value;
         $this->consumes->save();
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->consumes->name). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($this->consumes->name).' '.tr('successfuly').'");</script>';
       }else{
         $data['error']=validation_errors();
       }

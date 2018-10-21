@@ -1,10 +1,10 @@
 <div class="row">
     <?php if(!empty($dailyincome[0]['id'])){ ?>
     <div class="col col-md-8 well well-sm">
-        <?php echo form_open('dailyincome/edit/'.$dailyincome[0]['id'],array("id"=>"newIncomeForm", "role"=>"form",)); ?>
+        <?php echo form_open('dailyincome/edit/'.$dailyincome[0]['id'],array("id"=>"newDailyIncomeForm", "role"=>"form",)); ?>
         <fieldset>
             <legend>-
-                <?php trP('IncomeInformation')?>:</legend>
+                <?php trP('DailyIncomeInformation')?>:</legend>
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
@@ -28,9 +28,13 @@
         </div>
         <?php echo form_close(); ?>
     </div>
+    <div class="pull-right" title="Go to Daily Incoms">
+
+        <?php echo anchor('dailyincome', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+    </div>
     <?php
 }else{
-  echo '<div class="alert alert-danger text-center"><h1>Income Not Found</h1></div><div class="pull-right" title="Go to Incomes">'.anchor('dailyincome', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
+  echo '<div class="alert alert-danger text-center"><h1>DailyIncome Not Found</h1></div><div class="pull-right" title="Go to DailyIncomes">'.anchor('dailyincome', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
 }
 ?>
 </div>

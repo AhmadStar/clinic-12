@@ -1,26 +1,40 @@
-<legend class="legend_colour"><?php echo "- ".trP('DoctorIncomeList');?></legend>
+<legend class="legend_colour">-
+    <?php echo tr('DoctorIncomeList').' '.$doctorname[0]->name; ;?>
+</legend>
 
-<div class="form-group">       
+<div class="form-group">
     <div class="form-group">
-    <div class="col-md-6">
-        <legend class="legend_colour"><?php echo  tr('AllIncome').$allmoney ;?></legend>
+        <div class="col-md-6">
+            <legend class="legend_colour">
+                <?php echo  tr('AllIncome').$allmoney ;?>
+            </legend>
+        </div>
+        <div class="col-md-6">
+            <legend class="legend_colour">
+                <?php echo tr('StaticIncome').$allstatic ;?>
+            </legend>
+        </div>
+        <div class="col-md-6">
+            <legend class="legend_colour">
+                <?php echo  tr('NormalIncome').$allnormal ;?>
+            </legend>
+        </div>
+        <div class="col-md-6">
+            <legend class="legend_colour">
+                <?php echo  tr('NormalPureIncome').$allnormal*0.6 ;?>
+            </legend>
+        </div>
+        <div class="col-md-6">
+            <legend class="legend_colour">
+                <?php echo  tr('AllPureIncome'). ($allstatic + $allnormal*0.6) ;?>
+            </legend>
+        </div>
+        <div class="col-md-6">
+            <legend class="legend_colour">
+                <?php echo  tr('CenterIncome'). ($allnormal*0.4) ;?>
+            </legend>
+        </div>
     </div>
-    <div class="col-md-6">
-        <legend class="legend_colour"><?php echo tr('StaticIncome').$allstatic ;?></legend>
-    </div>
-    <div class="col-md-6">
-        <legend class="legend_colour"><?php echo  tr('NormalIncome').$allnormal ;?></legend>
-    </div>
-    <div class="col-md-6">
-        <legend class="legend_colour"><?php echo  tr('NormalPureIncome').$allnormal*0.6 ;?></legend>
-    </div>
-    <div class="col-md-6">
-        <legend class="legend_colour"><?php echo  tr('AllPureIncome'). ($allstatic + $allnormal*0.6) ;?></legend>
-    </div>
-    <div class="col-md-6">
-        <legend class="legend_colour"><?php echo  tr('CenterIncome'). ($allnormal*0.4) ;?></legend>
-    </div>
-  </div>    
 </div>
 
 
@@ -59,27 +73,32 @@ if($doctorincomes)
     $i++;
   }
   echo '</tbody></table></div>'.$pagination."</div>";
-  ?>        
-  
+  ?>
+<div class="pull-right" title="Go to Doctors">
+
+    <?php echo anchor('doctor', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+</div>
+
 <script>
-    $(document).ready(function(){ 
-        $('#doctor_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Delete Doctor'){
-               e.preventDefault();
-               $.get($(this).attr('href'),'',function(data){
-                   $('#tmpDiv').html(data);
-               });
+    $(document).ready(function() {
+        $('#doctor_list_table a').on('click', function(e) {
+            if ($(this).attr('title') == 'Delete Doctor') {
+                e.preventDefault();
+                $.get($(this).attr('href'), '', function(data) {
+                    $('#tmpDiv').html(data);
+                });
             }
         });
-        $('#doctor_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Check Availability'){
-               e.preventDefault();
-               $.get($(this).attr('href'),'',function(data){
-                   $('#tmpDiv').html(data);
-               });
+        $('#doctor_list_table a').on('click', function(e) {
+            if ($(this).attr('title') == 'Check Availability') {
+                e.preventDefault();
+                $.get($(this).attr('href'), '', function(data) {
+                    $('#tmpDiv').html(data);
+                });
             }
         });
     });
+
 </script>
 <?php
 }

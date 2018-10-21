@@ -28,13 +28,14 @@
           $.post($(this).attr('action'),$(this).serialize(),function(data){
               if(data=='ok'){
                   $('#test<?php echo $test->test_id;?>').remove();
-                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Test')?><?php trP('Successfuly')?>.');
+                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Test')?> <?php trP('Successfuly')?>.');
               }else if(data=='nok'){
-                  alert('Test is already assigned to a patient and cannot be deleted.');
+                  alert('<?php trP('cannotbedeleted')?> <?php trP('Test')?> <?php trP('isalreadyassignedtoapatient')?>.');
+                  //alert('Test is already assigned to a patient and cannot be deleted.');
               }else if(data=='mismatch'){
-                  alert('Data mismatch');
+                  alert('<?php trP('Datamismatch')?>.');
               }else if(data=='invalid'){
-                  alert('Invalid Data');
+                  alert('<?php trP('InvalidData')?>.');
               }
               $('#modalConfirmDelete<?php echo $test->test_id;?>').modal('hide');
           });

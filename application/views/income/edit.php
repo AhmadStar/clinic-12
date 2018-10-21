@@ -34,6 +34,10 @@
         </div>
         <?php echo form_close(); ?>
     </div>
+    <div class="pull-right" title="Go to Incomes">
+
+        <?php echo anchor('income', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+    </div>
     <?php
 }else{
   echo '<div class="alert alert-danger text-center"><h1>Income Not Found</h1></div><div class="pull-right" title="Go to Incomes">'.anchor('income', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';

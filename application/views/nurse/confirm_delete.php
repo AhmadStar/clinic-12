@@ -4,7 +4,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?> <?php echo $nurse[0]['id'];?></h4>
+          <h4 class="modal-title" id="myModalLabel"><?php trP('Delete')?> <?php echo $nurse[0]['id'];?></h4>
         </div>
         <div class="modal-body">
           <?php trP('uwdelete')?><strong><?php echo $nurse[0]['name'];?></strong>.<br/><?php trP('Areyousure')?>
@@ -28,7 +28,7 @@
           $.post($(this).attr('action'),$(this).serialize(),function(data){
               if(data=='ok'){
                   $('#nurse<?php echo $nurse[0]['id'];?>').remove();
-                  alert('<?php trP('HasBeenDeleted')?> <?php trP('Nurse')?><?php trP('Successfuly')?>.');
+                  alert('<?php trP('HasBeenDeleted')?> <?php echo $nurse[0]['name'];?> <?php trP('Successfuly')?>.');
               }else if(data=='nok'){
                   alert('Nurse is already assigned to a patient and cannot be deleted.');
               }else if(data=='mismatch'){

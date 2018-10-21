@@ -120,8 +120,8 @@ class Doctor extends CI_Controller {
               $this->doctors->$key = $value;
             $this->doctors->save();
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->doctors->name). ' has been updated successfuly.");</script>';
-            redirect('doctor');
+            $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->doctors->name).' '.tr('successfuly').'");</script>';
+//            redirect('doctor');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -245,7 +245,8 @@ class Doctor extends CI_Controller {
           $this->doctors->$key = $value;
         $this->doctors->save();
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->doctors->name). ' has been registered successfuly.");</script>';
+
+          $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($this->doctors->name).' '.tr('successfuly').'");</script>';
       }else{
         $data['error']=validation_errors();
       }
@@ -279,8 +280,12 @@ class Doctor extends CI_Controller {
       return;
     }
     
+    $this->load->model('doctors');
     $this->load->model('incomes');
     $this->load->model('patients');
+      
+    $data['doctorname'] = $this->doctors->get_name($doctor_id);
+    print_r($this->doctors->get_name($doctor_id));
     $data['patients'] = $this->patients->get();  
     
     $data['doctorincomes'] = $this->incomes->get_all_doctor_incomes($doctor_id);  

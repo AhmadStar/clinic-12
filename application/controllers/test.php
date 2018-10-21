@@ -104,8 +104,9 @@ class Test extends CI_Controller {
               $this->lab->$key = $value;
             $this->lab->save();
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->lab->test_name_en). ' has been updated successfuly.");</script>';
-            redirect('test');
+//            $data['script'] = '<script>alert("'. html_escape($this->lab->test_name_en). ' has been updated successfuly.");</script>';
+             $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->lab->test_name_en).' '.tr('successfuly').'");</script>';
+           // redirect('test');
         }else{
           //user may have sent the form to a url other than the original
           $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
@@ -143,7 +144,7 @@ class Test extends CI_Controller {
     }
     $this->load->model('lab');
     $this->lab->load($test_id);
-    
+//    print_r($this->lab->load($test_id);
     if($this->input->post())
     {
       $this->form_validation->set_rules(array(
@@ -215,7 +216,7 @@ class Test extends CI_Controller {
           $this->lab->$key = $value;
         $this->lab->save();
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->lab->test_name_en). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($this->lab->test_name_en).' '.tr('successfuly').'");</script>';
       }else{
         $data['error']=validation_errors();
       }

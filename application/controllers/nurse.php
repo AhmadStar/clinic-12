@@ -101,7 +101,8 @@ class Nurse extends CI_Controller {
             $this->nurses->update_nurse($id,$data_to_store);
             
             unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->nurses->name). ' has been updated successfuly.");</script>';
+//        $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->nurses->name).' '.tr('successfuly').'");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '. html_escape($nurse['name']).' '.tr('successfuly').'");</script>';
  //       redirect('nurse');
         }else{
           //user may have sent the form to a url other than the original
@@ -223,8 +224,7 @@ class Nurse extends CI_Controller {
                 );
         $this->nurses->save_nurse($data_to_store);
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->nurses->id). ' has been registered successfuly.");</script>';
-        //redirect('nurse');
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.html_escape($nurse['name']).' '.tr('successfuly').'");</script>';
       }else{
         $data['error']=validation_errors();
       }
@@ -283,7 +283,7 @@ class Nurse extends CI_Controller {
                 );
         $this->nurses->save_nurse_schedule($data_to_store);
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->nurses->nurse_id). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.tr('newschedule').' '.tr('successfuly').'");</script>';
 //       redirect('nurse');
       }else{
         $data['error']=validation_errors();
@@ -337,7 +337,7 @@ class Nurse extends CI_Controller {
                 );
         $this->nurses->save_nurse_incentive($data_to_store);
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->nurses->nurse_id). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.tr('newIncentive').' '.tr('successfuly').'");</script>';
        // redirect('nurse');
       }else{
         $data['error']=validation_errors();
@@ -519,7 +519,7 @@ class Nurse extends CI_Controller {
             $this->nurses->update_incentive($id,$data_to_store);
             
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->nurses->name). ' has been updated successfuly.");</script>';
+            $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.tr('nurseIncentiveInformations').' '/*. html_escape($nurse['name']).' '*/.tr('successfuly').'");</script>';
        //     redirect('nurse');
         }else{
           //user may have sent the form to a url other than the original
@@ -588,7 +588,7 @@ class Nurse extends CI_Controller {
             $this->nurses->update_schedule($id,$data_to_store);
             
             unset($_POST);
-            $data['script'] = '<script>alert("'. html_escape($this->nurses->name). ' has been updated successfuly.");</script>';
+            $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.tr('nurseScheduleInformations').' '/*. html_escape($nurse['name']).' '*/.tr('successfuly').'");</script>';
           //   redirect('nurse');
         }else{
           //user may have sent the form to a url other than the original
