@@ -265,6 +265,126 @@ class Diagnose extends CI_Controller {
     return array('0'=> tr('IncomeType'),
                  'static'=>'معاينة ثابتة',
                  'normal'=>'معاينة عادية',);
+  }
+    
+    
+  public function search()
+  {
+    if (!$this->bitauth->logged_in())
+    {
+      $this->session->set_userdata('redir', current_url());
+      redirect('account/login');
+    }
+    if($this->input->post())
+    {
+        $this->load->model('diagnoses');
+        $q=$this->input->post('q');
+        $diagnoses=$this->diagnoses->search(array('diagnose_name_en'=>$q,'diagnose_name_en'=>$q));
+        $data['diagnoses']=$diagnoses;
+        $this->load->view('diagnose/result',$data);
+        return TRUE;
+    }
+    $data['title']=tr('DiagnoseSearch');
+    $this->load->view('diagnose/search');
+  }    
+    
+    
+  public function assign()
+  {
+    if (!$this->bitauth->logged_in())
+    {
+      $this->session->set_userdata('redir', current_url());
+      redirect('account/login');
+    }
+    if(!($this->bitauth->has_role('doctor')||$this->bitauth->has_role('lab')))
+    {
+      $this->_no_access();
+      return;
+    }
+    
+    if($this->input->post())
+    {
+      $this->form_validation->set_rules(array(
+        array( 'field' => 'id', 'label' => 'Diag ID', 'rules' => 'required|is_numeric', ),
+        array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|is_numeric', ),
+        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
+        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
+        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
+      ));
+      if($this->form_validation->run() == TRUE)
+      {
+        $this->load->model('diagnose_patient');
+        unset($_POST['submit']);
+        foreach ($this->input->post() as $key => $value)
+          $this->diagnose_patient->$key = $value;
+          
+        print_r($this->diagnose_patient);  
+//        $this->diagnose_patient->user_id_assign=$this->session->userdata('ba_user_id');
+//        $this->diagnose_patient->assign_date=now();
+//        $this->diagnose_patient->save();
+//        $this->load->model('diagnoses');
+//        $this->diagnoses->load($this->diagnose_patient->diagnose_id);
+        
+        echo '<tr id="dpi'.$this->diagnose_patient->diagnose_patient_id.'"><td class="id"></td>'.
+            '<td>'.$this->diagnoses->diagnose_name_en.'</td>'.
+            '<td>'.$this->diagnoses->diagnose_name_ar.'</td>'.
+//            '<td>'.$this->diagnoses->price.'</td>'.
+            '<td>'.$this->diagnose_patient->no_of_item.'</td>'.
+            '<td>'.$this->diagnose_patient->total_cost.'</td>'.
+            '<td class="actions">'.anchor('#', 'Delete ',array('dpi'=>$this->diagnose_patient->diagnose_patient_id,'di'=>$this->diagnose_patient->diagnose_id,'pi'=>$this->lab_patient->patient_id,'tc'=>$this->lab_patient->total_cost,'action'=>'delete'));
+            if($this->bitauth->has_role('receptionist')) echo anchor('#', 'Pay ',array('dpi'=>$this->diagnose_patient->diagnose_patient_id,'di'=>$this->diagnose_patient->diagnose_id,'pi'=>$this->diagnose_patient->patient_id,'tc'=>$this->diagnose_patient->total_cost,'action'=>'pay'));
+            echo '</td></tr>';
+        return;
+      }
+      else{
+        
+      }
+    }
+  }
+    
+    
+  
+  public function payment($lab_patient_id)
+  {
+    if (!$this->bitauth->logged_in())
+    {
+      $this->session->set_userdata('redir', current_url());
+      redirect('account/login');
+    }
+    if(!$this->bitauth->has_role('receptionist'))
+    {
+      $this->_no_access();
+      return;
+    }
+    
+    if($this->input->post())
+    {
+      $this->form_validation->set_rules(array(
+        array( 'field' => 'lab_patient_id', 'label' => 'ID', 'rules' => 'required|trim|is_numeric|has_no_schar', ),
+        array( 'field' => 'test_id', 'label' => 'Drug ID', 'rules' => 'required|trim|is_numeric|has_no_schar', ),
+        array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|trim|is_numeric|has_no_schar', ),
+      ));
+      if($this->form_validation->run() == TRUE && $this->input->post('lab_patient_id')==$lab_patient_id)
+      {
+        $this->load->model('lab_patient');
+        $this->lab_patient->load($this->input->post('lab_patient_id'));
+        if($this->lab_patient->test_id==$this->input->post('test_id') &&
+           $this->lab_patient->patient_id==$this->input->post('patient_id') &&
+           $this->lab_patient->user_id_discharge==NULL &&
+           $this->lab_patient->discharge_date==NULL)
+        {
+          $this->lab_patient->user_id_discharge=$this->session->userdata('ba_user_id');
+          $this->lab_patient->discharge_date=now();
+          $this->lab_patient->save();
+          unset($_POST);
+          echo 'ok';
+        }else{
+          echo 'mismatch';
+        }
+      }else{
+          echo 'invalid';
+      }
+    }
   }    
     
   /**

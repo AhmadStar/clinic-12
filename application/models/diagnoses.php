@@ -103,7 +103,49 @@ class Diagnoses extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('diagnoses'); 
 	}
-        
+     
+    
+    public function search($like,$and=FALSE,$limit = 0, $offset = 0,$order_by=0)
+  {
+    $i=1;
+    if(!$and)
+      foreach ($like as $key => $value)
+      {
+        if($i==1) $this->db->like($key,$value);
+        else $this->db->or_like($key,$value);
+        $i++;
+      }
+    else
+      foreach ($like as $key => $value)
+        $this->db->like($key,$value);
+    
+    if($order_by)
+      $this->db->order_by($order_by[0],$order_by[1]);
+    
+    if ($limit) 
+      $query = $this->db->get($this::DB_TABLE, $limit, $offset);
+    else
+      $query = $this->db->get($this::DB_TABLE);
+    
+    $ret_val = array();
+    $class = get_class($this);
+    foreach ($query->result() as $row) {
+      $model = new $class;
+      $model->populate($row);
+      $ret_val[$row->{$this::DB_TABLE_PK}] = $model;
+    }
+    return $ret_val;
+  }
+    
+ /**
+   * Populate from an array or standard class.
+   * @param mixed $row
+   */
+  public function populate($row) {
+      foreach ($row as $key => $value) {
+          $this->$key = $value;
+      }
+  }    
     
         
 }

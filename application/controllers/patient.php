@@ -310,6 +310,10 @@ class Patient extends CI_Controller {
     $this->load->model('lab_patient');
     $lab =$this->lab_patient->get_by_fkey('patient_id',$this->patients->patient_id,'asc',0);
     $this->load->model('lab');
+      
+    $this->load->model('diagnose_patient');
+    $diagnose =$this->diagnose_patient->get_by_fkey('patient_id',$this->patients->patient_id,'asc',0);
+    $this->load->model('diagnoses');
         
     $data['title'] = tr('PatientPanel');        
     $data['patient']=$this->patients;
@@ -319,6 +323,7 @@ class Patient extends CI_Controller {
     $data['drugs']=$drugs;
     $data['xrays']=$xrays;
     $data['lab']=$lab;
+    $data['diagnoses']=$diagnose;
     
     $path='patient/panel';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)

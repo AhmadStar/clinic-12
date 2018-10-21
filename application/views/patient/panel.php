@@ -75,6 +75,7 @@
     <li><a href="#drugs" data-toggle="tab"><?php trP('Drugs')?></a></li>
     <li><a href="#xrays" data-toggle="tab"><?php trP('X-rays')?></a></li>
     <li><a href="#labs" data-toggle="tab"><?php trP('Laboratory')?></a></li>
+    <li><a href="#diagnoses" data-toggle="tab"><?php trP('Diagnoses')?></a></li>
   </ul>
   
   <div class="tab-content">
@@ -84,6 +85,7 @@
       include_once 'panel/drugs.php';
       include_once 'panel/labs.php';
       include_once 'panel/xrays.php';      
+      include_once 'panel/diagnoses.php';      
     ?>
   </div>
   <script>
