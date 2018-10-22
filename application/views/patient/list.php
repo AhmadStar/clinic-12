@@ -6,7 +6,7 @@
 -->
 <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" ><?php trP('DoctorFilter')?></h3>
+                <h3 class="panel-title" ><?php trP('PatientFilter')?></h3>
             </div>
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                    
