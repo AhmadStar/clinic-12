@@ -114,7 +114,6 @@ class Comment extends CI_Controller {
       {
         $this->comments->load($comment_id);
         $this->patient_doctor->load($this->comments->patient_doctor_id);
-/
         $this->comments->comment=$this->input->post('comment');
         $this->comments->last_edit_time=now();
         $this->comments->save();

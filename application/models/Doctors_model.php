@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customers_model extends CI_Model {
+class Doctors_model extends CI_Model {
 
-	var $table = 'customers';
-	var $column_order = array(null, 'FirstName','LastName','phone','address','city','country'); //set column field database for datatable orderable
-	var $column_search = array('FirstName','LastName','phone','address','city','country'); //set column field database for datatable searchable 
+	var $table = 'doctors';
+	var $column_order = array(null, 'id','name','address','phone','created_date'); //set column field database for datatable orderable
+	var $column_search = array('id','name','address','phone','created_date'); //set column field database for datatable searchable 
 	var $order = array('id' => 'asc'); // default order 
 
 	public function __construct()
@@ -17,22 +17,22 @@ class Customers_model extends CI_Model {
 	private function _get_datatables_query()
 	{
 		
-		//add custom filter here
-		if($this->input->post('country'))
+		//add custom filter here		
+		if($this->input->post('name'))
 		{
-			$this->db->where('country', $this->input->post('country'));
-		}
-		if($this->input->post('FirstName'))
-		{
-			$this->db->like('FirstName', $this->input->post('FirstName'));
-		}
-		if($this->input->post('LastName'))
-		{
-			$this->db->like('LastName', $this->input->post('LastName'));
+			$this->db->like('name', $this->input->post('name'));
 		}
 		if($this->input->post('address'))
 		{
 			$this->db->like('address', $this->input->post('address'));
+		}
+		if($this->input->post('phone'))
+		{
+			$this->db->like('phone', $this->input->post('phone'));
+		}
+        if($this->input->post('created_date'))
+		{
+			$this->db->like('created_date', $this->input->post('created_date'));
 		}
 
 		$this->db->from($this->table);
@@ -91,21 +91,6 @@ class Customers_model extends CI_Model {
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
-
-	public function get_list_countries()
-	{
-		$this->db->select('country');
-		$this->db->from($this->table);
-		$this->db->order_by('country','asc');
-		$query = $this->db->get();
-		$result = $query->result();
-
-		$countries = array();
-		foreach ($result as $row) 
-		{
-			$countries[] = $row->country;
-		}
-		return $countries;
-	}
+	
 
 }

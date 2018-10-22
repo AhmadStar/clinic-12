@@ -10,7 +10,7 @@ class Doctor extends CI_Controller {
   {
     parent::__construct();
     $this->load->helper('site');  
-
+    
     $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
   }
 
@@ -26,22 +26,10 @@ class Doctor extends CI_Controller {
       redirect('account/login');
     }
     
-    $this->load->model('doctors');
-    
-    $data['doctors'] = $this->doctors->get();    
-    $data['title'] = tr('DoctorsList');  
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('doctor/index/'.$data['per_page']);
-    $config['total_rows'] = count($data['doctors']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();
-    
+    $this->load->helper('url');
+    $this->load->helper('form');
+
+    $data['title'] = tr('DoctorsList');
     $path='doctor/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -53,6 +41,43 @@ class Doctor extends CI_Controller {
         $this->load->view('footer',$data);
     }
   }
+    
+public function ajax_list()
+	{
+        $this->load->model('Doctors_model','doctors');
+		$list = $this->doctors->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $customers) {
+			$no++;
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $customers->name;
+			$row[] = $customers->address;
+			$row[] = $customers->phone;			
+			$row[] = $customers->created_date;
+            
+            $actions .= anchor('doctor/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Doctor'));
+            $actions .= anchor('doctor/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Doctor'));
+            $actions .= anchor('doctor/incomelist/'.$customers->id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Check Income'));
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->doctors->count_all(),
+						"recordsFiltered" => $this->doctors->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+    
+    
   
   /**
    * Patient::search()

@@ -17,30 +17,58 @@ class Patient extends CI_Controller {
   /**
    * Patient::index()
    */
-  public function index($limit=15,$page=1,$reverse=1)
+//  public function index($limit=15,$page=1,$reverse=1)
+//  {
+//    if (!$this->bitauth->logged_in())
+//    {
+//      $this->session->set_userdata('redir', current_url());
+//      redirect('account/login');
+//    }
+//
+//    $this->load->model('patients');
+//    
+//    $data['patients'] = $this->patients->get(0,0,(int)$reverse);
+//    $data['title'] = tr('PatientList');    
+//    $data['navActiveId']='navbarLiPatient';
+//    
+//    $data['page'] = (int)$page;
+//    $data['per_page'] = (int)$limit;
+//    $this->load->library('pagination');
+//    $this->load->library('my_pagination');
+//    $config['base_url'] = site_url('patient/index/'.$data['per_page']);
+//    $config['total_rows'] = count($data['patients']);
+//    $config['per_page'] = $data['per_page'];
+//    $this->my_pagination->initialize($config); 
+//    $data['pagination']=$this->my_pagination->create_links();
+//    
+//    $path='patient/list';
+//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+//    {
+//        $this->load->view($path, $data);
+//    }else{
+//        $data['includes']=array($path);
+//        $this->load->view('header',$data);
+//        $this->load->view('index',$data);
+//        $this->load->view('footer',$data);
+//    }
+//  }
+    
+    
+/**
+   * Drug::index()
+   */
+  public function index($limit = 15,$page = 1)
   {
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
       redirect('account/login');
     }
+    
+    $this->load->helper('url');
+    $this->load->helper('form');
 
-    $this->load->model('patients');
-    
-    $data['patients'] = $this->patients->get(0,0,(int)$reverse);
-    $data['title'] = tr('PatientList');    
-    $data['navActiveId']='navbarLiPatient';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('patient/index/'.$data['per_page']);
-    $config['total_rows'] = count($data['patients']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();
-    
+    $data['title'] = tr('PatientList');
     $path='patient/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -52,6 +80,41 @@ class Patient extends CI_Controller {
         $this->load->view('footer',$data);
     }
   }
+    
+public function ajax_list()
+	{
+        $this->load->model('patients','patients');
+		$list = $this->patients->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $customers) {
+			$no++;
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $customers->first_name.' '.$customers->last_name;
+			$row[] = $customers->fname;
+			$row[] = $customers->phone;			
+			$row[] = $customers->create_date;
+			$row[] = $customers->gender;
+            
+            $actions .= anchor('patient/panel/'.$customers->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>'Pamel patient'));
+            $actions .= anchor('patient/edit_patient/'.$customers->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Patient'));            
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->patients->count_all(),
+						"recordsFiltered" => $this->patients->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}     
 
   /**
    * Patient::status()

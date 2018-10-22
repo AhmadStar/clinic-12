@@ -223,3 +223,12 @@ th{
     font-weight: bold;
     border-bottom: none;    
 }
+
+
+.filter-body {
+    padding: 10px;
+}
+
+.panel-default {
+    border-radius: 10px;
+}
