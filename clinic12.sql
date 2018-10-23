@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2018 at 08:52 AM
+-- Generation Time: Oct 23, 2018 at 08:52 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `last_edit_time` int(11) NOT NULL,
   PRIMARY KEY (`comment_id`),
   KEY `patient_doctor_id` (`patient_doctor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `comments`
@@ -79,7 +79,9 @@ INSERT INTO `comments` (`comment_id`, `patient_doctor_id`, `comment`, `spressur`
 (27, 19, 'تعليق اخيرااا', 1, 2, 3, 4, 5, 6, 1, 1539795117, 1539795117),
 (28, 19, 'dashdkj ahsdkja hskjdhak jsdhkjas hdkjahskdjhaskj dhkjshdkjas hdkjahdkjashdkjh', 1, 1, 2, 1, 1, 1, 1, 1539796891, 1539796891),
 (29, 6, 'تعليق', 2, 5, 5, 5, 5, 5, 1, 1539812246, 1539812246),
-(30, 20, 'هذ تعليق', 120, 80, 60, 38, 95, 12, 1, 1539863147, 1539863147);
+(30, 20, 'هذ تعليق', 120, 80, 60, 38, 95, 12, 1, 1539863147, 1539863147),
+(31, 1, 'شس', 1, 1, 1, 1, 1, 1, 1, 1540170719, 1540170719),
+(32, 12, 'هذا تعليق من الطبيب', 120, 80, 11, 88, 31, 312, 1, 1540220941, 1540220941);
 
 -- --------------------------------------------------------
 
@@ -285,7 +287,47 @@ CREATE TABLE IF NOT EXISTS `diagnoses` (
   `diagnose_name_ar` mediumtext NOT NULL,
   `description` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `diagnoses`
+--
+
+INSERT INTO `diagnoses` (`id`, `diagnose_name_en`, `diagnose_name_ar`, `description`) VALUES
+(7, 'Diagnose', 'تشخيص', 'هنا نضع وصف التشخيص'),
+(8, 'VXS', 'تشخيص', 'وصف التشخيص');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `diagnose_patient`
+--
+
+CREATE TABLE IF NOT EXISTS `diagnose_patient` (
+  `diagnose_patient_id` int(11) NOT NULL AUTO_INCREMENT,
+  `diagnose_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `user_id_assign` int(11) NOT NULL,
+  `assign_date` int(11) NOT NULL,
+  `no_of_item` int(11) DEFAULT NULL,
+  `result` text NOT NULL,
+  `total_cost` decimal(10,0) DEFAULT NULL,
+  `user_id_discharge` int(11) DEFAULT NULL,
+  `discharge_date` int(11) DEFAULT NULL,
+  `memo` text,
+  PRIMARY KEY (`diagnose_patient_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `diagnose_patient`
+--
+
+INSERT INTO `diagnose_patient` (`diagnose_patient_id`, `diagnose_id`, `patient_id`, `user_id_assign`, `assign_date`, `no_of_item`, `result`, `total_cost`, `user_id_discharge`, `discharge_date`, `memo`) VALUES
+(1, 7, 1, 1, 1540215385, 22, 'rrrr', '0', NULL, NULL, 'mmm'),
+(2, 7, 1, 1, 1540215546, 99, '99', '0', NULL, NULL, '99'),
+(3, 8, 1, 1, 1540215603, 1, '1', '0', NULL, NULL, '1'),
+(4, 7, 1, 1, 1540217458, NULL, '1', NULL, NULL, NULL, NULL),
+(5, 7, 2, 1, 1540220564, NULL, '1', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -300,17 +342,17 @@ CREATE TABLE IF NOT EXISTS `doctors` (
   `phone` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
   `created_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `doctors`
 --
 
 INSERT INTO `doctors` (`id`, `name`, `address`, `phone`, `created_date`) VALUES
-(4, 'د.محمد شباط', 'جديدة', '0994364545', '2018-10-06'),
+(4, 'د.محمد شباط', 'تضامن', '0994364545', '2018-10-06'),
 (5, 'د.نور شماس', 'دمشق', '0964536453', '2018-10-06'),
 (6, 'د.ماهر ابو صعب', 'دمشق', '09434242342', '2018-10-06'),
-(7, 'د.احمد ابو سرور', 'حلب', '09543534534', '2018-10-06');
+(7, 'د.احمد ابو سرور', 'حلب', '09543534534', '2018-10-20');
 
 -- --------------------------------------------------------
 
@@ -358,7 +400,7 @@ CREATE TABLE IF NOT EXISTS `drug_patient` (
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `drug_patient`
@@ -390,7 +432,9 @@ INSERT INTO `drug_patient` (`drug_patient_id`, `drug_id`, `patient_id`, `user_id
 (26, 5, 20, 1, 1540036867, 1, '2000', NULL, NULL, ''),
 (27, 5, 20, 1, 1540036924, 1, '2000', NULL, NULL, ''),
 (28, 5, 19, 1, 1540052768, 1, '2000', NULL, NULL, ''),
-(29, 5, 16, 1, 1540056965, 1, '2000', NULL, NULL, '');
+(29, 5, 16, 1, 1540056965, 1, '2000', NULL, NULL, ''),
+(30, 5, 1, 1, 1540201109, 1, '2000', NULL, NULL, ''),
+(31, 5, 2, 1, 1540211047, 1, '2000', NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -543,10 +587,10 @@ CREATE TABLE IF NOT EXISTS `lab_patient` (
   `lab_patient_id` int(11) NOT NULL AUTO_INCREMENT,
   `test_id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
-  `no_of_item` int(10) NOT NULL DEFAULT '1',
+  `no_of_item` int(10) DEFAULT NULL,
   `user_id_assign` int(11) NOT NULL,
   `assign_date` int(11) NOT NULL,
-  `total_cost` decimal(10,0) NOT NULL,
+  `total_cost` decimal(10,0) DEFAULT NULL,
   `user_id_discharge` int(11) DEFAULT NULL,
   `discharge_date` int(11) DEFAULT NULL,
   `memo` text,
@@ -556,7 +600,7 @@ CREATE TABLE IF NOT EXISTS `lab_patient` (
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 --
 -- Dumping data for table `lab_patient`
@@ -606,7 +650,10 @@ INSERT INTO `lab_patient` (`lab_patient_id`, `test_id`, `patient_id`, `no_of_ite
 (44, 6, 19, 1, 1, 1540054998, '2001', NULL, NULL, '', ''),
 (45, 6, 16, 1, 1, 1540056573, '2001', NULL, NULL, '', 'csdasd as '),
 (46, 6, 15, 1, 1, 1540057570, '2001', NULL, NULL, '', 'يسشي شسي شسي'),
-(47, 7, 15, 1, 1, 1540057574, '1400', NULL, NULL, '', 'يشسي شسي ');
+(47, 7, 15, 1, 1, 1540057574, '1400', NULL, NULL, '', 'يشسي شسي '),
+(48, 6, 20, 1, 1, 1540149981, '2001', NULL, NULL, '', 'يشسيشس يشسي'),
+(49, 9, 1, 1, 1, 1540201125, '1000', NULL, NULL, '', ''),
+(50, 6, 2, NULL, 1, 1540220310, NULL, NULL, NULL, NULL, 'نتائج ');
 
 -- --------------------------------------------------------
 
@@ -622,7 +669,7 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `success` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`login_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=214 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=221 ;
 
 --
 -- Dumping data for table `logins`
@@ -841,7 +888,14 @@ INSERT INTO `logins` (`login_id`, `ip_address`, `user_id`, `time`, `success`) VA
 (210, 0, 1, '2018-10-20 14:21:23', 1),
 (211, 0, 1, '2018-10-20 17:40:29', 1),
 (212, 0, 1, '2018-10-20 18:13:14', 1),
-(213, 0, 1, '2018-10-21 04:24:04', 1);
+(213, 0, 1, '2018-10-21 04:24:04', 1),
+(214, 0, 1, '2018-10-21 14:50:27', 1),
+(215, 0, 1, '2018-10-21 16:18:47', 1),
+(216, 0, 1, '2018-10-21 22:01:28', 1),
+(217, 0, 1, '2018-10-22 06:23:19', 1),
+(218, 0, 1, '2018-10-22 10:35:26', 1),
+(219, 0, 1, '2018-10-22 10:36:54', 1),
+(220, 0, 1, '2018-10-23 05:30:09', 1);
 
 -- --------------------------------------------------------
 
@@ -897,9 +951,9 @@ CREATE TABLE IF NOT EXISTS `patients` (
 --
 
 INSERT INTO `patients` (`patient_id`, `first_name`, `last_name`, `fname`, `gender`, `email`, `phone`, `address`, `social_id`, `id_type`, `birth_date`, `create_date`, `picture`, `memo`) VALUES
-(1, 'احمد', 'سمير', 'سامر', 1, 'dasd@dsd.com', '03929329', 'Damas', '11', 'Passport', 843177600, 1537459901, NULL, ''),
+(1, 'باسم', 'سمير', 'سامر', 1, 'dasd@dsd.com', '03929329', 'Damas', '11', 'Passport', 843177600, 1537459901, NULL, ''),
 (2, 'ماهر', 'محمود', 'سامر', 1, 'nager@sad.com', '0993623827', 'dimashq', '1', 'Tazkara', 662774400, 1537459901, NULL, ''),
-(3, 'سمير', 'محمود', 'جميل', 1, 'fsd@fdf.com', '094837462343', 'Damascus', '', 'Tazkara', 844128000, 1538429500, NULL, ''),
+(3, 'سمير', 'محمود', 'جميل', 1, 'fsd@fdf.com', '0948374643', 'Damascus', '', 'Tazkara', 844128000, 1538429500, NULL, ''),
 (4, 'احمد', 'رمضان', 'خالد', 1, 'm.shbat@gimal.com', '0988766544', 'جديدة عرطوز', '', 'Tazkara', 781315200, 1538743246, NULL, ''),
 (5, 'عمير', 'عامر', 'ماهر', 1, 'fsd@fdf.com', '0932323232', 'تضامن', '1', 'Passport', 497491200, 1538899410, NULL, 'ملخص '),
 (6, 'عمر', 'علي', 'عمير', 1, 'asdasdas@dsd.com', '0943349343', 'دمشق', '11', 'Passport', 497491200, 1538911427, NULL, ''),
@@ -940,8 +994,8 @@ CREATE TABLE IF NOT EXISTS `patient_doctor` (
 --
 
 INSERT INTO `patient_doctor` (`patient_doctor_id`, `patient_id`, `doctor_id`, `visit_date`, `status`) VALUES
-(1, 1, 6, 1539264088, 1),
-(2, 3, 6, 1538863028, 0),
+(1, 1, 6, 1540201590, 0),
+(2, 3, 6, 1540208709, 0),
 (3, 10, 4, 1539784979, 2),
 (4, 11, 5, 1539239966, 2),
 (5, 12, 5, 1539785002, 2),
@@ -1116,7 +1170,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `password_last_set`, `password_never_expires`, `remember_me`, `activation_code`, `active`, `forgot_code`, `forgot_generated`, `enabled`, `last_login`, `last_login_ip`) VALUES
-(1, 'admin', '$2a$08$glVINo.dWbH7voqyOzZ4YeyZOUTGSy3jxYXzNLrVPaWJj9ZLesoCy', '2018-09-19 18:00:15', 0, '6878a7fdad4a5aea216f1f66ae1becfac6a62285', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-21 07:24:04', 0),
+(1, 'admin', '$2a$08$glVINo.dWbH7voqyOzZ4YeyZOUTGSy3jxYXzNLrVPaWJj9ZLesoCy', '2018-09-19 18:00:15', 0, '6878a7fdad4a5aea216f1f66ae1becfac6a62285', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-23 08:30:09', 0),
 (2, 'ahmad', '$2a$08$30kc9L1nLO/sUVG2ExwUs..LqI5C/mMwoVzxPPWk0G1fTeS6T9jhW', '2018-09-19 18:01:15', 0, '6ac3c5aa0002289b0ba7bef6fc38c256869a86c8', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-02 17:38:48', 83919838),
 (3, 'mossab', '$2a$08$5JnDGg5bCUFvYYVsZSf24uUj/skPcMwferFknI8ar7bBFUDsUESrC', '2018-10-08 10:31:44', 0, '', '', 1, '', '0000-00-00 00:00:00', 1, '2018-10-08 10:32:04', 83923213);
 
@@ -1198,7 +1252,7 @@ CREATE TABLE IF NOT EXISTS `xray_patient` (
   `user_id_assign` int(11) NOT NULL,
   `assign_date` int(11) NOT NULL,
   `no_of_item` int(11) NOT NULL DEFAULT '1',
-  `total_cost` decimal(10,0) NOT NULL,
+  `total_cost` decimal(10,0) DEFAULT NULL,
   `user_id_discharge` int(11) DEFAULT NULL,
   `discharge_date` int(11) DEFAULT NULL,
   `memo` text,
@@ -1208,7 +1262,7 @@ CREATE TABLE IF NOT EXISTS `xray_patient` (
   KEY `patient_id` (`patient_id`),
   KEY `user_id_assign` (`user_id_assign`),
   KEY `user_id_discharge` (`user_id_discharge`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `xray_patient`
@@ -1227,7 +1281,14 @@ INSERT INTO `xray_patient` (`xray_patient_id`, `xray_id`, `patient_id`, `user_id
 (14, 1, 20, 1, 1540036941, 1, '2001', NULL, NULL, '', ''),
 (15, 1, 20, 1, 1540036980, 1, '2001', NULL, NULL, '', ''),
 (16, 1, 19, 1, 1540052781, 1, '2001', NULL, NULL, '', ''),
-(17, 1, 16, 1, 1540056659, 9, '18009', NULL, NULL, '', 'Ahmad');
+(17, 1, 16, 1, 1540056659, 9, '18009', NULL, NULL, '', 'Ahmad'),
+(18, 1, 20, 1, 1540149964, 1, '2001', NULL, NULL, '', 'بسيبسي'),
+(19, 1, 1, 1, 1540201139, 1, '2001', NULL, NULL, '', ''),
+(20, 1, 2, 1, 1540211059, 1, '2001', NULL, NULL, '', ''),
+(21, 1, 1, 1, 1540215184, 99, '198099', NULL, NULL, '', 'das'),
+(22, 1, 1, 1, 1540219047, 1, '2001', NULL, NULL, '', 'dasd'),
+(23, 1, 1, 1, 1540219062, 1, '2001', NULL, NULL, '', 'new'),
+(24, 1, 2, 1, 1540220039, 0, NULL, NULL, NULL, NULL, 'test xx ');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
