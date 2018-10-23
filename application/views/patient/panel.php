@@ -63,7 +63,7 @@
           <label><?php trP('Email')?>: </label> <?php echo html_escape($patient->email);?><br/>
 -->
         
-        <?php if($patient->address) echo '<label> '.tr('Address').':</label>'.html_escape($patient->address).'<br/>';if($patient->memo) echo '<label>Memo: </label>'.html_escape($patient->memo).'<br/>';echo '<div class="pull-right" title="Go to Patients">'.anchor('patient', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';?>
+        <?php if($patient->address) echo '<label> '.tr('Address').':</label>'.html_escape($patient->address).'<br/>';if($patient->memo) echo '<label>Memo: </label>'.html_escape($patient->memo).'<br/>'?>
           </div>
       </div>
     </div>

@@ -80,6 +80,8 @@
           <th>#</th>
           <th><?php trP('EnglishName')?></th>
           <th><?php trP('ArabicName')?></th>
+          <th><?php trP('Memo')?></th>
+          <th><?php trP('AssignDate')?></th>
           <th><?php trP('result')?></th>           
           <th></th>
       </tr>
@@ -94,6 +96,8 @@
         echo '<tr id="dpi'.$test->lab_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->lab->test_name_en.'</td>'.
             '<td>'.$this->lab->test_name_ar.'</td>'.
+            '<td>'.$this->lab->memo.'</td>'.
+            '<td>'.date("Y-m-d", $test->assign_date).'</td>'.
             '<td>'.$test->result.'</td>';            
 //        if(!($test->user_id_discharge&&$test->discharge_date))
 //        {
