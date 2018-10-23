@@ -92,8 +92,7 @@ class Dailyincome extends CI_Controller {
         if($session_check && $session_check[0]==$dailyincome_id)
         {
             unset($_POST['submit']);
-            $dailyincome=$this->input->post();
-            echo $dailyincome['doctor_id'];
+            $dailyincome=$this->input->post();            
             $this->load->model('dailyincomes');
              $data_to_store = array(
                     'doctor_id' => $this->input->post('doctor_id'),
@@ -227,6 +226,7 @@ class Dailyincome extends CI_Controller {
         $this->dailyincomes->save_dailyincome($data_to_store);
         unset($_POST);
         $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.tr('newDailyIncome').' '.tr('successfuly').'");</script>';
+//          $data['script'] = '<script>alert("'. html_escape($this->$dailyincome->name). ' has been registered successfuly.");</script>';
        // redirect('dailyincome');
       }else{
         $data['error']=validation_errors();

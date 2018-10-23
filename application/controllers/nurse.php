@@ -59,7 +59,7 @@ class Nurse extends CI_Controller {
   /**
    * Patient::edit()
    */
-  public function edit($id=0)
+  public function edit($nurse_id=0)
   {
     if (!$this->bitauth->logged_in())
     {
@@ -72,8 +72,7 @@ class Nurse extends CI_Controller {
       return;
     }
     $this->load->model('nurses');
-    $data['nurse'] = $this->nurses->get_one_nurse($id);
-    //print_r($data['nurse']);
+    $data['nurse'] = $this->nurses->get_one_nurse($nurse_id);
     if($this->input->post())
     {
       $this->form_validation->set_rules(array(
@@ -87,7 +86,7 @@ class Nurse extends CI_Controller {
         //check if patient form already loaded from this app -> should be checked with session
         $session_check=$this->session->userdata(current_url());
         $this->session->unset_userdata(current_url());
-        if($session_check && $session_check[0]==$id)
+        if($session_check && $session_check[0]==$nurse_id)
         {
             unset($_POST['submit']);
             $nurse=$this->input->post();
@@ -98,25 +97,27 @@ class Nurse extends CI_Controller {
                     'phone' => $this->input->post('phone'),
                     'address' => $this->input->post('address'),                    
                 );
-            $this->nurses->update_nurse($id,$data_to_store);
+            $this->nurses->update_nurse($nurse_id,$data_to_store);
             
             unset($_POST);
 //        $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.html_escape($this->nurses->name).' '.tr('successfuly').'");</script>';
-        $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '. html_escape($nurse['name']).' '.tr('successfuly').'");</script>';
+//        $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '. html_escape($nurse['name']).' '.tr('successfuly').'");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.tr('successfuly').'");</script>';
+            
  //       redirect('nurse');
         }else{
           //user may have sent the form to a url other than the original
-          $data['error'] = '<div class="alert alert-danger">Form URLLL Error</div>';
+          $data['error'] = '<div class="alert alert-danger">Form URL Error</div>';
         }
       }else{
         $data['error']=validation_errors();
       }
     }      
       
-    $this->session->set_userdata(current_url(),array($id));    
+    $this->session->set_userdata(current_url(),array($nurse_id));    
     $data['title'] = tr('EditNurse');    
     
-      $path='nurse/edit';
+    $path='nurse/edit';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
         $this->load->view($path, $data);
