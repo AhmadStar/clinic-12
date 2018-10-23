@@ -307,7 +307,7 @@ class Diagnose extends CI_Controller {
       $this->form_validation->set_rules(array(
         array( 'field' => 'diagnose_id', 'label' => 'Diag ID', 'rules' => 'required|is_numeric', ),
         array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'result', 'label' => 'Result', 'rules' => 'required|is_numeric', ),
+        array( 'field' => 'result', 'label' => 'Result', 'rules' => 'required', ),
 //        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
 //        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
 //        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),

@@ -86,6 +86,8 @@
           <th>#</th>
          <th><?php trP('EnglishName')?></th>
          <th><?php trP('ArabicName')?></th>
+         <th><?php trP('Memo')?></th>
+         <th><?php trP('AssignDate')?></th>
          <th><?php trP('Xresult')?></th>
          <th></th>
       </tr>
@@ -100,6 +102,8 @@
         echo '<tr id="dpi'.$xray->xray_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->xrays->xray_name_en.'</td>'.
             '<td>'.$this->xrays->xray_name_ar.'</td>'.
+            '<td>'.$this->xrays->memo.'</td>'.
+            '<td>'.date("Y-m-d", $xray->assign_date).'</td>'.
 //            '<td>'.$this->xrays->price.'</td>'.
 //            '<td>'.$xray->no_of_item.'</td>'.
 //            '<td>'.$xray->total_cost.'</td>';

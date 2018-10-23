@@ -94,8 +94,8 @@
       <tr>          
           <th><?php trP('Date')?></th>
           <th><?php trP('comment')?></th>
-          <th><?php trP('spressur')?></th>
-          <th><?php trP('ppressur')?></th>
+          <th><?php trP('pressur')?></th>
+<!--          <th><?php trP('ppressur')?></th>-->
           <th><?php trP('hrate')?></th>
           <th><?php trP('heate')?></th>  
           <th><?php trP('oxidation')?></th>  
@@ -110,12 +110,12 @@
             echo '<tr>'.
             '<td>'.date('M d',gmt_to_local($comment->create_date,'UP45')).'</td>'.            
             '<td>'.$comment->comment.'</td>'.               
-            '<td>'.$comment->spressur.'</td>'.                
-            '<td>'.$comment->ppressure.'</td>'.                
-            '<td>'.$comment->hrate.'</td>'.                
-            '<td>'.$comment->heate.'</td>'.                
-            '<td>'.$comment->oxidation.'</td>'.                
-            '<td>'.$comment->nbreathing.'</td>';                
+            '<td>'.$comment->spressur.'/'.$comment->ppressure.'</td>'.                
+//            '<td>'.$comment->ppressure.'</td>'.                
+            '<td>'.$comment->hrate.''.tr('minute').'</td>'.                
+            '<td>'.$comment->heate.''.tr('ْ').'</td>'.                
+            '<td>'.$comment->oxidation.'%'.'</td>'.                
+            '<td>'.$comment->nbreathing.''.tr('minute').'</td>';                
             echo '</tr>';            
       }      
     ?>

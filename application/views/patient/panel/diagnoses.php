@@ -80,6 +80,8 @@
           <th>#</th>
           <th><?php trP('EnglishName')?></th>
           <th><?php trP('ArabicName')?></th>          
+          <th><?php trP('AssignDescription')?></th>            
+          <th><?php trP('AssignDate')?></th>            
           <th><?php trP('DiagnoseResult')?></th>            
           <th></th>
       </tr>
@@ -94,6 +96,8 @@
         echo '<tr id="dpi'.$diagnose->diagnose_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->diagnoses->diagnose_name_en.'</td>'.
             '<td>'.$this->diagnoses->diagnose_name_ar.'</td>'.            
+            '<td>'.$this->diagnoses->description.'</td>'.            
+            '<td>'.date("Y-m-d", $diagnose->assign_date).'</td>'.
             '<td>'.$diagnose->result.'</td>';            
 //        if(!($diagnose->user_id_discharge&&$diagnose->discharge_date))
 //        {
