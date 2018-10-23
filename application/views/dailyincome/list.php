@@ -10,9 +10,9 @@ if($dailyincome)
   echo "<div>".$pagination."<div class='table-responsive'><table id='income_list_table' class='table table-bordered table-striped'><thead><tr>
                    
            <th>".tr('ID')."</th>
-           <th>".tr('DcotorName')."</th>
+           <th>".tr('DoctorName')."</th>
            <th>".tr('Date')."</th>           
-           <th>".tr('Amount')."</th>          
+           <th>".tr('amount')."</th>          
            <th></th>
        </tr></thead><tbody>";
   $start = ($page-1) * $per_page;

@@ -1,4 +1,5 @@
-<legend class="legend_colour"><?php echo "- ".trP('X-rays');?></legend>
+<legend class="legend_colour">- <?php echo trP('X-rays');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('xray/new_xray', tr('RegisterNewX-ray'),array('class'=>'btn btn-info'))?>
 </div>
@@ -54,3 +55,5 @@ if($xrays)
 <?php
 }
 ?>
+    
+</div>

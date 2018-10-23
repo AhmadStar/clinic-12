@@ -27,7 +27,7 @@
     </div>
     <div class="pull-right" title="Go to Schedules">
         
-        <?php echo anchor('nurse/nurseschedule/'.$schedule[0]->nurse_id, '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('nurse/nurseschedule/'.$schedule[0]->nurse_id, '<button class="btn btn-return"><span>العودة إلى قائمة ساعات عمل الممرض </span></button>');?>
     </div>
     <?php
 }else{

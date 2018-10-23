@@ -1,4 +1,4 @@
-<legend class="legend_colour" ><?php echo "- ".trP('ConsumeList');?></legend>
+<legend class="legend_colour" >- <?php echo trP('ConsumeList');?></legend>
 <div class="hidden-print">
 <?php echo anchor('consume/new_consume', tr('NewConsume'),array('class'=>'btn btn-info'))?>
 </div>
@@ -30,7 +30,7 @@ if($consumes)
         {
           $actions .= anchor('consume/edit/'.$_consume->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Consume'));
           $actions .= anchor('consume/delete/'.$_consume->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Consume'));
-          $actions .= anchor('consume/check/'.$_consume->id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Check Availability'));
+          
         }
         echo '<tr id="consume'.$_consume->id.'">'.
           

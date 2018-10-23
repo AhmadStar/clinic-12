@@ -1,6 +1,7 @@
 <legend class="legend_colour">-
     <?php echo trP('NursesList');?>
 </legend>
+<div>
 <div class="hidden-print">
     <?php echo anchor('nurse/new_nurse', tr('NewNurse'),array('class'=>'btn btn-info'))?>
 </div>
@@ -69,3 +70,4 @@ if($nurses)
  <?php
 }
 ?> 
+</div>

@@ -76,7 +76,7 @@ if($doctorincomes)
   ?>
 <div class="pull-right" title="Go to Doctors">
 
-    <?php echo anchor('doctor', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+    <?php echo anchor('doctor', '<button class="btn btn-return"><span>العودة إلى قائمة الأطباء </span></button>');?>
 </div>
 
 <script>

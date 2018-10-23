@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12"><input type="nimber" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder='<?php trP('IncentiveAmount')?>' title='Incentive Amount' required /></div>
+                        <div class="col-md-12"><input type="nimber" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder='<?php trP(' IncentiveAmount')?>' title='Incentive Amount' required /></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -26,6 +26,10 @@
             </div>
         </div>
         <?php echo form_close(); ?>
+    </div>
+    <div class="pull-right" title="Go to Nurses">
+
+        <?php echo anchor('nurse', '<button class="btn btn-return"><span>العودة إلى قائمة الممرضين </span></button>');?>
     </div>
 </div>
 <script>

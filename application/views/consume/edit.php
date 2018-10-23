@@ -30,7 +30,7 @@
     </div>
     <div class="pull-right" title="Go to Concumes">
 
-        <?php echo anchor('consume', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('consume', '<button class="btn btn-return"><span>العودة إلى قائمة المصاريف </span></button>');?>
     </div>
     <?php
 }else{
