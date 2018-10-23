@@ -89,10 +89,10 @@ class Patients extends MY_Model {
      */
     public $memo;
     
-    var $table = 'patients';
+    
 	var $column_order = array(null, 'patient_id','first_name','last_name','fname','gender','email','phone','address','social_id','id_type','birth_date','create_date','picture','picture'); //set column field database for datatable orderable
     var $column_search = array( 'patient_id','first_name','last_name','fname','gender','email','phone','address','social_id','id_type','birth_date','create_date','picture','picture'); //set column field database for datatable orderable
-    
+//    var $table = 'patients';
 //	var $column_search = array('id','name','address','phone','created_date'); //set column field database for datatable searchable 
 	var $order = array('patient_id' => 'asc'); // default order 
 
@@ -131,7 +131,7 @@ class Patients extends MY_Model {
 			$this->db->like('creat_date', $this->input->post('creat_date'));
 		}
 
-		$this->db->from($this->table);
+		$this->db->from('patients');
 		$i = 0;
 	
 		foreach ($this->column_search as $item) // loop column 
@@ -184,7 +184,7 @@ class Patients extends MY_Model {
 
 	public function count_all()
 	{
-		$this->db->from($this->table);
+		$this->db->from('patients');
 		return $this->db->count_all_results();
 	}
 }

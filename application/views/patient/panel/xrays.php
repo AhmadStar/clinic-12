@@ -74,8 +74,8 @@
     echo form_input('patient_id',$patient->patient_id,'id="patient_id"');
     echo form_input('no_of_item','','id="xray_no_of_item"');
     echo form_input('xresult','','id="xresult"');
-    echo form_input('total_cost','','id="xray_total_cost"');
-    echo form_input('memo','','id="memo"');
+//    echo form_input('total_cost','','id="xray_total_cost"');
+//    echo form_input('memo','','id="memo"');
     echo form_close().'</div>';
   }?>
     <div id='xrayError'></div>
@@ -87,11 +87,6 @@
          <th><?php trP('EnglishName')?></th>
          <th><?php trP('ArabicName')?></th>
          <th><?php trP('Xresult')?></th>
-<!--
-         <th><?php trP('UnitPrice')?></th>
-         <th><?php trP('Quantity')?></th>
-         <th><?php trP('TotalCost')?></th>  
--->
          <th></th>
       </tr>
     </thead>
@@ -109,28 +104,28 @@
 //            '<td>'.$xray->no_of_item.'</td>'.
 //            '<td>'.$xray->total_cost.'</td>';
             '<td>'.$xray->xresult.'</td>';
-        if(!($xray->user_id_discharge&&$xray->discharge_date))
-        {
-            $unpaid+=$xray->total_cost;
-            echo '<td class="actions">'.anchor('#', tr('Delete'),array('dpi'=>$xray->xray_patient_id,'di'=>$xray->xray_id,'pi'=>$xray->patient_id,'action'=>'delete','tc'=>$xray->total_cost));
-            echo '  ';
-            if($this->bitauth->has_role('receptionist'))
-            { 
-                echo anchor('#', tr('Pay'),array('dpi'=>$xray->xray_patient_id,'di'=>$xray->xray_id,'pi'=>$xray->patient_id,'action'=>'pay','tc'=>$xray->total_cost));
-            }else{
-                echo '</td>';
-            }
-            
-        }else{
-            $paid+=$xray->total_cost;
-            echo '<td class="actions">'.anchor('xray/details/'.$xray->xray_patient_id, 'Details ',array('action'=>'details'));
-            echo '</td>';
-        }
+//        if(!($xray->user_id_discharge&&$xray->discharge_date))
+//        {
+//            $unpaid+=$xray->total_cost;
+//            echo '<td class="actions">'.anchor('#', tr('Delete'),array('dpi'=>$xray->xray_patient_id,'di'=>$xray->xray_id,'pi'=>$xray->patient_id,'action'=>'delete','tc'=>$xray->total_cost));
+//            echo '  ';
+//            if($this->bitauth->has_role('receptionist'))
+//            { 
+//                echo anchor('#', tr('Pay'),array('dpi'=>$xray->xray_patient_id,'di'=>$xray->xray_id,'pi'=>$xray->patient_id,'action'=>'pay','tc'=>$xray->total_cost));
+//            }else{
+//                echo '</td>';
+//            }
+//            
+//        }else{
+//            $paid+=$xray->total_cost;
+//            echo '<td class="actions">'.anchor('xray/details/'.$xray->xray_patient_id, 'Details ',array('action'=>'details'));
+//            echo '</td>';
+//        }
         echo '</tr>';
       }
-      echo '<tr class="xray_paid text-success '.($paid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Paid').':</td><td id="xray_paid">'.$paid.'</td><td></td></tr>';
-      echo '<tr class="xray_unpaid text-danger '.($unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Unpaid').':</td><td id="xray_unpaid">'.$unpaid.'</td><td></td></tr>';
-      echo '<tr class="xray_tc text-info '.($paid&&$unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Total').':</td><td id="xray_tc">'.($paid+$unpaid).'</td><td></td></tr>';
+//      echo '<tr class="xray_paid text-success '.($paid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Paid').':</td><td id="xray_paid">'.$paid.'</td><td></td></tr>';
+//      echo '<tr class="xray_unpaid text-danger '.($unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Unpaid').':</td><td id="xray_unpaid">'.$unpaid.'</td><td></td></tr>';
+//      echo '<tr class="xray_tc text-info '.($paid&&$unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Total').':</td><td id="xray_tc">'.($paid+$unpaid).'</td><td></td></tr>';
     }?>
     </tbody></table></div>
 </div>

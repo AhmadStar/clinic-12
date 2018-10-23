@@ -83,6 +83,8 @@
     <script src="<?php echo base_url() ?>content/js/bootstrap-datepicker.js"></script>
     <script src="<?php echo base_url() ?>content/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url() ?>content/js/dataTables.bootstrap.min.js"></script>
+    
+    <script src="<?php echo base_url() ?>content/js/bootstrap-datepicker.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

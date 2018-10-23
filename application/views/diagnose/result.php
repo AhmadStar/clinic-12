@@ -5,7 +5,6 @@ if($diagnoses)
            <th>ID</th>
           <th>".tr('EnglishName')."</th>
           <th>".tr('ArabicName')."</th>          
-          <th>".tr('Quantity')."</th>
           <th>".tr('result')."</th>
            <th></th>
        </tr></thead><tbody>";
@@ -16,8 +15,9 @@ if($diagnoses)
       '<td>'.html_escape($diag->id).'</td>'.
       '<td>'.html_escape($diag->diagnose_name_en).'</td>'.
       '<td>'.html_escape($diag->diagnose_name_ar).'</td>'.      
-      '<td><input type="number" name="no_of_item" value="1"/></td>'.
-      '<td><input type="text" name="result"/></td>'.
+//      '<td><input type="number" name="no_of_item" value="1"/></td>'.
+      '<td><input type="text" name="diagnose_result" value="1"/></td>'.
+//      '<td><input type="text" name="diagnose_memo" value="1"/></td>'.
 //      '<td><textarea name="result" id="result" value="result" class="form-control" rows="5">dasdas</textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
@@ -28,10 +28,11 @@ if($diagnoses)
       $('#diagnoseResult a').on('click',function(e){
         e.preventDefault();
         var tr = $(this).parent().parent();
-        $('#id').val(tr.find('td:first').text());
-        $('#diagnose_no_of_item').val(tr.find('input[name="no_of_item"]').val());
-        $('#result').val(tr.find('input[name="result"]').val());          
-        $('#diagnose_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
+        $('#diagnose_id').val(tr.find('td:first').text());
+//        $('#diagnose_no_of_item').val(tr.find('input[name="no_of_item"]').val());
+        $('#diagnose_result').val(tr.find('input[name="diagnose_result"]').val());          
+//        $('#diagnose_memo').val(tr.find('input[name="diagnose_memo"]').val());          
+//        $('#diagnose_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
         
         $.post($('#addDiagnoseForm').attr('action'),$('#addDiagnoseForm').serialize(),function(data){
           if(data!=''){

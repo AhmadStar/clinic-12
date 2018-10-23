@@ -64,12 +64,12 @@
     //echo anchor('diagnose/search',tr('AssignADiagnose'),array('id'=>'addDiagnose'));
     //hidden form to inject info to
     echo "<div class='hidden'>".form_open('diagnose/assign',array('id'=>'addDiagnoseForm'));
-    echo form_input('id','','id="id"');
+    echo form_input('diagnose_id','','id="diagnose_id"');
     echo form_input('patient_id',$patient->patient_id,'id="patient_id"');
-    echo form_input('no_of_item','','id="diagnose_no_of_item"');
-    echo form_input('result','','id="result"');
-    echo form_input('total_cost','','id="diagnose_total_cost"');
-    echo form_input('memo','','id="memo"');
+//    echo form_input('no_of_item','','id="diagnose_no_of_item"');
+    echo form_input('result','','id="diagnose_result"');
+//    echo form_input('total_cost','','id="diagnose_total_cost"');
+//    echo form_input('memo','','id="diagnose_memo"');
     echo form_close().'</div>';
   }?>
     <div id='diagnoseError'></div>
@@ -79,11 +79,8 @@
       <tr>
           <th>#</th>
           <th><?php trP('EnglishName')?></th>
-          <th><?php trP('ArabicName')?></th>
-<!--          <th><?php trP('UnitPrice')?></th>-->
-<!--          <th><?php trP('Quantity')?></th>-->
-          <th><?php trP('result')?></th>
-          <th><?php trP('TotalCost')?></th>  
+          <th><?php trP('ArabicName')?></th>          
+          <th><?php trP('DiagnoseResult')?></th>            
           <th></th>
       </tr>
     </thead>
@@ -96,32 +93,29 @@
         $this->diagnoses->load($diagnose->diagnose_id);
         echo '<tr id="dpi'.$diagnose->diagnose_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->diagnoses->diagnose_name_en.'</td>'.
-            '<td>'.$this->diagnoses->diagnose_name_ar.'</td>'.
-//            '<td>'.$this->diagnoses->price.'</td>'.
-//            '<td>'.$diagnose->no_of_item.'</td>'.
-            '<td>'.$diagnose->result.'</td>'.
-            '<td>'.$diagnose->total_cost.'</td>';
-        if(!($diagnose->user_id_discharge&&$diagnose->discharge_date))
-        {
-            $unpaid+=$diagnose->total_cost;
-            echo '<td class="actions">'.anchor('#', tr('Delete'),array('dpi'=>$diagnose->diagnose_patient_id,'di'=>$diagnose->diagnose_id,'pi'=>$diagnose->patient_id,'action'=>'delete',/*'onclick'=>'drugItemsAction',*/'tc'=>$diagnose->total_cost));
-            echo '  ';
-            if($this->bitauth->has_role('receptionist'))
-            { 
-                echo anchor('#', tr('Pay'),array('dpi'=>$diagnose->diagnose_patient_id,'di'=>$diagnose->diagnose_id,'pi'=>$diagnose->patient_id,'action'=>'pay',/*'onclick'=>'drugItemsAction',*/'tc'=>$diagnose->total_cost));
-            }else{
-                echo '</td>';
-            }
-            
-        }else{
-            $paid+=$diagnose->total_cost;
-            echo '<td></td>';
-        }
+            '<td>'.$this->diagnoses->diagnose_name_ar.'</td>'.            
+            '<td>'.$diagnose->result.'</td>';            
+//        if(!($diagnose->user_id_discharge&&$diagnose->discharge_date))
+//        {
+//            $unpaid+=$diagnose->total_cost;
+//            echo '<td class="actions">'.anchor('#', tr('Delete'),array('dpi'=>$diagnose->diagnose_patient_id,'di'=>$diagnose->diagnose_id,'pi'=>$diagnose->patient_id,'action'=>'delete',/*'onclick'=>'drugItemsAction',*/'tc'=>$diagnose->total_cost));
+//            echo '  ';
+//            if($this->bitauth->has_role('receptionist'))
+//            { 
+////                echo anchor('#', tr('Pay'),array('dpi'=>$diagnose->diagnose_patient_id,'di'=>$diagnose->diagnose_id,'pi'=>$diagnose->patient_id,'action'=>'pay',/*'onclick'=>'drugItemsAction',*/'tc'=>$diagnose->total_cost));
+//            }else{
+//                echo '</td>';
+//            }
+//            
+//        }else{
+//            $paid+=$diagnose->total_cost;
+//            echo '<td></td>';
+//        }
         echo '</tr>';
       }
-      echo '<tr class="diagnose_paid text-success '.($paid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Paid').':</td><td id="diagnose_paid">'.$paid.'</td><td></td></tr>';
-      echo '<tr class="diagnose_unpaid text-danger '.($unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Unpaid').':</td><td id="diagnose_unpaid">'.$unpaid.'</td><td></td></tr>';
-      echo '<tr class="diagnose_tc text-info '.($paid&&$unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Total').':</td><td id="diagnose_tc">'.($paid+$unpaid).'</td><td></td></tr>';
+//      echo '<tr class="diagnose_paid text-success '.($paid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Paid').':</td><td id="diagnose_paid">'.$paid.'</td><td></td></tr>';
+//      echo '<tr class="diagnose_unpaid text-danger '.($unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Unpaid').':</td><td id="diagnose_unpaid">'.$unpaid.'</td><td></td></tr>';
+//      echo '<tr class="diagnose_tc text-info '.($paid&&$unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Total').':</td><td id="diagnose_tc">'.($paid+$unpaid).'</td><td></td></tr>';
     }?>
     </tbody></table></div>
 </div>

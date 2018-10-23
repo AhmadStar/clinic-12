@@ -305,25 +305,29 @@ class Diagnose extends CI_Controller {
     if($this->input->post())
     {
       $this->form_validation->set_rules(array(
-        array( 'field' => 'id', 'label' => 'Diag ID', 'rules' => 'required|is_numeric', ),
+        array( 'field' => 'diagnose_id', 'label' => 'Diag ID', 'rules' => 'required|is_numeric', ),
         array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
+        array( 'field' => 'result', 'label' => 'Result', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
       ));
       if($this->form_validation->run() == TRUE)
       {
         $this->load->model('diagnose_patient');
         unset($_POST['submit']);
         foreach ($this->input->post() as $key => $value)
-          $this->diagnose_patient->$key = $value;
+            echo $this->diagnose_patient->$key = $value;
+//           print_r($this->input->post());
           
-        print_r($this->diagnose_patient);  
-//        $this->diagnose_patient->user_id_assign=$this->session->userdata('ba_user_id');
-//        $this->diagnose_patient->assign_date=now();
-//        $this->diagnose_patient->save();
-//        $this->load->model('diagnoses');
-//        $this->diagnoses->load($this->diagnose_patient->diagnose_id);
+          
+//        print_r($this->diagnose_patient);  
+        $this->diagnose_patient->user_id_assign=$this->session->userdata('ba_user_id');
+        $this->diagnose_patient->assign_date=now();
+        print_r($this->diagnose_patient);
+        $this->diagnose_patient->save();
+        $this->load->model('diagnoses');
+        $this->diagnoses->load($this->diagnose_patient->diagnose_id);
         
         echo '<tr id="dpi'.$this->diagnose_patient->diagnose_patient_id.'"><td class="id"></td>'.
             '<td>'.$this->diagnoses->diagnose_name_en.'</td>'.
@@ -331,7 +335,7 @@ class Diagnose extends CI_Controller {
 //            '<td>'.$this->diagnoses->price.'</td>'.
             '<td>'.$this->diagnose_patient->no_of_item.'</td>'.
             '<td>'.$this->diagnose_patient->total_cost.'</td>'.
-            '<td class="actions">'.anchor('#', 'Delete ',array('dpi'=>$this->diagnose_patient->diagnose_patient_id,'di'=>$this->diagnose_patient->diagnose_id,'pi'=>$this->lab_patient->patient_id,'tc'=>$this->lab_patient->total_cost,'action'=>'delete'));
+            '<td class="actions">'.anchor('#', 'Delete ',array('dpi'=>$this->diagnose_patient->diagnose_patient_id,'di'=>$this->diagnose_patient->diagnose_id,'pi'=>$this->diagnose_patient->patient_id,'tc'=>$this->diagnose_patient->total_cost,'action'=>'delete'));
             if($this->bitauth->has_role('receptionist')) echo anchor('#', 'Pay ',array('dpi'=>$this->diagnose_patient->diagnose_patient_id,'di'=>$this->diagnose_patient->diagnose_id,'pi'=>$this->diagnose_patient->patient_id,'tc'=>$this->diagnose_patient->total_cost,'action'=>'pay'));
             echo '</td></tr>';
         return;
