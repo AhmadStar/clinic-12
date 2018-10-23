@@ -40,7 +40,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#date').datepicker({
-            autoclose: true
+            autoclose: true,
+            language: "ar"
         });
     });
 

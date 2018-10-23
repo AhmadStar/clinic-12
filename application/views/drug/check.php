@@ -7,10 +7,10 @@
           <h4 class="modal-title" id="myModalLabel">Availability Check</h4>
         </div>
         <div class="modal-body">
-          You have <?php echo $count;?> available in the stock.<br/>
-          Purchased: <?php echo $all_drugs_count;?><br/>
-          Returned: <?php echo $returned_drugs_count;?><br/>
-          Sold: <?php echo $sold_drugs_count;?><br/>
+          <?php echo tr('Youhave').' '.$count.' '.tr('availableinthestock')?>.<br/>
+          <?php echo tr('Purchased').': '.$all_drugs_count?><br/>
+          <?php echo tr('Returned').': '.$returned_drugs_count?><br/>
+          <?php echo tr('Sold').': '.$sold_drugs_count?><br/>
         </div>
       </div>
     </div>

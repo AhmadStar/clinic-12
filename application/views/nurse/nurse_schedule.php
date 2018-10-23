@@ -1,4 +1,4 @@
-<legend class="legend_colour"><?php echo "- ".trP('NurseSceduleList');?></legend>
+<legend class="legend_colour">- <?php echo trP('NurseSceduleList');?></legend>
 <?php //pagination should be added if have time.
 if($nurseschedules)
 {
