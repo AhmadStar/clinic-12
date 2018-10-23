@@ -53,7 +53,7 @@
         </ul>
       </li>
     <!--      <li id="navbarGoTo" style="position: relative; top: 5px"><?php echo "<input type='number' placeholder='Patient ID...' id='goToPatient' style='margin-top:10px' href='".  site_url('patient/panel')."'/>";?></li>-->
-      <li><?php echo anchor('patient','<i class="material-icons materialsidebar md-48">hotel</i>'.tr('SearchForPatient'));?></li>
+      <li><?php echo anchor('patient','<i class="fa fa-address-book icons" style="font-size:24px"></i>'.tr('SearchForPatient'));?></li>
     </ul>
   </div>
   <?php if(isset($navActiveId)){?>

@@ -1,4 +1,5 @@
-<legend class="legend_colour"><?php echo "- ".trP('DiagnoseList');?></legend>
+<legend class="legend_colour">- <?php echo trP('DiagnoseList');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('diagnose/new_diagnose', tr('NewDiagnose'),array('class'=>'btn btn-info'))?>
 </div>
@@ -60,3 +61,4 @@ if($diagnoses)
 <?php
 }
 ?> 
+</div>

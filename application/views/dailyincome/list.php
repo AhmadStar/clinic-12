@@ -1,4 +1,5 @@
 <legend class="legend_colour">- <?php echo trP('DailyIncomeList');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('dailyincome/new_dailyincome', tr('NewdailyIncome'),array('class'=>'btn btn-info'))?>
 </div>
@@ -72,3 +73,5 @@ if($dailyincome)
 }
 
 ?>
+    
+</div>

@@ -34,9 +34,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Incomes">
+    <div class="pull-right" title="Go to Nurses">
 
-        <?php echo anchor('income', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('income', '<button class="btn btn-return"><span>العودة إلى قائمة المعاينات </span></button>');?>
     </div>
     <?php
 }else{

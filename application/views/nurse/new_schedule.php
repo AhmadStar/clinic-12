@@ -3,7 +3,7 @@
         <?php echo form_open('nurse/new_schedule',array("id"=>"newNurseScheduleForm", "role"=>"form",)); ?>
         <fieldset>
             <legend>-
-                <?php trP('NurseInformation')?>:</legend>
+                <?php trP('AddNurseSceduleList')?>:</legend>
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
@@ -13,17 +13,17 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="input-group date col-md-6">
+                        <div class="input-group date col-md-6" id = "datepicker">
                             <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="work_date" id="work_date" value="<?php echo $this->input->post('work_date');?>" class="form-control" placeholder="انقر لتدخل التاريخ" title='work_date' required />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-group">
-                        <div class="col-md-6"><input type="Number" name='work_hours' id='work_hours' value="<?php echo $this->input->post('work_hours');?>" class='form-control' placeholder='<?php trP(' WorkHours')?>' title='work_hours' required /></div>
+                        <div class="col-md-6"><input type="Number" name='work_hours' id='work_hours' value="<?php echo $this->input->post('work_hours');?>" class='form-control' placeholder='<?php trP('WorkHours')?>' title='work_hours' required /></div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-6"><input type="Number" name='hour_price' id='hour_price' value="<?php echo $this->input->post('hour_price');?>" class='form-control' placeholder='<?php trP(' HourPrice')?>' title='hour_price' required /></div>
+                        <div class="col-md-6"><input type="Number" name='hour_price' id='hour_price' value="<?php echo $this->input->post('hour_price');?>" class='form-control' placeholder='<?php trP('HourPrice')?>' title='hour_price' required /></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -43,10 +43,11 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#date').datepicker({
-            autoclose: true
+        $('#work_date').datepicker({
+            autoclose: true,
+            language: "ar"
         });
+        
     });
 
 </script>
-

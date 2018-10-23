@@ -9,17 +9,17 @@
                 <div class="form-group">
 
                     <div class="form-group">
-                        <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo $this->input->post('name');?>" class='form-control' placeholder='<?php trP(' Name')?>' title='Name' required /></div>
+                        <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo $this->input->post('name');?>" class='form-control' placeholder='<?php trP('Name')?>' title='Name' required /></div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-6"><input type="number" name='age' id='age' value="<?php echo $this->input->post('age');?>" class='form-control' placeholder='<?php trP(' Age')?>' title='Age' required /></div>
+                        <div class="col-md-6"><input type="number" name='age' id='age' value="<?php echo $this->input->post('age');?>" class='form-control' placeholder='<?php trP('Age')?>' title='Age' required /></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="phone" name='phone' id='phone' value="<?php echo $this->input->post('phone');?>" class='form-control' placeholder='<?php trP(' Phone')?>' title='Phone' required /></div>
+                    <div class="col-md-6"><input type="phone" name='phone' id='phone' value="<?php echo $this->input->post('phone');?>" class='form-control' placeholder='<?php trP('Phone')?>' title='Phone' required /></div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='address' id='address' value="<?php echo $this->input->post('address');?>" class='form-control' placeholder='<?php trP(' Address')?>' title='Address' required /></div>
+                    <div class="col-md-6"><input type="text" name='address' id='address' value="<?php echo $this->input->post('address');?>" class='form-control' placeholder='<?php trP('Address')?>' title='Address' required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
