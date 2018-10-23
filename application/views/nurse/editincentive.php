@@ -26,7 +26,7 @@
     </div>
     <div class="pull-right" title="Go to Nurses">
         
-        <?php echo anchor('nurse/nurseincentive/'.$incentive[0]->nurse_id, '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('nurse/nurseincentive/'.$incentive[0]->nurse_id, '<button class="btn btn-return"><span>العودة إلى قائمة حوافز الممرض </span></button>');?>
     </div>
     <?php
 }else{

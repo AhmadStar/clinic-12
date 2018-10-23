@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <a href="#collapseDiagnose" data-parent="#accordion" data-toggle="collapse">
-        <span class="medical-icon-i-medical-library icons" aria-hidden="true" style=" font-size: 25px; position: relative; top: 2px;"></span> 
+        <link rel="icon" href="<?php echo base_url() ?>content/img/diagnosesIcon.png" type="image/png" sizes="16x16">
         <?php trP('Diagnoses');?>
       </a>
     </h4>

@@ -211,6 +211,8 @@ class Dailyincome extends CI_Controller {
         array( 'field' => 'date', 'label' => 'date', 'rules' => 'required|trim|has_no_schar', ),
         array( 'field' => 'amount', 'label' => 'amount', 'rules' => 'required|trim|has_no_schar', ),
       ));
+        
+        
       if($this->form_validation->run() == TRUE)
       {
         

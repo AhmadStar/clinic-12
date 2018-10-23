@@ -36,7 +36,7 @@
     </div>
     <div class="pull-right" title="Go to Drugs">
 
-        <?php echo anchor('drug', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('drug', '<button class="btn btn-return"><span>العودة إلى قائمة الأدوية </span></button>');?>
     </div>
     <?php
 }else{

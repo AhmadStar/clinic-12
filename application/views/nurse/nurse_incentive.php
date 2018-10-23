@@ -39,7 +39,7 @@ if($nurseincentives)
   ?>
 <div class="pull-right" title="Go to Nurses">
 
-    <?php echo anchor('nurse', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+    <?php echo anchor('nurse', '<button class="btn btn-return"><span>العودة إلى قائمة الممرضين </span></button>');?>
 </div>
 
 <script>

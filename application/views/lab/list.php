@@ -1,4 +1,5 @@
-<legend class="legend_colour"><?php echo "- ".trP('Laboratory');?></legend>
+<legend class="legend_colour">- <?php echo trP('Laboratory');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('test/new_test', tr('RegisterNewTest'),array('class'=>'btn btn-info'))?>
 </div>
@@ -54,3 +55,5 @@ if($tests)
 <?php
 }
 ?>
+    
+</div>

@@ -47,7 +47,7 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend>- <?php trp('Memo')?>:</legend>
+        <legend>+ <?php trp('Memo')?>:</legend>
         <div style="display: none;">
           <div class="form-group">
             <div class="col-md-12"><textarea name="memo" id="memo" class="form-control" rows="10"><?php echo $this->input->post('memo');?></textarea>

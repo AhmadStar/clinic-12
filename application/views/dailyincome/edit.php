@@ -30,7 +30,7 @@
     </div>
     <div class="pull-right" title="Go to Daily Incoms">
 
-        <?php echo anchor('dailyincome', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('dailyincome', '<button class="btn btn-return"><span>العودة إلى قائمة الموارد </span></button>');?>
     </div>
     <?php
 }else{

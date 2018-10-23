@@ -232,3 +232,40 @@ th{
 .panel-default {
     border-radius: 10px;
 }
+
+.btn-return {
+  border-radius: 4px;
+  background-color: #61c0dbe0;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 6px 12px;
+  width: -webkit-fill-available;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn-return span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.btn-return span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+}
+
+.btn-return:hover span {
+  padding-right: 10px;
+  color: #f5f5f5
+}
+
+.btn-return:hover span:after {
+  opacity: 1;
+  right: 0;
+}

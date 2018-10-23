@@ -32,7 +32,7 @@
     </div>
     <div class="pull-right" title="Go to Diagnose">
 
-        <?php echo anchor('diagnose', '<span class="glyphicon glyphicon-arrow-left"></span>');?>
+        <?php echo anchor('diagnose', '<button class="btn btn-return"><span>العودة إلى قائمة التشاخيص </span></button>');?>
     </div>
     <?php
 }else{

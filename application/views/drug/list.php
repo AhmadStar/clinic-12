@@ -1,4 +1,5 @@
-<legend class="legend_colour"><?php echo "- ".trP('Drugs');?></legend>
+<legend class="legend_colour">- <?php echo trP('Drugs');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('drug/new_drug', tr('RegisterNewDrug'),array('class'=>'btn btn-info'))?>
 </div>
@@ -59,8 +60,9 @@ if($drugs)
         });
     });
 </script>
-<!--
+
 <?php
 }
-echo '<div class="hidden-print">'.anchor('drug/new_drug', tr('RegisterNewDrug'),array('class'=>'hidden-print')).'</div>';
-?>-->
+
+?>
+</div>

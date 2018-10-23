@@ -1,4 +1,5 @@
-<legend class="legend_colour"><?php echo "- ".trP('IncomeList');?></legend>
+<legend class="legend_colour">- <?php echo trP('IncomeList');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('income/new_income', tr('NewIncomes'),array('class'=>'btn btn-info'))?>
 </div>
@@ -74,7 +75,9 @@ if($incomes)
         });
     });
 </script>
-<!-- <?php
+<?php
 }
-echo '<div class="col-md-6">'.anchor('income/new_income', tr('NewIncomes'),array('class'=>'form-control btn btn-info')).'</div>';
-?> -->
+
+?> 
+</div>
+    

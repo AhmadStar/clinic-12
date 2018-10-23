@@ -1,4 +1,5 @@
-<legend class="legend_colour"><?php echo "- ".trP('UsersList');?></legend>
+<legend class="legend_colour">- <?php echo trP('UsersList');?></legend>
+<div>
 <div class="hidden-print">
 <?php echo anchor('account/signup', tr('RegisterUser'),array('class'=>'btn btn-info'))?>
 </div>
@@ -49,3 +50,4 @@ if($this->bitauth->is_admin())
 //  echo '<div>'.anchor('account/signup', tr('RegisterUser'),array('class'=>'hidden-print')).'</div>';
 }
 ?>
+</div>

@@ -4,10 +4,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?> <?php echo $dailyincome[0]['id'];?></h4>
+          <h4 class="modal-title" id="myModalLabel"><?php trP('Delete')?> <?php echo $dailyincome[0]['id'];?></h4>
         </div>
         <div class="modal-body">
-          <?php trP('uwdelete')?><strong><?php echo $dailyincome[0]['doctor_id'];?></strong>.<br/><?php trP('Areyousure')?>
+          <?php trP('uwdelete')?><strong><?php echo trP('DailyIncome');?></strong>.<br/><?php trP('Areyousure')?>
         </div>
         <div class="modal-footer">
           <?php echo form_open('dailyincome/delete/'.$dailyincome[0]['id']);
