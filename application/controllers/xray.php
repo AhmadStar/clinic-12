@@ -248,9 +248,9 @@ class Xray extends CI_Controller {
       $this->form_validation->set_rules(array(
         array( 'field' => 'xray_id', 'label' => 'Xray ID', 'rules' => 'required|is_numeric', ),
         array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
+//        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
       ));
       if($this->form_validation->run() == TRUE)
       {
@@ -258,6 +258,8 @@ class Xray extends CI_Controller {
         unset($_POST['submit']);
         foreach ($this->input->post() as $key => $value)
           $this->xray_patient->$key = $value;
+          
+        print_r($this->input->post());  
         $this->xray_patient->user_id_assign=$this->session->userdata('ba_user_id');
         $this->xray_patient->assign_date=now();
         $this->xray_patient->save();

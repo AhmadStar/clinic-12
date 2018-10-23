@@ -66,10 +66,10 @@
     echo "<div class='hidden'>".form_open('test/assign',array('id'=>'addTestForm'));
     echo form_input('test_id','','id="test_id"');
     echo form_input('patient_id',$patient->patient_id,'id="patient_id"');
-    echo form_input('no_of_item','','id="test_no_of_item"');
+//    echo form_input('no_of_item','','id="test_no_of_item"');
     echo form_input('result','','id="result"');
-    echo form_input('total_cost','','id="test_total_cost"');
-    echo form_input('memo','','id="memo"');
+//    echo form_input('total_cost','','id="test_total_cost"');
+//    echo form_input('memo','','id="memo"');
     echo form_close().'</div>';
   }?>
     <div id='testError'></div>
@@ -80,10 +80,7 @@
           <th>#</th>
           <th><?php trP('EnglishName')?></th>
           <th><?php trP('ArabicName')?></th>
-<!--          <th><?php trP('UnitPrice')?></th>-->
-<!--          <th><?php trP('Quantity')?></th>-->
-          <th><?php trP('result')?></th>
-          <th><?php trP('TotalCost')?></th>  
+          <th><?php trP('result')?></th>           
           <th></th>
       </tr>
     </thead>
@@ -97,31 +94,28 @@
         echo '<tr id="dpi'.$test->lab_patient_id.'"><td class="id">'.++$i.'</td>'.
             '<td>'.$this->lab->test_name_en.'</td>'.
             '<td>'.$this->lab->test_name_ar.'</td>'.
-//            '<td>'.$this->lab->price.'</td>'.
-//            '<td>'.$test->no_of_item.'</td>'.
-            '<td>'.$test->result.'</td>'.
-            '<td>'.$test->total_cost.'</td>';
-        if(!($test->user_id_discharge&&$test->discharge_date))
-        {
-            $unpaid+=$test->total_cost;
-            echo '<td class="actions">'.anchor('#', tr('Delete'),array('dpi'=>$test->lab_patient_id,'di'=>$test->test_id,'pi'=>$test->patient_id,'action'=>'delete',/*'onclick'=>'drugItemsAction',*/'tc'=>$test->total_cost));
-            echo '  ';
-            if($this->bitauth->has_role('receptionist'))
-            { 
-                echo anchor('#', tr('Pay'),array('dpi'=>$test->lab_patient_id,'di'=>$test->test_id,'pi'=>$test->patient_id,'action'=>'pay',/*'onclick'=>'drugItemsAction',*/'tc'=>$test->total_cost));
-            }else{
-                echo '</td>';
-            }
-            
-        }else{
-            $paid+=$test->total_cost;
-            echo '<td></td>';
-        }
+            '<td>'.$test->result.'</td>';            
+//        if(!($test->user_id_discharge&&$test->discharge_date))
+//        {
+//            $unpaid+=$test->total_cost;
+//            echo '<td class="actions">'.anchor('#', tr('Delete'),array('dpi'=>$test->lab_patient_id,'di'=>$test->test_id,'pi'=>$test->patient_id,'action'=>'delete',/*'onclick'=>'drugItemsAction',*/'tc'=>$test->total_cost));
+//            echo '  ';
+//            if($this->bitauth->has_role('receptionist'))
+//            { 
+//                echo anchor('#', tr('Pay'),array('dpi'=>$test->lab_patient_id,'di'=>$test->test_id,'pi'=>$test->patient_id,'action'=>'pay',/*'onclick'=>'drugItemsAction',*/'tc'=>$test->total_cost));
+//            }else{
+//                echo '</td>';
+//            }
+//            
+//        }else{
+//            $paid+=$test->total_cost;
+//            echo '<td></td>';
+//        }
         echo '</tr>';
       }
-      echo '<tr class="test_paid text-success '.($paid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Paid').':</td><td id="test_paid">'.$paid.'</td><td></td></tr>';
-      echo '<tr class="test_unpaid text-danger '.($unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Unpaid').':</td><td id="test_unpaid">'.$unpaid.'</td><td></td></tr>';
-      echo '<tr class="test_tc text-info '.($paid&&$unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Total').':</td><td id="test_tc">'.($paid+$unpaid).'</td><td></td></tr>';
+//      echo '<tr class="test_paid text-success '.($paid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Paid').':</td><td id="test_paid">'.$paid.'</td><td></td></tr>';
+//      echo '<tr class="test_unpaid text-danger '.($unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Unpaid').':</td><td id="test_unpaid">'.$unpaid.'</td><td></td></tr>';
+//      echo '<tr class="test_tc text-info '.($paid&&$unpaid?'':'hidden').'"><td></td><td></td><td></td><td></td><td>'.tr('Total').':</td><td id="test_tc">'.($paid+$unpaid).'</td><td></td></tr>';
     }?>
     </tbody></table></div>
 </div>

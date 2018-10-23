@@ -145,7 +145,18 @@ class Diagnoses extends CI_Model {
       foreach ($row as $key => $value) {
           $this->$key = $value;
       }
-  }    
+  }
+    
+/**
+   * Load from the database.
+   * @param int $id
+   */
+  public function load($id) {
+      $query = $this->db->get_where($this::DB_TABLE, array(
+          $this::DB_TABLE_PK => $id,
+      ));
+      $this->populate($query->row());
+  }
     
         
 }

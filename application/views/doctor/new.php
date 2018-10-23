@@ -16,7 +16,7 @@
           <div class="clearfix"></div>
       </fieldset>
       <div class="form-group">
-        <div class="col-md-6"><input type="submit" name='submit' id='submit' value=<?php trp('update')?> class="form-control btn btn-info" /></div>
+        <div class="col-md-6"><input type="submit" name='submit' id='submit' value=<?php trp('Add')?> class="form-control btn btn-info" /></div>
         <div class="col-md-6"><?php echo anchor('doctor',tr('cancel'),array('class'=>'form-control btn btn-info'));?></div>
       </div>
     <?php echo form_close(); ?>

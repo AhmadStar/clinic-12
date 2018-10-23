@@ -82,25 +82,32 @@ class Patient extends CI_Controller {
     }
   }
     
-public function ajax_list()
-	{
+  public function ajax_list()
+  {
         $this->load->model('patients','patients');
 		$list = $this->patients->get_datatables();
 		$data = array();
 		$no = $_POST['start'];        
-		foreach ($list as $customers) {
+		foreach ($list as $patients) {
 			$no++;
             $actions = '';
 			$row = array();
 			$row[] = $no;
-			$row[] = $customers->first_name.' '.$customers->last_name;
-			$row[] = $customers->fname;
-			$row[] = $customers->phone;			
-			$row[] = $customers->create_date;
-			$row[] = $customers->gender;
+			$row[] = $patients->first_name.' '.$patients->last_name;
+			$row[] = $patients->fname;
+			$row[] = $patients->phone;
+            $html=null;
+//            if($patients->create_date) $html =((int)date('Y'))-((int)date('Y',$patients->create_date));
+            if($patients->create_date) $html =date("Y-m-d", $patients->create_date);
+            else $html = '';
+			$row[] = $html;			
+            $html=null;    
+            if($patients->gender) $html=tr('Male');
+            else $html=tr('Female');
+            $row[]=$html;
             
-            $actions .= anchor('patient/panel/'.$customers->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>'Pamel patient'));
-            $actions .= anchor('patient/edit_patient/'.$customers->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Patient'));            
+            $actions .= anchor('patient/panel/'.$patients->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>'Pamel patient'));
+            $actions .= anchor('patient/edit_patient/'.$patients->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Patient'));            
             
             $row[] = $actions;
 
@@ -117,6 +124,8 @@ public function ajax_list()
 		echo json_encode($output);
 	}     
 
+    
+    
   /**
    * Patient::status()
    */
@@ -478,6 +487,7 @@ public function ajax_list()
           foreach ($patient as $key => $value)
             $this->patients->$key = $value;
           $this->patients->birth_date=strtotime($this->input->post('birth_date'));
+//          print_r($this->patients);
           $this->patients->save();
           
           //update patient doctor

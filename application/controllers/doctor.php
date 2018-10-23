@@ -42,7 +42,7 @@ class Doctor extends CI_Controller {
     }
   }
     
-public function ajax_list()
+  public function ajax_list()
 	{
         $this->load->model('Doctors_model','doctors');
 		$list = $this->doctors->get_datatables();
@@ -310,7 +310,7 @@ public function ajax_list()
     $this->load->model('patients');
       
     $data['doctorname'] = $this->doctors->get_name($doctor_id);
-    print_r($this->doctors->get_name($doctor_id));
+//    print_r($this->doctors->get_name($doctor_id));
     $data['patients'] = $this->patients->get();  
     
     $data['doctorincomes'] = $this->incomes->get_all_doctor_incomes($doctor_id);  

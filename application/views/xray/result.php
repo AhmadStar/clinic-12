@@ -5,8 +5,8 @@ if($xrays)
            <th>ID</th>
           <th>".tr('EnglishName')."</th>
           <th>".tr('ArabicName')."</th>
-          <th>".tr('UnitPrice')."</th>
-          <th>".tr('Quantity')."</th>
+          
+          <th>".tr('XResult')."</th>
            <th></th>
        </tr></thead><tbody>";
   foreach($xrays as $xray)
@@ -16,8 +16,8 @@ if($xrays)
       '<td>'.html_escape($xray->xray_id).'</td>'.
       '<td>'.html_escape($xray->xray_name_en).'</td>'.
       '<td>'.html_escape($xray->xray_name_ar).'</td>'.
-      '<td>'.html_escape($xray->price).'</td>'.
-      '<td><input type="number" name="no_of_item" value="1"/></td>'.
+//      '<td>'.html_escape($xray->price).'</td>'.
+//      '<td><input type="number" name="no_of_item" value="1"/></td>'.
       '<td><input type="text" name="xresult"/></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
@@ -29,9 +29,9 @@ if($xrays)
         e.preventDefault();
         var tr = $(this).parent().parent();
         $('#xray_id').val(tr.find('td:first').text());
-        $('#xray_no_of_item').val(tr.find('input[name="no_of_item"]').val());
+//        $('#xray_no_of_item').val(tr.find('input[name="no_of_item"]').val());
         $('#xresult').val(tr.find('input[name="xresult"]').val());
-        $('#xray_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
+//        $('#xray_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
         
         $.post($('#addXrayForm').attr('action'),$('#addXrayForm').serialize(),function(data){
           if(data!=''){

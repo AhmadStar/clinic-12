@@ -252,9 +252,9 @@ class Test extends CI_Controller {
       $this->form_validation->set_rules(array(
         array( 'field' => 'test_id', 'label' => 'Test ID', 'rules' => 'required|is_numeric', ),
         array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
-        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
+//        array( 'field' => 'no_of_item', 'label' => 'Number of Item', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'total_cost', 'label' => 'Total Cost', 'rules' => 'required|is_numeric', ),
+//        array( 'field' => 'memo', 'label' => 'Memo', 'rules' => 'trim', ),
       ));
       if($this->form_validation->run() == TRUE)
       {
