@@ -5,7 +5,7 @@
   
 <!--  <article class="col col-sm-9" id="mainContent"> -->
       
-<article class="<?php if($this->uri->segment(1) ==''){ echo 'odd';} else { echo 'even';} ?>" id="mainContent">
+<article class="<?php if($this->uri->segment(1) ==''){ echo 'col col-sm-12' ;} else { echo 'col col-sm-9';} ?>" id="mainContent">
 
       
       
@@ -23,9 +23,9 @@
       }
       else{
 //          if($this->uri->segment(1) !='')
-          echo $this->uri->segment(0)."  first  ";          
-          echo $this->uri->segment(1)."  second  ";          
-          echo $this->uri->segment(2)."  third  ";          
+//          echo $this->uri->segment(0)."  first  ";          
+//          echo $this->uri->segment(1)."  second  ";          
+//          echo $this->uri->segment(2)."  third  ";          
             include_once 'repository/sidebar.php';
       }
     ?>
