@@ -3,7 +3,12 @@
 ?>
 <section class="row">
   
-  <article class="col col-sm-9" id="mainContent"> 
+<!--  <article class="col col-sm-9" id="mainContent"> -->
+      
+<article class="<?php if($this->uri->segment(1) ==''){ echo 'odd';} else { echo 'even';} ?>" id="mainContent">
+
+      
+      
   <?php 
     if(@$includes)
       foreach ($includes as $include)
@@ -17,7 +22,11 @@
         include_once 'account/login.php';
       }
       else{
-        include_once 'repository/sidebar.php';
+//          if($this->uri->segment(1) !='')
+          echo $this->uri->segment(0)."  first  ";          
+          echo $this->uri->segment(1)."  second  ";          
+          echo $this->uri->segment(2)."  third  ";          
+            include_once 'repository/sidebar.php';
       }
     ?>
   </aside>

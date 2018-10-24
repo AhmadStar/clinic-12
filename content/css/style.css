@@ -269,3 +269,15 @@ th{
   opacity: 1;
   right: 0;
 }
+
+.hidenav{
+    visibility:hidden;
+}
+
+
+.even{
+    col col-sm-9
+}
+.odd{
+    col col-sm-12
+    }

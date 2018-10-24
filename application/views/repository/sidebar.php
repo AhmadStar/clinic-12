@@ -1,4 +1,5 @@
-<div id='sidebar'>
+<!--<div id='sidebar'>-->
+<div id='sidebar' class="<?php if($this->uri->segment(1) ==''){ echo 'hidenav';}?>">
   <div id="accordion" class="panel-group">
       <div class="panel panel-default">
         <div class="panel-heading">

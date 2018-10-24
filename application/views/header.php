@@ -21,7 +21,10 @@
     <link rel="stylesheet" href='https://fonts.googleapis.com/earlyaccess/amiri.css' />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/droidarabickufi.css">
     <link rel="stylesheet" href='<?php echo base_url() ?>content/css/dataTables.bootstrap.min.css' />
+    <link rel="stylesheet" href='<?php echo base_url() ?>content/css/iconsstyles.css' />
+
     <link rel="stylesheet" href='<?php echo base_url() ?>content/css/style.css' />
+
 
 
 
