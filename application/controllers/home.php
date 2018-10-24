@@ -27,6 +27,7 @@ class Home extends CI_Controller {
     //initialize and load header
     $data['title'] = 'مركز الشفاء الطبي';
     $data['navActiveId']='navbarLiHome';
+    $this->load->helper('site');  
     
     $data['includes']=array('home/cp');
     

@@ -2,7 +2,7 @@
     <div class="panel-heading">
         <h4 class="panel-title">
             <a href="#collapseNurse" data-parent="#accordion" data-toggle="collapse">
-                <i class="fa fa-user-md icons" style="font-size:25px;"></i>
+                <i class="icon icon-nurse icons" style="font-size:25px;"></i>
                 <?php trP('Nurses');?>
             </a>
         </h4>
@@ -13,7 +13,8 @@
                 <tbody>
                     <tr>
                         <td>
-                            <i class="fa fa-user-md matr materialsidebar" style="top:2px"></i>
+<!--                            <div class="icon icon-nurse" style="top:2px"></div>-->
+                            <i class="icon icon-nurse materialsidebar" style="top:2px"></i>
                             <?php echo anchor('nurse',tr('NursesList'));?>
                         </td>
                     </tr>
@@ -31,7 +32,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <span><i class="small material-icons materialsidebar" style="margin-right: 3px">add_box</i> </span>
+                            <span><i class="icon icon-incentive materialsidebar" style="margin-right: 3px"></i> </span>
                             <?php echo anchor('nurse/new_incentive',tr('NewNurseIncentive'));?>
                         </td>
                     </tr>
