@@ -1,4 +1,4 @@
-<div class="row">
+ <div class="row">
     <div class="col col-md-8 well well-sm">
         <?php echo form_open('nurse/new_schedule',array("id"=>"newNurseScheduleForm", "role"=>"form",)); ?>
         <fieldset>
@@ -13,9 +13,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="input-group date col-md-6" id = "datepicker">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="work_date" id="work_date" value="<?php echo $this->input->post('work_date');?>" class="form-control" placeholder="انقر لتدخل التاريخ" title='work_date' required />
-                        </div>
+                        <div class="col-md-6"><input type="date" name='work_date' id='work_date' value="<?php echo $this->input->post('work_date');?>" class='form-control' placeholder='<?php trP('Workdate')?>' title='<?php trP('Workdate')?>' required /></div>
+                    </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -41,13 +40,4 @@
         <?php echo anchor('nurse', '<button class="btn btn-return"><span>العودة إلى قائمة الممرضين </span></button>');?>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#work_date').datepicker({
-            autoclose: true,
-            language: "ar"
-        });
-        
-    });
 
-</script>

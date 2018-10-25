@@ -26,13 +26,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <span><i class="small material-icons materialsidebar" style="margin-right: 3px">add_box</i> </span>
+                            <span><i data-icon="k" class="icon materialsidebar" style="margin-right: 3px"></i> </span>
                             <?php echo anchor('nurse/new_schedule',tr('NewNurseSchedule'));?>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <span><i class="icon icon-incentive materialsidebar" style="margin-right: 3px"></i> </span>
+                            <span><i class="icon icon-incentive materialsidebar" style="margin-right: 3px; font-size:25px"></i> </span>
                             <?php echo anchor('nurse/new_incentive',tr('NewNurseIncentive'));?>
                         </td>
                     </tr>

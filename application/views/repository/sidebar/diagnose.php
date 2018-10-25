@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <a href="#collapseDiagnose" data-parent="#accordion" data-toggle="collapse">
-        <link rel="icon" href="<?php echo base_url() ?>content/img/diagnosesIcon.png" type="image/png" sizes="16x16">
+        <span data-icon="b" class="icon icons" aria-hidden="true" style="font-size:25px"></span>
         <?php trP('Diagnoses');?>
       </a>
     </h4>
@@ -13,12 +13,12 @@
         <tbody>
           <tr>
             <td>
-              <span class="medical-icon-i-medical-library materialsidebar" aria-hidden="true" style=" top: 2px"></span> <?php echo anchor('diagnose', tr('DiagnoseList'));?>
+              <span data-icon="b" class="icon materialsidebar" aria-hidden="true" style=" top: 2px"></span> <?php echo anchor('diagnose', tr('DiagnoseList'));?>
             </td>
           </tr>
           <tr>
             <td>
-              <span class="medical-icon-i-surgery materialsidebar" aria-hidden="true" style=" top: 2px"></span> <?php echo anchor('diagnose/new_diagnose',tr('NewDiagnose'));?>
+              <span data-icon="a" class="icon materialsidebar" aria-hidden="true" style=" top: 2px"></span> <?php echo anchor('diagnose/new_diagnose',tr('NewDiagnose'));?>
             </td>
           </tr>                   
         </tbody>
