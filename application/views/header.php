@@ -16,7 +16,6 @@
     <link rel="stylesheet" href='<?php echo base_url() ?>content/css/ui/jquery-ui.min.css' media="screen" />
     <link rel="stylesheet" href='<?php echo base_url() ?>content/css/print.css' media="print" />
     <link rel="stylesheet" href='<?php echo base_url() ?>content/css/wfmi-style.css'>
-    <link rel="stylesheet" href='<?php echo base_url() ?>content/css/bootstrap-datepicker3.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href='https://fonts.googleapis.com/earlyaccess/amiri.css' />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/droidarabickufi.css">
@@ -84,7 +83,6 @@
     <script src="<?php echo base_url() ?>content/js/jquery-2.2.3.min.js"></script>
     <script src="<?php echo base_url() ?>content/js/jquery.cookie.js"></script>
     <script src="<?php echo base_url() ?>content/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url() ?>content/js/bootstrap-datepicker.js"></script>
     <script src="<?php echo base_url() ?>content/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url() ?>content/js/dataTables.bootstrap.min.js"></script>
     <script src="<?php echo base_url() ?>content/js/bootstrap-datepicker.js"></script>

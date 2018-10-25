@@ -12,9 +12,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="input-group date col-md-6">
-                    <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="created_date" id="created_date" value="<?php echo $this->input->post('created_date');?>" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('created_date')?>;" required />
-                </div>
+                <div class="col-md-6"><input type="date" name='created_date' id='created_date' value="<?php echo $this->input->post('created_date');?>" class='form-control' placeholder="<?php trP('created_date')?>" title="<?php trP('created_date')?>" required /></div>
                 <div class="col-md-6"><input type="tel" name='phone' id='phone' value="<?php echo $this->input->post('phone');?>" class='form-control' placeholder="<?php trP('Phone')?>" title='phone' required /></div>
             </div>
             <div class="clearfix"></div>

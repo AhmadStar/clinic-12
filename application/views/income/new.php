@@ -20,9 +20,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="input-group date col-md-6">
-                        <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="date" id="date" value="<?php echo $this->input->post('date');?>" class="form-control" placeholder="انقر لتدخل التاريخ" title='date' required />
-                    </div>
+                    <div class="col-md-6"><input type="date" name='date' id='date' value="<?php echo $this->input->post('date');?>" class='form-control' placeholder="<?php trP('Date')?>" title="<?php trP('Date')?>" required /></div>
 
                     <div class="col-md-6"><input type="number" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder="<?php trP('amount')?>" title='amount' required /></div>
                 </div>
@@ -46,11 +44,4 @@
         <?php echo anchor('income', '<button class="btn btn-return"><span>العودة إلى قائمة المعاينات </span></button>');?>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#date').datepicker({
-            autoclose: true
-        });
-    });
 
-</script>

@@ -1,19 +1,18 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "untitled-font-4";
-  src:url("../fonts/untitled-font-4.eot");
-  src:url("../fonts/untitled-font-4.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/untitled-font-4.woff") format("woff"),
-    url("../fonts/untitled-font-4.ttf") format("truetype"),
-    url("../fonts/untitled-font-4.svg#untitled-font-4") format("svg");
+  font-family: "icons-font";
+  src:url("../fonts/icons-font.eot");
+  src:url("../fonts/icons-font.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/icons-font.woff") format("woff"),
+    url("../fonts/icons-font.ttf") format("truetype"),
+    url("../fonts/icons-font.svg#icons-font") format("svg");
   font-weight: normal;
   font-style: normal;
-
 }
 
 [data-icon]:before {
-  font-family: "untitled-font-4" !important;
+  font-family: "icons-font" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -27,7 +26,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "untitled-font-4" !important;
+  font-family: "icons-font" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -55,4 +54,25 @@
 }
 .icon-incentive:before {
   content: "\66";
+}
+.icon-circle-icons-hourglass:before {
+  content: "\69";
+}
+.icon-hourglass-sandclock-icon:before {
+  content: "\6a";
+}
+.icon-alarm-add-595b40b85ba036ed117dbec6:before {
+  content: "\6b";
+}
+.icon-nurse-clipart-photo-book:before {
+  content: "\67";
+}
+.icon-nurse-blond:before {
+  content: "\68";
+}
+.icon-nurse-clipart-photo-photoshop:before {
+  content: "\6c";
+}
+.icon-images:before {
+  content: "\6d";
 }

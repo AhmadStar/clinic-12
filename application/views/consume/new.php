@@ -11,8 +11,8 @@
                     <div class="col-md-6"><input type="number" name='count' id='count' value="<?php echo $this->input->post('count');?>" class='form-control' placeholder="<?php trP('Count')?>" title='count' required /></div>
                 </div>
                 <div class="form-group">
-                    <div class="input-group date col-md-6">
-                        <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="date" id="date" value="<?php echo $this->input->post('date');?>" class="form-control" placeholder="انقر لتدخل التاريخ" title='date' required />
+                    <div class="col-md-6">
+                        <input type="date" name='date' id='date' value="<?php echo $this->input->post('date');?>" class='form-control' placeholder="<?php trP('Date')?>" title="<?php trP('Date')?>" required />
                     </div>
                     <div class="form-group">
                         <div class="col-md-6">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo $this->input->post('price');?>" class='form-control' placeholder="<?php trP('Price')?>" title='price' required /></div>
+                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo $this->input->post('price');?>" class='form-control' placeholder="<?php trP('Price')?>" title=<?php trP('Price')?> required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -38,11 +38,4 @@
         <?php echo anchor('consume', '<button class="btn btn-return"><span>العودة إلى قائمة المصاريف </span></button>');?>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#date').datepicker({
-            autoclose: true
-        });
-    });
 
-</script>
