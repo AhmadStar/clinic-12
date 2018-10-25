@@ -44,16 +44,16 @@
       ?>
       <li class="dropdown"><!-- Fixed on all users -->
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <span class="glyphicon glyphicon-user"></span> <?php echo $this->session->userdata('ba_first_name').' '.$this->session->userdata('ba_last_name');?> <b class="caret"></b>
+          <span class="glyphicon glyphicon-user" style="position: relative; top: 5px;"></span> <?php echo $this->session->userdata('ba_first_name').' '.$this->session->userdata('ba_last_name');?> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><?php echo anchor('account/edit_user/'.$this->session->userdata('ba_user_id'),'<span class="glyphicon glyphicon-user"></span> Profile');?></li>
+          <li><?php echo anchor('account/edit_user/'.$this->session->userdata('ba_user_id'),'<span class="glyphicon glyphicon-user" style="position: relative; top: 5px;"></span> '.tr('Profile'));?></li>
           <li class="divider"></li>
-          <li><?php echo anchor('account/logout','<span class="glyphicon glyphicon-off"></span> Logout');?></li>
+          <li><?php echo anchor('account/logout','<span class="glyphicon glyphicon-off" style="position: relative; top: 5px;"></span> '.tr('Logout'));?></li>
         </ul>
       </li>
     <!--      <li id="navbarGoTo" style="position: relative; top: 5px"><?php echo "<input type='number' placeholder='Patient ID...' id='goToPatient' style='margin-top:10px' href='".  site_url('patient/panel')."'/>";?></li>-->
-      <li><?php echo anchor('patient','<i class="fa fa-address-book icons" style="font-size:24px"></i>'.tr('SearchForPatient'));?></li>
+      <li><?php echo anchor('patient','<i class="fa fa-address-book icons" style="font-size:24px; position: relative; top: 5px;"></i>'.tr('SearchForPatient'));?></li>
     </ul>
   </div>
   <?php if(isset($navActiveId)){?>
