@@ -83,4 +83,15 @@ class Doctors extends MY_Model {
          
     }
     
+    function get_doctor_name($doctor_id)
+    {
+        $this->db->select('name');
+        $this->db->where('id', $doctor_id);
+        $this->db->from('doctors');
+        $query = $this->db->get();
+        
+        return $query->result(); 
+        
+    }
+    
 }

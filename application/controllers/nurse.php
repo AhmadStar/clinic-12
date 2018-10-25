@@ -16,34 +16,54 @@ class Nurse extends CI_Controller {
 
   
   /**
-   * Drug::index()
+   * Nurse::index()
    */
   public function index($limit = 15,$page = 1)
   {
+//    if (!$this->bitauth->logged_in())
+//    {
+//      $this->session->set_userdata('redir', current_url());
+//      redirect('account/login');
+//    }
+//    
+//    $this->load->model('nurses');
+//      
+//    $data['nurses'] = $this->nurses->get_all_nurses();
+//      
+//    $data['title'] = tr('NursesList');  
+//    $data['navActiveId']='navbarLiDrug';
+//    
+//    $data['page'] = (int)$page;
+//    $data['per_page'] = (int)$limit;
+//    $this->load->library('pagination');
+//    $this->load->library('my_pagination');
+//    $config['base_url'] = site_url('nurse/index/'.$data['per_page']);
+//    $config['total_rows'] = count($data['nurses']);
+//    $config['per_page'] = $data['per_page'];
+//    $this->my_pagination->initialize($config); 
+//    $data['pagination']=$this->my_pagination->create_links();
+//    
+//
+//    $path='nurse/list';
+//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+//    {
+//        $this->load->view($path, $data);
+//    }else{
+//        $data['includes']=array($path);
+//        $this->load->view('header',$data);
+//        $this->load->view('index',$data);
+//        $this->load->view('footer',$data);
+//    }
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
       redirect('account/login');
     }
     
-    $this->load->model('nurses');
-      
-    $data['nurses'] = $this->nurses->get_all_nurses();
-      
-    $data['title'] = tr('NursesList');  
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('nurse/index/'.$data['per_page']);
-    $config['total_rows'] = count($data['nurses']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();
-    
+    $this->load->helper('url');
+    $this->load->helper('form');
 
+    $data['title'] = tr('IncomeList');
     $path='nurse/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -55,9 +75,49 @@ class Nurse extends CI_Controller {
         $this->load->view('footer',$data);
     }
   }
+    
+    
+  public function ajax_list()
+  {      
+        $this->load->model('Nurses','nurses');
+//        $this->load->model('Doctors_model','doctors');        
+		$list = $this->nurses->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $nurses) {
+			$no++;            
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $nurses->name;
+			$row[] = $nurses->age;
+			$row[] = $nurses->phone;
+			$row[] = $nurses->address;			
+            
+            $actions .= anchor('nurse/edit/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Nurse'));
+            $actions .= anchor('nurse/delete/'.$nurses->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Nurse'));
+            $actions .= anchor('nurse/nurseschedule/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Nurse Hours Work'));
+            $actions .= anchor('nurse/nurseincentive/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Nurse Incentives'));            
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->nurses->count_all(),
+						"recordsFiltered" => $this->nurses->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+    
+          
   
   /**
-   * Patient::edit()
+   * Nurse::edit()
    */
   public function edit($nurse_id=0)
   {

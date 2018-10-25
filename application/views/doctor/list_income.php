@@ -2,6 +2,7 @@
     <?php echo tr('DoctorIncomeList').' '.$doctorname[0]->name; ;?>
 </legend>
 
+<!--
 <div class="form-group">
     <div class="form-group">
         <div class="col-md-6">
@@ -36,48 +37,93 @@
         </div>
     </div>
 </div>
+-->
+<div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" ><?php trP('DoctorFilter')?></h3>
+            </div>
+            <div class="panel-body">
+                <form id="form-filter" class="form-horizontal filter-body">                   
+                    <div class="form-group">                        
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Minimum Date:')?></label>
+                        <div class="col-md-4">
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title='min' required />
+                        </div>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Maximum Date:')?></label>
+                        <div class="col-md-4">
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title='max' required />
+                        </div>
+                    </div>                    
+                    <div class="form-group">                        
+                        <div class="col-sm-12">
+                            <button type="button" id="btn-filter" class="btn btn-primary"><?php trP('Filter')?></button>
+                            <button type="button" id="btn-reset" class="btn btn-default"><?php trP('Reset')?></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+  <table id="income_list_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th><?php trP('Amount')?></th>
+                    <th><?php trP('date')?></th>                    
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>                 
+        </table>
 
 
+<script type="text/javascript">
+      
+var table;
 
-<?php //pagination should be added if have time.
-if($doctorincomes)
-{
-  echo "<div>".$pagination."<div class='table-responsive'><table id='doctor_list_table' class='table table-bordered table-striped'><thead><tr>
-           <th>ID</th>                      
-           <th>المبلغ </th>           
-           <th>اسم المريض</th>           
-           <th>نوع المعاينة</th>           
-           <th>تاريخ الانشاء</th>           
-       </tr></thead><tbody>";
-  $start = ($page-1) * $per_page;
-  $i=0;
-  foreach($doctorincomes as $_doctor_income)
-  {
-    if($i>=(int)$start&&$i<(int)$start+(int)$per_page)
-    {     
-        $patient_name = '';
-        foreach($patients as $_patient){
-            if ($_patient->patient_id == $_doctor_income['patient_id'])
-                $patient_name = $_patient->first_name.' '.$_patient->last_name;
-        }
-        
-        
-        echo '<tr id="Doctor'.$_doctor_income['id'].'">'.
-          '<td>'.html_escape($_doctor_income['id']).'</td>'.
-          '<td>'.html_escape($_doctor_income['amount']).'</td>'.
-          '<td>'.html_escape($patient_name).'</td>'.    
-          '<td>'.html_escape($type_options[$_doctor_income['type']]).'</td>'.          
-          '<td>'.html_escape($_doctor_income['date']).'</td>'.          
-        '</tr>';
-    }
-    $i++;
-  }
-  echo '</tbody></table></div>'.$pagination."</div>";
-  ?>
-<div class="pull-right" title="Go to Doctors">
+$(document).ready(function() {
 
-    <?php echo anchor('doctor', '<button class="btn btn-return"><span>العودة إلى قائمة الأطباء </span></button>');?>
-</div>
+    //datatables
+    table = $('#income_list_table').DataTable({ 
+
+        "processing": true, //Feature control the processing indicator.
+        "serverSide": true, //Feature control DataTables' server-side processing mode.
+        "order": [], //Initial no order.
+        "searchable": false,
+        "searching": false,
+        "bPaginate": false,
+        "bInfo" : false,
+
+        // Load data for the table's content from an Ajax source
+        "ajax": {
+            "url": "<?php echo site_url('doctor/doctor_list_income')?>",
+            "type": "POST",
+            "data": function ( data ) {                
+                data.doctor_id = <?php echo $doctor_id?>;                
+                data.min_date = $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val();
+                data.max_date = $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val();
+            }
+        },
+
+        //Set column definition initialisation properties.
+        "columnDefs": [
+        { 
+            "targets": [ 0 ], //first column / numbering column
+            "orderable": false, //set not orderable
+        },
+        ],
+
+    });
+
+    $('#btn-filter').click(function(){ //button filter event click
+        table.ajax.reload();  //just reload table
+    });
+    $('#btn-reset').click(function(){ //button reset event click
+        $('#form-filter')[0].reset();
+        table.ajax.reload();  //just reload table
+    });
+});
+
+</script>
 
 <script>
     $(document).ready(function() {
@@ -100,6 +146,3 @@ if($doctorincomes)
     });
 
 </script>
-<?php
-}
-?>

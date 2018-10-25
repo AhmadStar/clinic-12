@@ -26,27 +26,10 @@ class Dailyincome extends CI_Controller {
       redirect('account/login');
     }
     
-    $this->load->model('dailyincomes');
-    $this->load->model('doctors');
-//    $this->load->model('patients');
-    
-    $data['dailyincome'] = $this->dailyincomes->get_all_dailyincome();
-    $data['doctors'] = $this->doctors->get();
-//    $data['patients'] = $this->patients->get();    
-    $data['title'] = tr('DailyIncomeList');  
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('dailyincome/index/'.$data['per_page']);
-    $config['total_rows'] = count($data['dailyincome']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();
-    
-      
+    $this->load->helper('url');
+    $this->load->helper('form');
+
+    $data['title'] = tr('DailyIncomeList');
     $path='dailyincome/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -59,6 +42,40 @@ class Dailyincome extends CI_Controller {
     }
   }
   
+
+  public function ajax_list()
+	{
+        $this->load->model('Dailyincomes','dailyincome');
+		$list = $this->dailyincome->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $customers) {
+			$no++;
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $customers->doctor_id;
+			$row[] = $customers->date;
+			$row[] = $customers->amount;						
+            
+            $actions .= anchor('dailyincome/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Doctor'));
+            $actions .= anchor('dailyincome/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Doctor'));            
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->dailyincome->count_all(),
+						"recordsFiltered" => $this->dailyincome->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}     
+    
   /**
    * Patient::edit()
    */

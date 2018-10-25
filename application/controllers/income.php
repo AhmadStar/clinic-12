@@ -16,38 +16,59 @@ class Income extends CI_Controller {
 
   
   /**
-   * Drug::index()
+   * Income::index()
    */
   public function index($limit = 15,$page = 1)
   {
+//    if (!$this->bitauth->logged_in())
+//    {
+//      $this->session->set_userdata('redir', current_url());
+//      redirect('account/login');
+//    }
+//    
+//    $this->load->model('incomes');
+//    $this->load->model('doctors');
+////    $this->load->model('patients');
+//    
+//    $data['incomes'] = $this->incomes->get_all_incomes();
+//    $data['doctors'] = $this->doctors->get();
+////    $data['patients'] = $this->patients->get();    
+//    $data['title'] = tr('IncomeList');  
+//    $data['navActiveId']='navbarLiDrug';
+//    
+//    $data['page'] = (int)$page;
+//    $data['per_page'] = (int)$limit;
+//    $this->load->library('pagination');
+//    $this->load->library('my_pagination');
+//    $config['base_url'] = site_url('income/index/'.$data['per_page']);
+//    $config['total_rows'] = count($data['incomes']);
+//    $config['per_page'] = $data['per_page'];
+//    $this->my_pagination->initialize($config); 
+//    $data['pagination']=$this->my_pagination->create_links();
+//    
+//      
+////    $data['type_options'] = $this->type_options();  
+//    $path='income/list';
+//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+//    {
+//        $this->load->view($path, $data);
+//    }else{
+//        $data['includes']=array($path);
+//        $this->load->view('header',$data);
+//        $this->load->view('index',$data);
+//        $this->load->view('footer',$data);
+//    }
+      
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
       redirect('account/login');
     }
     
-    $this->load->model('incomes');
-    $this->load->model('doctors');
-    $this->load->model('patients');
-    
-    $data['incomes'] = $this->incomes->get_all_incomes();
-    $data['doctors'] = $this->doctors->get();
-    $data['patients'] = $this->patients->get();    
-    $data['title'] = tr('IncomeList');  
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('income/index/'.$data['per_page']);
-    $config['total_rows'] = count($data['incomes']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();
-    
-      
-    $data['type_options'] = $this->type_options();  
+    $this->load->helper('url');
+    $this->load->helper('form');
+
+    $data['title'] = tr('IncomeList');
     $path='income/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -58,8 +79,47 @@ class Income extends CI_Controller {
         $this->load->view('index',$data);
         $this->load->view('footer',$data);
     }
+      
   }
   
+    
+  public function ajax_list()
+  {      
+        $this->load->model('Incomes','incomes');
+        $this->load->model('Doctors_model','doctors');        
+		$list = $this->incomes->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $incomes) {
+			$no++;
+            $doctor_name = $this->doctors->get_doctor_name($incomes->doctor_id);
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $doctor_name[0]->name;
+			$row[] = $incomes->amount;
+			$row[] = $incomes->date;			
+            
+            $actions .= anchor('income/edit/'.$incomes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Income'));
+            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Income'));            
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->incomes->count_all(),
+						"recordsFiltered" => $this->incomes->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+    
+        
+    
   /**
    * Patient::edit()
    */
@@ -82,8 +142,8 @@ class Income extends CI_Controller {
     {
       $this->form_validation->set_rules(array(
         array( 'field' => 'doctor_id','label' => 'doctor Name', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'patient_id','label' => 'patient Name', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'type', 'label' => 'type', 'rules' => 'trim|has_no_schar', ),
+//        array( 'field' => 'patient_id','label' => 'patient Name', 'rules' => 'required|trim|has_no_schar', ),
+//        array( 'field' => 'type', 'label' => 'type', 'rules' => 'trim|has_no_schar', ),
         array( 'field' => 'amount', 'label' => 'amount', 'rules' => 'required|trim|has_no_schar', ),
       ));
       if($this->form_validation->run() == TRUE)
@@ -98,8 +158,8 @@ class Income extends CI_Controller {
             $this->load->model('incomes');
              $data_to_store = array(
                     'doctor_id' => $this->input->post('doctor_id'),
-                    'patient_id' => $this->input->post('patient_id'),
-                    'type' => $this->input->post('type'),
+//                    'patient_id' => $this->input->post('patient_id'),
+//                    'type' => $this->input->post('type'),
                     'amount' => $this->input->post('amount'),                    
                 );
             $this->incomes->update_income($income_id,$data_to_store);
@@ -119,9 +179,9 @@ class Income extends CI_Controller {
       
     $this->session->set_userdata(current_url(),array($income_id));    
     $data['title'] = tr('EditIncome');    
-    $data['type_options'] = $this->type_options();
+//    $data['type_options'] = $this->type_options();
     $data['doctor_list']= $this->_doctor_list();
-    $data['patient_list']= $this->_patient_list();
+//    $data['patient_list']= $this->_patient_list();
     
       $path='income/edit';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
@@ -207,8 +267,8 @@ class Income extends CI_Controller {
     {
       $this->form_validation->set_rules(array(
         array( 'field' => 'doctor_id','label' => 'doctor Name', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'patient_id','label' => 'patient Name', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'type', 'label' => 'type', 'rules' => 'trim|has_no_schar', ),
+//        array( 'field' => 'patient_id','label' => 'patient Name', 'rules' => 'required|trim|has_no_schar', ),
+//        array( 'field' => 'type', 'label' => 'type', 'rules' => 'trim|has_no_schar', ),
         array( 'field' => 'amount', 'label' => 'amount', 'rules' => 'required|trim|has_no_schar', ),
         array( 'field' => 'date', 'label' => 'date', 'rules' => 'required|trim|has_no_schar', ),
       ));
@@ -220,23 +280,23 @@ class Income extends CI_Controller {
         $this->load->model('incomes');        
         $data_to_store = array(
                     'doctor_id' => $this->input->post('doctor_id'),
-                    'patient_id' => $this->input->post('patient_id'),
-                    'type' => $this->input->post('type'),
+//                    'patient_id' => $this->input->post('patient_id'),
+//                    'type' => $this->input->post('type'),
                     'amount' => $this->input->post('amount'),
                     'date' => $this->input->post('date'),
                 );
         $this->incomes->save_income($data_to_store);
         unset($_POST);
         $data['script'] = '<script>alert("'. html_escape($this->incomes->doctor_id). ' has been registered successfuly.");</script>';
-        redirect('income');
+//        redirect('income');
       }else{
         $data['error']=validation_errors();
       }
     }    
     $data['title'] = tr('NewIncomes');      
-    $data['type_options'] = $this->type_options();
+//    $data['type_options'] = $this->type_options();
     $data['doctor_list']=$this->_doctor_list();      
-    $data['patient_list']=$this->_patient_list();      
+//    $data['patient_list']=$this->_patient_list();      
       
     $data['css'] = "<style>.form-group{margin-bottom:0px;} .form-group .form-control{margin-bottom:10px;}</style>";
     $path='income/new';
@@ -268,16 +328,16 @@ class Income extends CI_Controller {
     }
   }
     
-    /**
+/**
    * _id_type_options()
    * returns the array of type
    */
-  public function type_options()
-  {
-    return array('0'=> tr('IncomeType'),
-                 'static'=>'معاينة ثابتة',
-                 'normal'=>'معاينة عادية',);
-  }    
+//  public function type_options()
+//  {
+//    return array('0'=> tr('IncomeType'),
+//                 'static'=>'معاينة ثابتة',
+//                 'normal'=>'معاينة عادية',);
+//  }    
     
   /**
    * _doctor_list()
@@ -299,17 +359,17 @@ class Income extends CI_Controller {
    * _patient_list()
    * returns a list of doctor to assign the patient to.
    */ 
-  public function _patient_list()
-  {
-    $this->load->model('patients');
-    $patients = $this->patients->get();
-    $patient_list['0']= tr('PatientName');
-    foreach ($patients as $patient) 
-    {
-      $patient_list[$patient->patient_id]=  html_escape($patient->first_name.', '.$patient->last_name.', '.$patient->address);
-    }
-    return $patient_list;
-  }    
+//  public function _patient_list()
+//  {
+//    $this->load->model('patients');
+//    $patients = $this->patients->get();
+//    $patient_list['0']= tr('PatientName');
+//    foreach ($patients as $patient) 
+//    {
+//      $patient_list[$patient->patient_id]=  html_escape($patient->first_name.', '.$patient->last_name.', '.$patient->address);
+//    }
+//    return $patient_list;
+//  }    
     
     
     

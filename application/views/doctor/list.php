@@ -23,11 +23,11 @@
                     <div class="form-group">                        
                         <label for="LastName" class="col-sm-2 control-label"><?php trP('Minimum Date:')?></label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="min" name="min">
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title='min' required />
                         </div>
                         <label for="LastName" class="col-sm-2 control-label"><?php trP('Maximum Date:')?></label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="max" name="max">
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title='max' required />
                         </div>
 <!--
                         <label for="LastName" class="col-sm-2 control-label"><?php trP('CreatedDate')?></label>
@@ -87,6 +87,8 @@ $(document).ready(function() {
                 data.address = $('#address').val();
                 data.phone = $('#phone').val();
                 data.created_date = $('#created_date').val();
+                data.min_date = $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val();
+                data.max_date = $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val();
             }
         },
 
@@ -107,42 +109,6 @@ $(document).ready(function() {
         $('#form-filter')[0].reset();
         table.ajax.reload();  //just reload table
     });
-    
-    
-    /* Custom filtering function which will search data in column four between two values */
-    $.fn.dataTable.ext.search.push(
-        function( settings, data, dataIndex ) {
-            var min = $('#min').datepicker("getDate");
-            var max = $('#max').datepicker("getDate");
-            var created_date = new Date(data[3]);
-            
-//            var d = data[4].split("/");
-//            var created_date = new Date(d[1]+ "/" +  d[0] +"/" + d[2]);
-            
-
-            if ( ( isNaN( min ) && isNaN( max ) ) ||
-                 ( isNaN( min ) && age <= max ) ||
-                 ( min <= age   && isNaN( max ) ) ||
-                 ( min <= age   && age <= max ) )
-            {
-                return true;
-            }
-            return false;
-        }
-    );
-      
-    $("#min").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-    $("#max").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-    
-//    $("#min").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true,dateFormat:"dd/mm/yy" });
-//    $("#max").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true,dateFormat:"dd/mm/yy" });
-    
-    
-    // Event listener to the two range filtering inputs to redraw on input
-    $('#min, #max').change( function() {
-        table.draw();
-    } );
-
 });
 
 </script>
@@ -167,3 +133,4 @@ $(document).ready(function(){
     });
 });
 </script>  
+                        
