@@ -30,11 +30,4 @@
         <?php echo anchor('doctor', '<button class="btn btn-return"><span>العودة إلى قائمة الأطباء </span></button>');?>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#created_date').datepicker({
-            autoclose: true
-        });
-    });
 
-</script>
