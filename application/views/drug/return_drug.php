@@ -8,17 +8,17 @@
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <?php echo form_dropdown('drug_id',$drugs_list,$this->input->post('drug_id'),"class='form-control' title='Drug' required");?>
+                        <?php echo form_dropdown('drug_id',$drugs_list,$this->input->post('drug_id'),"class='form-control' title=".tr('Drug')." required");?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="number" name='no_of_item' id='no_of_item' value="<?php echo $this->input->post('no_of_item');?>" class='form-control' placeholder="<?php trP('NumberOfItems')?>" title='Number of Items' required /></div>
-                    <div class="col-md-6"><input type="number" name='unit_price' id='unit_price' value="<?php echo $this->input->post('unit_price');?>" class='form-control' placeholder="<?php trP('UnitPrice')?>" title='Unit Price' required /></div>
+                    <div class="col-md-6"><input type="number" name='no_of_item' id='no_of_item' value="<?php echo $this->input->post('no_of_item');?>" class='form-control' placeholder="<?php trP('NumberOfItems')?>" title="<?php trP('NumberOfItems')?>"  required /></div>
+                    <div class="col-md-6"><input type="number" name='unit_price' id='unit_price' value="<?php echo $this->input->post('unit_price');?>" class='form-control' placeholder="<?php trP('UnitPrice')?>" title="<?php trP('UnitPrice')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="number" name='total_cost' id='total_cost' value="<?php echo $this->input->post('total_cost');?>" class='form-control' placeholder="<?php trP('TotalCost')?>" title='Total Cost' required /></div>
-                    <div class="col-md-6"><input type="date" name='return_date' id='purchase_date' value="<?php echo set_value('return_date',@$today);?>" class='form-control' placeholder="<?php trP('ReturnDate')?>" title='Return Date' required /></div>
+                    <div class="col-md-6"><input type="number" name='total_cost' id='total_cost' value="<?php echo $this->input->post('total_cost');?>" class='form-control' placeholder="<?php trP('TotalCost')?>" title="<?php trP('TotalCost')?>" required /></div>
+                    <div class="col-md-6"><input type="date" name='return_date' id='purchase_date' value="<?php echo set_value('return_date',@$today);?>" class='form-control' placeholder="<?php trP('ReturnDate')?>" title="<?php trP('ReturnDate')?>" required /></div>
                 </div>
         </fieldset>
         <fieldset>
@@ -38,9 +38,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Drugs">
+    <div class="pull-right" title="<?php trP('GotoDrugs')?>">
 
-        <?php echo anchor('drug', '<button class="btn btn-return"><span>العودة إلى قائمة الأدوية </span></button>');?>
+        <?php echo anchor('drug', '<button class="btn btn-return"><span>'.tr('GotoDrugs').'</span></button>');?>
     </div>
 </div>
 <script>

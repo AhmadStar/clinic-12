@@ -9,11 +9,11 @@
                 <div class="form-group">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <?php echo form_dropdown('nurse_id',$nurse_list,$this->input->post('nurse_id'),"class='form-control' title='Nurse' required");?>
+                            <?php echo form_dropdown('nurse_id',$nurse_list,$this->input->post('nurse_id'),"class='form-control' title=".tr('Nurse')." required");?>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12"><input type="nimber" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder='<?php trP('IncentiveAmount')?>' title='Incentive Amount' required /></div>
+                        <div class="col-md-12"><input type="nimber" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder='<?php trP('IncentiveAmount')?>' title='<?php trP('IncentiveAmount')?>' required /></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -27,9 +27,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Nurses">
+    <div class="pull-right" title="<?php trP('GotoNurses')?>">
 
-        <?php echo anchor('nurse', '<button class="btn btn-return"><span>العودة إلى قائمة الممرضين </span></button>');?>
+        <?php echo anchor('nurse', '<button class="btn btn-return"><span>'.tr('GotoNurses').'</span></button>');?>
     </div>
 </div>
 <script>

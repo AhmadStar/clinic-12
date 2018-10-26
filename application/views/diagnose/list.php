@@ -24,8 +24,8 @@ if($diagnoses)
         $actions = '';
         if($this->bitauth->has_role('pharmacy'))
         {
-          $actions .= anchor('diagnose/edit/'.$_diagnose['id'], '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Diagnose'));
-          $actions .= anchor('diagnose/delete/'.$_diagnose['id'], '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Diagnose'));          
+          $actions .= anchor('diagnose/edit/'.$_diagnose['id'], '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDiagnose')));
+          $actions .= anchor('diagnose/delete/'.$_diagnose['id'], '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteDiagnose')));          
         }
         echo '<tr id="diagnose'.$_diagnose['id'].'">'.                    
           '<td>'.html_escape($_diagnose['diagnose_name_en']).'</td>'.                              

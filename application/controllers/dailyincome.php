@@ -58,8 +58,8 @@ class Dailyincome extends CI_Controller {
 			$row[] = $customers->date;
 			$row[] = $customers->amount;						
             
-            $actions .= anchor('dailyincome/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Doctor'));
-            $actions .= anchor('dailyincome/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Doctor'));            
+            $actions .= anchor('dailyincome/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
+            $actions .= anchor('dailyincome/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف المورد اليومي'));            
             
             $row[] = $actions;
 

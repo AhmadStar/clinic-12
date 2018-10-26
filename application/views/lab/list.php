@@ -23,8 +23,8 @@ if($tests)
         $actions = '';
         if($this->bitauth->has_role('lab'))
         {
-          $actions .= anchor('test/edit/'.$test->test_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Test'));
-          $actions .= anchor('test/delete/'.$test->test_id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Test'));
+          $actions .= anchor('test/edit/'.$test->test_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditTest')));
+          $actions .= anchor('test/delete/'.$test->test_id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف التحليل'));
         }
         echo '<tr id="test'.$test->test_id.'" title="'.$test->memo.'">'.
           
@@ -42,7 +42,7 @@ if($tests)
 <script>
     $(document).ready(function(){ 
         $('#drug_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Delete Test'){
+            if($(this).attr('title')=='حذف التحليل'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);

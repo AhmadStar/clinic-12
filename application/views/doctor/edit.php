@@ -8,11 +8,11 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='name' id="name" value="<?php echo set_value('name', $doctor->name);?>" class='form-control' placeholder="<?php trP('DoctorName')?>" title='Doctor Name' required autofocus /></div>
-                    <div class="col-md-6"><input type="text" name='address' id='address' value="<?php echo set_value('address', $doctor->address);?>" class='form-control' placeholder="<?php trP('Address')?>" title='address' required /></div>
+                    <div class="col-md-6"><input type="text" name='name' id="name" value="<?php echo set_value('name', $doctor->name);?>" class='form-control' placeholder="<?php trP('DoctorName')?>" title="<?php trP('DoctorName')?>" required autofocus /></div>
+                    <div class="col-md-6"><input type="text" name='address' id='address' value="<?php echo set_value('address', $doctor->address);?>" class='form-control' placeholder="<?php trP('Address')?>" title="<?php trP('Address')?>" required /></div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="tel" name='phone' id='category' value="<?php echo set_value('category', $doctor->phone);?>" class='form-control' placeholder="<?php trP('category')?>" title='Category' /></div>
+                    <div class="col-md-6"><input type="tel" name='phone' id='category' value="<?php echo set_value('category', $doctor->phone);?>" class='form-control' placeholder="<?php trP('category')?>" title="<?php trP('category')?>" /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -24,9 +24,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Doctors">
+    <div class="pull-right" title="<?php trP('GotoDoctors')?>">
 
-        <?php echo anchor('doctor', '<button class="btn btn-return"><span>العودة إلى قائمة الأطباء </span></button>');?>
+        <?php echo anchor('doctor', '<button class="btn btn-return"><span>'.tr('ReturnToDoctors').'</span></button>');?>
     </div>
     <?php
 }else{

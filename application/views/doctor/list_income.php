@@ -45,13 +45,13 @@
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                   
                     <div class="form-group">                        
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Minimum Date:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title='min' required />
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MinimumDate:')?>" required />
                         </div>
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Maximum Date:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MaximumDate:')?></label>
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title='max' required />
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MaximumDate:')?>" required />
                         </div>
                     </div>                    
                     <div class="form-group">                        
@@ -66,9 +66,9 @@
   <table id="income_list_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th><?php trP('Amount')?></th>
-                    <th><?php trP('date')?></th>                    
+                    <th><?php trP('Number')?></th>
+                    <th><?php trP('amount')?></th>
+                    <th><?php trP('Date')?></th>                    
                 </tr>
             </thead>
             <tbody>

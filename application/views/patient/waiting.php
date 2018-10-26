@@ -25,8 +25,8 @@ if(!empty($waitings))
     $actions = '';
     if($this->bitauth->has_role('receptionist'))
     {
-      $actions = anchor('patient/panel/'.$_patient->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>'Patient Control Panel'));
-      $actions .= anchor('patient/edit_patient/'.$_patient->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Patient'));
+      $actions = anchor('patient/panel/'.$_patient->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>tr('PatientControlPanel')));
+      $actions .= anchor('patient/edit_patient/'.$_patient->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditPatient')));
     }
 
     echo '<tr id="'.$_patient->patient_id.'" title="'.$_patient->memo.'">'.

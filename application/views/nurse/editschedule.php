@@ -9,9 +9,9 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-12"><input type="date" name='work_date' id='work_date' value="<?php echo set_value('work_date', $schedule[0]->work_date);?>" class='form-control' placeholder="<?php trP('work_date')?>" title='work_date' required /></div>
-                    <div class="col-md-6"><input type="number" name='work_hours' id='work_hours' value="<?php echo set_value('work_hours', $schedule[0]->work_hours);?>" class='form-control' placeholder="<?php trP('work_hours')?>" title='work_hours' required /></div>
-                    <div class="col-md-6"><input type="number" name='hour_price' id='hour_price' value="<?php echo set_value('hour_price', $schedule[0]->hour_price);?>" class='form-control' placeholder="<?php trP('hour_price')?>" title='hour_price' required /></div>
+                    <div class="col-md-12"><input type="date" name='work_date' id='work_date' value="<?php echo set_value('work_date', $schedule[0]->work_date);?>" class='form-control' placeholder="<?php trP('work_date')?>" title="<?php trP('work_date')?>" required /></div>
+                    <div class="col-md-6"><input type="number" name='work_hours' id='work_hours' value="<?php echo set_value('work_hours', $schedule[0]->work_hours);?>" class='form-control' placeholder="<?php trP('work_hours')?>" title="<?php trP('work_hours')?>" required /></div>
+                    <div class="col-md-6"><input type="number" name='hour_price' id='hour_price' value="<?php echo set_value('hour_price', $schedule[0]->hour_price);?>" class='form-control' placeholder="<?php trP('hour_price')?>" title="<?php trP('hour_price')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -25,9 +25,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Schedules">
+    <div class="pull-right" title="<?php trP('GotoSchedules')?>">
         
-        <?php echo anchor('nurse/nurseschedule/'.$schedule[0]->nurse_id, '<button class="btn btn-return"><span>العودة إلى قائمة ساعات عمل الممرض </span></button>');?>
+        <?php echo anchor('nurse/nurseschedule/'.$schedule[0]->nurse_id, '<button class="btn btn-return"><span>'.tr('GotoSchedules').'</span></button>');?>
     </div>
     <?php
 }else{

@@ -23,9 +23,9 @@ if($drugs)
         $actions = '';
         if($this->bitauth->has_role('pharmacy'))
         {
-          $actions .= anchor('drug/edit/'.$_drug->drug_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Drug'));
-          $actions .= anchor('drug/delete/'.$_drug->drug_id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Drug'));
-          $actions .= anchor('drug/check/'.$_drug->drug_id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Check Availability'));
+          $actions .= anchor('drug/edit/'.$_drug->drug_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDrug')));
+          $actions .= anchor('drug/delete/'.$_drug->drug_id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف الدواء'));
+          $actions .= anchor('drug/check/'.$_drug->drug_id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>'معلومات الدواء'));
         }
         echo '<tr id="drug'.$_drug->drug_id.'" title="'.$_drug->memo.'">'.
           
@@ -43,7 +43,7 @@ if($drugs)
 <script>
     $(document).ready(function(){ 
         $('#drug_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Delete Drug'){
+            if($(this).attr('title')=='حذف الدواء'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);
@@ -51,7 +51,7 @@ if($drugs)
             }
         });
         $('#drug_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Check Availability'){
+            if($(this).attr('title')=='معلومات الدواء'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);

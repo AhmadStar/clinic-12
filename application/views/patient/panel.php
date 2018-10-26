@@ -96,6 +96,6 @@
 </div>
     <?php
   }else{
-    echo '<div class="alert alert-danger text-center"><h1>Patient Not Found</h1></div><div class="pull-right" title="Go to Patients">'.anchor('patient', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
+    echo '<div class="alert alert-danger text-center"><h1>Patient Not Found</h1></div><div class="pull-right" title="'.tr('GoToPatient').'>'.anchor('patient', '<span class="glyphicon glyphicon-arrow-left"></span>').'</div>';
   }
 ?>
