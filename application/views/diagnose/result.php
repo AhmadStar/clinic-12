@@ -17,7 +17,7 @@ if($diagnoses)
       '<td>'.html_escape($diag->diagnose_name_ar).'</td>'.      
 //      '<td><input type="number" name="no_of_item" value="1"/></td>'.
 //      '<td><input type="text" name="diagnose_result" value="1"/></td>'.
-      '<td><textarea name="diagnose_result"  value="diagnose_result" class="form-control" rows="5">dasdas</textarea></td>'.
+      '<td><textarea name="diagnose_result"  value="diagnose_result" class="form-control" rows="2">dasdas</textarea></td>'.
 //      '<td><input type="text" name="diagnose_memo" value="1"/></td>'.
 //      '<td><textarea name="result" id="result" value="result" class="form-control" rows="5">dasdas</textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
