@@ -7,12 +7,12 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='xray_name_en' id="xray_name_en" value="<?php echo $this->input->post('xray_name_en');?>" class='form-control' placeholder="<?php trP('XRayNameen')?>" title='Xray Name' required autofocus /></div>
-                    <div class="col-md-6"><input type="text" name='xray_name_ar' id='xray_name_ar' value="<?php echo $this->input->post('xray_name_ar');?>" class='form-control' placeholder="<?php trP('XRayNamear')?>" title='الاسم العربي' required /></div>
+                    <div class="col-md-6"><input type="text" name='xray_name_en' id="xray_name_en" value="<?php echo $this->input->post('xray_name_en');?>" class='form-control' placeholder="<?php trP('XRayNameen')?>" title="<?php trP('XRayNameen')?>" required autofocus /></div>
+                    <div class="col-md-6"><input type="text" name='xray_name_ar' id='xray_name_ar' value="<?php echo $this->input->post('xray_name_ar');?>" class='form-control' placeholder="<?php trP('XRayNamear')?>" title="<?php trP('XRayNamear')?>" required /></div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='category' id='category' value="<?php echo $this->input->post('category');?>" class='form-control' placeholder="<?php trP('category')?>" title='Category' /></div>
-                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo $this->input->post('price');?>" class='form-control' placeholder="<?php trP('Price')?>" title='Price' required /></div>
+                    <div class="col-md-6"><input type="text" name='category' id='category' value="<?php echo $this->input->post('category');?>" class='form-control' placeholder="<?php trP('category')?>" title="<?php trP('category')?>" /></div>
+                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo $this->input->post('price');?>" class='form-control' placeholder="<?php trP('Price')?>" title="<?php trP('Price')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -33,8 +33,8 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Xray">
+    <div class="pull-right" title="<?php trP('GotoXray')?>">
 
-        <?php echo anchor('xray', '<button class="btn btn-return"><span>العودة إلى قائمة صور الأشعة </span></button>');?>
+        <?php echo anchor('xray', '<button class="btn btn-return"><span>'.tr('GotoXray').'</span></button>');?>
     </div>
 </div>

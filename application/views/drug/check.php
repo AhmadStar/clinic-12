@@ -4,7 +4,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Availability Check</h4>
+          <h4 class="modal-title" id="myModalLabel"><?php echo trP('DrugInformations')?></h4>
         </div>
         <div class="modal-body">
           <?php echo tr('Youhave').' '.$count.' '.tr('availableinthestock')?>.<br/>

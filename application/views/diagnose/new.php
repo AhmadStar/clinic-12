@@ -7,8 +7,8 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='diagnose_name_en' id="diagnose_name_en" value="<?php echo $this->input->post('diagnose_name_en');?>" class='form-control' placeholder="<?php trP('EnglishName')?>" title='Drug Name' required autofocus /></div>
-                    <div class="col-md-6"><input type="text" name='diagnose_name_ar' id='diagnose_name_ar' value="<?php echo $this->input->post('diagnose_name_ar');?>" class='form-control' placeholder="<?php trP('ArabicName')?>" title='الاسم العربي' required /></div>
+                    <div class="col-md-6"><input type="text" name='diagnose_name_en' id="diagnose_name_en" value="<?php echo $this->input->post('diagnose_name_en');?>" class='form-control' placeholder="<?php trP('EnglishName')?>" title="<?php trP('EnglishName')?>" required autofocus /></div>
+                    <div class="col-md-6"><input type="text" name='diagnose_name_ar' id='diagnose_name_ar' value="<?php echo $this->input->post('diagnose_name_ar');?>" class='form-control' placeholder="<?php trP('ArabicName')?>" title="<?php trP('ArabicName')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -29,9 +29,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Diagnose">
+    <div class="pull-right" title="<?php trP('GotoDiagnose')?>">
 
-        <?php echo anchor('diagnose', '<button class="btn btn-return"><span>العودة إلى قائمة التشاخيص </span></button>');?>
+        <?php echo anchor('diagnose', '<button class="btn btn-return"><span>'.tr('GotoDiagnose').'</span></button>');?>
     </div>
 </div>
 <script>

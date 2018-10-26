@@ -8,12 +8,12 @@
             <div id="test_info">
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='test_name_en' id="test_name_en" value="<?php echo set_value('test_name_en', $test->test_name_en);?>" class='form-control' placeholder="<?php trP('TestNameEnglish')?>" title='Test Name' required autofocus /></div>
-                    <div class="col-md-6"><input type="text" name='test_name_ar' id='test_name_ar' value="<?php echo set_value('test_name_ar', $test->test_name_ar);?>" class='form-control' placeholder="<?php trP('TestNameArabic')?>" title='الاسم العربي' required /></div>
+                    <div class="col-md-6"><input type="text" name='test_name_en' id="test_name_en" value="<?php echo set_value('test_name_en', $test->test_name_en);?>" class='form-control' placeholder="<?php trP('TestNameEnglish')?>" title="<?php trP('TestNameEnglish')?>" required autofocus /></div>
+                    <div class="col-md-6"><input type="text" name='test_name_ar' id='test_name_ar' value="<?php echo set_value('test_name_ar', $test->test_name_ar);?>" class='form-control' placeholder="<?php trP('TestNameArabic')?>" title="<?php trP('TestNameArabic')?>" required /></div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='category' id='category' value="<?php echo set_value('category', $test->category);?>" class='form-control' placeholder="<?php trP('category')?>" title='Category' /></div>
-                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo set_value('price', $test->price);?>" class='form-control' placeholder="<?php trP('Price')?>" title='Price' required /></div>
+                    <div class="col-md-6"><input type="text" name='category' id='category' value="<?php echo set_value('category', $test->category);?>" class='form-control' placeholder="<?php trP('category')?>" title="<?php trP('category')?>" /></div>
+                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo set_value('price', $test->price);?>" class='form-control' placeholder="<?php trP('Price')?>" title="<?php trP('Price')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -34,9 +34,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Lab">
+    <div class="pull-right" title="<?php trP('GoToLab')?>">
 
-        <?php echo anchor('test', '<button class="btn btn-return"><span>العودة إلى قائمة التحاليل </span></button>');?>
+        <?php echo anchor('test', '<button class="btn btn-return"><span>'.tr('ReturnToLab').'</span></button>');?>
     </div>
     <?php
 }else{

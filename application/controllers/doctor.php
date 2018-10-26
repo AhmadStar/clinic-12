@@ -58,9 +58,9 @@ class Doctor extends CI_Controller {
 			$row[] = $customers->phone;			
 			$row[] = $customers->created_date;
             
-            $actions .= anchor('doctor/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Doctor'));
-            $actions .= anchor('doctor/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Doctor'));
-            $actions .= anchor('doctor/incomelist/'.$customers->id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>'Check Income'));
+            $actions .= anchor('doctor/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
+            $actions .= anchor('doctor/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteDoctor')));
+            $actions .= anchor('doctor/incomelist/'.$customers->id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>tr('CheckIncome')));
             
             $row[] = $actions;
 

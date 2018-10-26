@@ -1,4 +1,4 @@
-<legend class="legend_colour"><?php echo "- ".trP('PatientList');?></legend>
+<legend class="legend_colour">- <?php echo trP('PatientList');?></legend>
 <!--
 <div class="hidden-print">
 <?php echo anchor('patient/register', tr('RegisterPatient'),array('class'=>'btn btn-info'))?>

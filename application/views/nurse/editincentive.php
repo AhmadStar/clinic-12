@@ -10,7 +10,7 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-12"><input type="number" name='amount' id='amount' value="<?php echo set_value('amount', $incentive[0]->amount);?>" class='form-control' placeholder="<?php trP('IncentiveAmount')?>" title='Incentive Amount' required /></div>
+                    <div class="col-md-12"><input type="number" name='amount' id='amount' value="<?php echo set_value('amount', $incentive[0]->amount);?>" class='form-control' placeholder="<?php trP('IncentiveAmount')?>" title="<?php trP('IncentiveAmount')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -24,9 +24,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Nurses">
+    <div class="pull-right" title="<?php trP('GoToIncentiveNurses')?>">
         
-        <?php echo anchor('nurse/nurseincentive/'.$incentive[0]->nurse_id, '<button class="btn btn-return"><span>العودة إلى قائمة حوافز الممرض </span></button>');?>
+        <?php echo anchor('nurse/nurseincentive/'.$incentive[0]->nurse_id, '<button class="btn btn-return"><span>'.tr('GoToIncentiveNurses').'</span></button>');?>
     </div>
     <?php
 }else{

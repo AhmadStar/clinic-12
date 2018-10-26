@@ -20,44 +20,7 @@ class Income extends CI_Controller {
    */
   public function index($limit = 15,$page = 1)
   {
-//    if (!$this->bitauth->logged_in())
-//    {
-//      $this->session->set_userdata('redir', current_url());
-//      redirect('account/login');
-//    }
-//    
-//    $this->load->model('incomes');
-//    $this->load->model('doctors');
-////    $this->load->model('patients');
-//    
-//    $data['incomes'] = $this->incomes->get_all_incomes();
-//    $data['doctors'] = $this->doctors->get();
-////    $data['patients'] = $this->patients->get();    
-//    $data['title'] = tr('IncomeList');  
-//    $data['navActiveId']='navbarLiDrug';
-//    
-//    $data['page'] = (int)$page;
-//    $data['per_page'] = (int)$limit;
-//    $this->load->library('pagination');
-//    $this->load->library('my_pagination');
-//    $config['base_url'] = site_url('income/index/'.$data['per_page']);
-//    $config['total_rows'] = count($data['incomes']);
-//    $config['per_page'] = $data['per_page'];
-//    $this->my_pagination->initialize($config); 
-//    $data['pagination']=$this->my_pagination->create_links();
-//    
-//      
-////    $data['type_options'] = $this->type_options();  
-//    $path='income/list';
-//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
-//    {
-//        $this->load->view($path, $data);
-//    }else{
-//        $data['includes']=array($path);
-//        $this->load->view('header',$data);
-//        $this->load->view('index',$data);
-//        $this->load->view('footer',$data);
-//    }
+
       
     if (!$this->bitauth->logged_in())
     {
@@ -100,8 +63,8 @@ class Income extends CI_Controller {
 			$row[] = $incomes->amount;
 			$row[] = $incomes->date;			
             
-            $actions .= anchor('income/edit/'.$incomes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Income'));
-            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Income'));            
+            $actions .= anchor('income/edit/'.$incomes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditIncome')));
+            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteIncome')));            
             
             $row[] = $actions;
 
