@@ -25,7 +25,7 @@ if($diagnoses)
         if($this->bitauth->has_role('pharmacy'))
         {
           $actions .= anchor('diagnose/edit/'.$_diagnose['id'], '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDiagnose')));
-          $actions .= anchor('diagnose/delete/'.$_diagnose['id'], '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteDiagnose')));          
+          $actions .= anchor('diagnose/delete/'.$_diagnose['id'], '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف التشخيص'));          
         }
         echo '<tr id="diagnose'.$_diagnose['id'].'">'.                    
           '<td>'.html_escape($_diagnose['diagnose_name_en']).'</td>'.                              
@@ -41,7 +41,7 @@ if($diagnoses)
 <script>
     $(document).ready(function(){ 
         $('#diagnose_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Delete Diagnose'){
+            if($(this).attr('title')=='حذف التشخيص'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);
