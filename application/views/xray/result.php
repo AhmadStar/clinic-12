@@ -18,7 +18,8 @@ if($xrays)
       '<td>'.html_escape($xray->xray_name_ar).'</td>'.
 //      '<td>'.html_escape($xray->price).'</td>'.
 //      '<td><input type="number" name="no_of_item" value="1"/></td>'.
-      '<td><input type="text" name="xresult"/></td>'.
+//      '<td><input type="text" name="xresult"/></td>'.
+        '<td><textarea name="xresult"  value="xresult" class="form-control" rows="5">dasdas</textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
   }?>
@@ -30,7 +31,8 @@ if($xrays)
         var tr = $(this).parent().parent();
         $('#xray_id').val(tr.find('td:first').text());
 //        $('#xray_no_of_item').val(tr.find('input[name="no_of_item"]').val());
-        $('#xresult').val(tr.find('input[name="xresult"]').val());
+//        $('#xresult').val(tr.find('input[name="xresult"]').val());
+        $('#xresult').val(tr.find('textarea[name="xresult"]').val());         
 //        $('#xray_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
         
         $.post($('#addXrayForm').attr('action'),$('#addXrayForm').serialize(),function(data){

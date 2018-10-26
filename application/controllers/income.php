@@ -118,7 +118,18 @@ class Income extends CI_Controller {
 		echo json_encode($output);
 	}    
     
-        
+    public function total()
+  {      
+        $this->load->model('Incomes','incomes');
+        $this->load->model('Doctors_model','doctors');        
+		$data = $this->incomes->get_total();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}        
     
   /**
    * Patient::edit()

@@ -17,8 +17,8 @@ if($lab)
       '<td>'.html_escape($test->test_name_ar).'</td>'.
 //      '<td>'.html_escape($test->price).'</td>'.
 //      '<td><input type="number" name="no_of_item" value="1"/></td>'.
-      '<td><input type="text" name="result"/></td>'.
-//      '<td><textarea name="result" id="result" value="result" class="form-control" rows="5">dasdas</textarea></td>'.
+//      '<td><input type="text" name="result"/></td>'.
+      '<td><textarea name="result"  value="result" class="form-control" rows="5">dasdas</textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
   }?>
@@ -30,7 +30,8 @@ if($lab)
         var tr = $(this).parent().parent();
         $('#test_id').val(tr.find('td:first').text());
 //        $('#test_no_of_item').val(tr.find('input[name="no_of_item"]').val());
-        $('#result').val(tr.find('input[name="result"]').val());          
+        $('#result').val(tr.find('textarea[name="result"]').val());       
+		debugger;
 //        $('#test_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
         
         $.post($('#addTestForm').attr('action'),$('#addTestForm').serialize(),function(data){

@@ -187,12 +187,14 @@ class Incomes extends CI_Model {
 			$this->db->like('amount', $this->input->post('amount'));
 		}
             
-        if($this->input->post('max_date') && $this->input->post('min_date'))
+        if($this->input->post('max_date'))
 		{
-			$this->db->where('date >=', $this->input->post('min_date'));
 			$this->db->where('date <=', $this->input->post('max_date'));
 		}
-        
+        if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
 
 		$this->db->from($this->table);
 		$i = 0;
@@ -238,6 +240,26 @@ class Incomes extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	
+	public function get_total(){
+		
+		$this->db->select('sum(amount) as total');
+		
+		if($this->input->post('max_date'))
+		{
+			$this->db->where('date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
+		
+		$this->db->from($this->table);
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
     
     public function count_filtered()
 	{

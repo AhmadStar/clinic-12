@@ -16,7 +16,8 @@ if($diagnoses)
       '<td>'.html_escape($diag->diagnose_name_en).'</td>'.
       '<td>'.html_escape($diag->diagnose_name_ar).'</td>'.      
 //      '<td><input type="number" name="no_of_item" value="1"/></td>'.
-      '<td><input type="text" name="diagnose_result" value="1"/></td>'.
+//      '<td><input type="text" name="diagnose_result" value="1"/></td>'.
+      '<td><textarea name="diagnose_result"  value="diagnose_result" class="form-control" rows="5">dasdas</textarea></td>'.
 //      '<td><input type="text" name="diagnose_memo" value="1"/></td>'.
 //      '<td><textarea name="result" id="result" value="result" class="form-control" rows="5">dasdas</textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
@@ -30,7 +31,8 @@ if($diagnoses)
         var tr = $(this).parent().parent();
         $('#diagnose_id').val(tr.find('td:first').text());
 //        $('#diagnose_no_of_item').val(tr.find('input[name="no_of_item"]').val());
-        $('#diagnose_result').val(tr.find('input[name="diagnose_result"]').val());          
+//        $('#diagnose_result').val(tr.find('input[name="diagnose_result"]').val());          
+          $('#diagnose_result').val(tr.find('textarea[name="diagnose_result"]').val());                   
 //        $('#diagnose_memo').val(tr.find('input[name="diagnose_memo"]').val());          
 //        $('#diagnose_total_cost').val(tr.find('td:nth(3)').text()*tr.find('input[name="no_of_item"]').val());
         
