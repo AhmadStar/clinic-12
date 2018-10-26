@@ -32,7 +32,7 @@ if($nurseschedules)
   }
   echo '</tbody></table></div>'.$pagination."</div>";
   ?>
-<div class="pull-right" title="<?php trP('GotoNurses')?>">
+<div class="pull-right" title="<?php trP('GoToNurses')?>">
 
     <?php echo anchor('nurse', '<button class="btn btn-return"><span>'.tr('ReturnToNurses').'</span></button>');?>
 </div>

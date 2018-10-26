@@ -29,7 +29,7 @@ if($consumes)
         if($this->bitauth->has_role('pharmacy'))
         {
           $actions .= anchor('consume/edit/'.$_consume->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditConsume')));
-          $actions .= anchor('consume/delete/'.$_consume->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteConsume')));
+          $actions .= anchor('consume/delete/'.$_consume->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف المصروف'));
           
         }
         echo '<tr id="consume'.$_consume->id.'">'.
@@ -49,7 +49,7 @@ if($consumes)
 <script>
     $(document).ready(function(){ 
         $('#consume_list_table a').on('click',function(e){
-            if($(this).attr('title')==tr('DeleteConsume')){
+            if($(this).attr('title')=='حذف المصروف'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);

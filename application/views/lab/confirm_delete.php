@@ -4,10 +4,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><? trP('Delete')?>  <?php echo $test->test_name_en;?></h4>
+          <h4 class="modal-title" id="myModalLabel"><?php trP('Delete')?>  <?php echo $test->test_name_en;?></h4>
         </div>
         <div class="modal-body">
-          <? trP('uwdelete')?><strong><?php echo $test->test_name_en;?></strong>.<br/><? trP('Areyousure')?>
+          <?php trP('uwdelete')?><strong><?php echo $test->test_name_en;?></strong>.<br/><?php trP('Areyousure')?>
         </div>
         <div class="modal-footer">
           <?php echo form_open('test/delete/'.$test->test_id);

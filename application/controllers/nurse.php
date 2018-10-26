@@ -63,8 +63,8 @@ class Nurse extends CI_Controller {
             
             $actions .= anchor('nurse/edit/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditNurse')));
             $actions .= anchor('nurse/delete/'.$nurses->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteNurse')));
-            $actions .= anchor('nurse/nurseschedule/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('NurseHoursWork')));
-            $actions .= anchor('nurse/nurseincentive/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('NurseIncentives')));            
+            $actions .= anchor('nurse/nurseschedule/'.$nurses->id, '<span data-icon="k" class="icon" style="font-size: 20px"></span>',array('title'=>tr('NurseHoursWork')));
+            $actions .= anchor('nurse/nurseincentive/'.$nurses->id, '<span data-icon="f" class="icon" style="font-size: 30px; position: relative; top: 6px;"></span>',array('title'=>tr('NurseIncentives')));            
             
             $row[] = $actions;
 
