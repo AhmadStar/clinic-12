@@ -23,8 +23,8 @@ if($xrays)
         $actions = '';
         if($this->bitauth->has_role('pharmacy'))
         {
-          $actions .= anchor('xray/edit/'.$xray->xray_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Xray'));
-          $actions .= anchor('xray/delete/'.$xray->xray_id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Xray'));
+          $actions .= anchor('xray/edit/'.$xray->xray_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'تعديل الصورة الشعاعية'));
+          $actions .= anchor('xray/delete/'.$xray->xray_id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف الصورة الشعاعية'));
         }
         echo '<tr id="xray'.$xray->xray_id.'" title="'.$xray->memo.'">'.
           
@@ -42,7 +42,7 @@ if($xrays)
 <script>
     $(document).ready(function(){ 
         $('#xray_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Delete Xray'){
+            if($(this).attr('title')=='حذف الصورة الشعاعية'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);

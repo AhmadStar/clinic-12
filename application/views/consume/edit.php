@@ -8,15 +8,15 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='name' id="name" value="<?php echo set_value('name', $consume->name);?>" class='form-control' placeholder="<?php trP('ConsumeName')?>" title='Consume Name' required autofocus /></div>
+                    <div class="col-md-6"><input type="text" name='name' id="name" value="<?php echo set_value('name', $consume->name);?>" class='form-control' placeholder="<?php trP('ConsumeName')?>" title="<?php trP('ConsumeName');?>" required autofocus /></div>
                     <div class="col-md-6">
                         <?php echo form_dropdown('doctor_id',$doctor_list,
-                $consume->doctor_id,"class='form-control' title='Doctor' required");?>
+                $consume->doctor_id,"class='form-control' title=".tr('Doctor')."required");?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="number" name='count' id='count' value="<?php echo set_value('count', $consume->count);?>" class='form-control' placeholder="<?php trP('Count')?>" title='count' /></div>
-                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo set_value('price', $consume->price);?>" class='form-control' placeholder="<?php trP('Price')?>" title='price' required /></div>
+                    <div class="col-md-6"><input type="number" name='count' id='count' value="<?php echo set_value('count', $consume->count);?>" class='form-control' placeholder="<?php trP('Count')?>" title="<?php trP('Count')?>" /></div>
+                    <div class="col-md-6"><input type="number" name='price' id='price' value="<?php echo set_value('price', $consume->price);?>" class='form-control' placeholder="<?php trP('Price')?>" title="<?php trP('Price')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -28,9 +28,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Concumes">
+    <div class="pull-right" title="<?php trP('GoTOConsumes')?>">
 
-        <?php echo anchor('consume', '<button class="btn btn-return"><span>العودة إلى قائمة المصاريف </span></button>');?>
+        <?php echo anchor('consume', '<button class="btn btn-return"><span>'.tr('ReturnToConsumes').'</span></button>');?>
     </div>
     <?php
 }else{

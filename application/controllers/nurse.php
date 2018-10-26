@@ -20,40 +20,7 @@ class Nurse extends CI_Controller {
    */
   public function index($limit = 15,$page = 1)
   {
-//    if (!$this->bitauth->logged_in())
-//    {
-//      $this->session->set_userdata('redir', current_url());
-//      redirect('account/login');
-//    }
-//    
-//    $this->load->model('nurses');
-//      
-//    $data['nurses'] = $this->nurses->get_all_nurses();
-//      
-//    $data['title'] = tr('NursesList');  
-//    $data['navActiveId']='navbarLiDrug';
-//    
-//    $data['page'] = (int)$page;
-//    $data['per_page'] = (int)$limit;
-//    $this->load->library('pagination');
-//    $this->load->library('my_pagination');
-//    $config['base_url'] = site_url('nurse/index/'.$data['per_page']);
-//    $config['total_rows'] = count($data['nurses']);
-//    $config['per_page'] = $data['per_page'];
-//    $this->my_pagination->initialize($config); 
-//    $data['pagination']=$this->my_pagination->create_links();
-//    
-//
-//    $path='nurse/list';
-//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
-//    {
-//        $this->load->view($path, $data);
-//    }else{
-//        $data['includes']=array($path);
-//        $this->load->view('header',$data);
-//        $this->load->view('index',$data);
-//        $this->load->view('footer',$data);
-//    }
+
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
@@ -94,10 +61,10 @@ class Nurse extends CI_Controller {
 			$row[] = $nurses->phone;
 			$row[] = $nurses->address;			
             
-            $actions .= anchor('nurse/edit/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Nurse'));
-            $actions .= anchor('nurse/delete/'.$nurses->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Nurse'));
-            $actions .= anchor('nurse/nurseschedule/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Nurse Hours Work'));
-            $actions .= anchor('nurse/nurseincentive/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Nurse Incentives'));            
+            $actions .= anchor('nurse/edit/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditNurse')));
+            $actions .= anchor('nurse/delete/'.$nurses->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteNurse')));
+            $actions .= anchor('nurse/nurseschedule/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('NurseHoursWork')));
+            $actions .= anchor('nurse/nurseincentive/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('NurseIncentives')));            
             
             $row[] = $actions;
 

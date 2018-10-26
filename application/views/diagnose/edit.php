@@ -30,9 +30,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Diagnose">
+    <div class="pull-right" title="<?php trP('GotoDiagnose')?>">
 
-        <?php echo anchor('diagnose', '<button class="btn btn-return"><span>العودة إلى قائمة التشاخيص </span></button>');?>
+        <?php echo anchor('diagnose', '<button class="btn btn-return"><span>'.tr('GotoDiagnose').'</span></button>');?>
     </div>
     <?php
 }else{

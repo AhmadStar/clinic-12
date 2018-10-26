@@ -10,7 +10,7 @@
 
                     <div class="form-group">
                         <div class="col-md-12">
-                            <?php echo form_dropdown('doctor_id',$doctor_list,$this->input->post('doctor_id'),"class='form-control' title='Doctor' required");?>
+                            <?php echo form_dropdown('doctor_id',$doctor_list,$this->input->post('doctor_id'),"class='form-control' title=".tr('Doctor')." required");?>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
 
                     <div class="col-md-6"><input type="date" name='date' id='date' value="<?php echo $this->input->post('date');?>" class='form-control' placeholder="<?php trP('Date')?>" title="<?php trP('Date')?>" required /></div>
 
-                    <div class="col-md-6"><input type="number" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder="<?php trP('amount')?>" title='amount' required /></div>
+                    <div class="col-md-6"><input type="number" name='amount' id='amount' value="<?php echo $this->input->post('amount');?>" class='form-control' placeholder="<?php trP('amount')?>" title="<?php trP('amount')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
         </fieldset>
@@ -30,9 +30,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Daily Incoms">
+    <div class="pull-right" title="<?php trP('GotoDailyIncoms')?>">
 
-        <?php echo anchor('dailyincome', '<button class="btn btn-return"><span>العودة إلى قائمة الموارد </span></button>');?>
+        <?php echo anchor('dailyincome', '<button class="btn btn-return"><span>'.tr('GotoDailyIncoms').'</span></button>');?>
     </div>
 </div>
 

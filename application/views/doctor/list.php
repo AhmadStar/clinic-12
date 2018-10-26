@@ -11,7 +11,7 @@
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                    
                     <div class="form-group">
-                        <label for="FirstName" class="col-sm-2 control-label"><?php trP('Name')?></label>
+                        <label for="FirstName" class="col-sm-2 control-label" ><?php trP('Name')?></label>
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="name">
                         </div>
@@ -21,13 +21,13 @@
                         </div>                        
                     </div>
                     <div class="form-group">                        
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Minimum Date:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title='min' required />
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MinimumDate:')?>" required />
                         </div>
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Maximum Date:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MaximumDate:')?></label>
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title='max' required />
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MaximumDate:')?>" required />
                         </div>
 <!--
                         <label for="LastName" class="col-sm-2 control-label"><?php trP('CreatedDate')?></label>
@@ -48,7 +48,7 @@
   <table id="doctor_list_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th><?php trP('Number')?></th>
                     <th><?php trP('Name')?></th>
                     <th><?php trP('Address')?></th>
                     <th><?php trP('Phone')?></th>                    
@@ -116,7 +116,7 @@ $(document).ready(function() {
 <script>
 $(document).ready(function(){ 
     $('#doctor_list_table a').on('click',function(e){
-        if($(this).attr('title')=='Delete Doctor'){
+        if($(this).attr('title')==tr('DeleteDoctor')){
            e.preventDefault();
            $.get($(this).attr('href'),'',function(data){
                $('#tmpDiv').html(data);

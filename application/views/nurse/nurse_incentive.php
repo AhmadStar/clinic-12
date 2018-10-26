@@ -25,7 +25,7 @@ if($nurseincentives)
         $actions = '';
         if($this->bitauth->has_role('pharmacy'))
         {          
-          $actions .= anchor('nurse/editincentive/'.$_nurse_incentive->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Nurse'));
+          $actions .= anchor('nurse/editincentive/'.$_nurse_incentive->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditIncentive')));
         }
         echo '<tr id="Doctor'.$_nurse_incentive->id.'">'.
           '<td>'.html_escape($_nurse_incentive->id).'</td>'.             
@@ -37,9 +37,9 @@ if($nurseincentives)
   }
   echo '</tbody></table></div>'.$pagination."</div>";
   ?>
-<div class="pull-right" title="Go to Nurses">
+<div class="pull-right" title="<?php trP('GotoNurses')?>">
 
-    <?php echo anchor('nurse', '<button class="btn btn-return"><span>العودة إلى قائمة الممرضين </span></button>');?>
+    <?php echo anchor('nurse', '<button class="btn btn-return"><span>'.tr('ReturnToNurses').'</span></button>');?>
 </div>
 
 <script>

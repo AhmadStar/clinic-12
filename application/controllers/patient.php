@@ -106,8 +106,8 @@ class Patient extends CI_Controller {
             else $html=tr('Female');
             $row[]=$html;
             
-            $actions .= anchor('patient/panel/'.$patients->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>'Pamel patient'));
-            $actions .= anchor('patient/edit_patient/'.$patients->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>'Edit Patient'));            
+            $actions .= anchor('patient/panel/'.$patients->patient_id, '<span class="glyphicon glyphicon-cog"></span>',array('title'=>tr('PatientControlPanel')));
+            $actions .= anchor('patient/edit_patient/'.$patients->patient_id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditPatient')));            
             
             $row[] = $actions;
 

@@ -38,9 +38,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Nurses">
+    <div class="pull-right" title="<?php trP('GoToIncomes')?>">
 
-        <?php echo anchor('income', '<button class="btn btn-return"><span>العودة إلى قائمة المعاينات </span></button>');?>
+        <?php echo anchor('income', '<button class="btn btn-return"><span>'.tr('ReturnToIncomes').'</span></button>');?>
     </div>
     <?php
 }else{

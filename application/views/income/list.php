@@ -17,11 +17,11 @@
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                   
                     <div class="form-group">                        
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Minimum Date:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
                         <div class="col-md-4">
                             <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title='min' required />
                         </div>
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Maximum Date:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MaximumDate:')?></label>
                         <div class="col-md-4">
                             <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title='max' required />
                         </div>
@@ -40,8 +40,8 @@
                 <tr>
                     <th>No</th>
                     <th><?php trP('DoctorName')?></th>
-                    <th><?php trP('Amount')?></th>
-                    <th><?php trP('date')?></th>                    
+                    <th><?php trP('amount')?></th>
+                    <th><?php trP('Date')?></th>                    
                     <th></th>                    
                 </tr>
             </thead>
