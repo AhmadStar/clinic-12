@@ -19,7 +19,7 @@ if($xrays)
 //      '<td>'.html_escape($xray->price).'</td>'.
 //      '<td><input type="number" name="no_of_item" value="1"/></td>'.
 //      '<td><input type="text" name="xresult"/></td>'.
-        '<td><textarea name="xresult"  value="xresult" class="form-control" rows="2">dasdas</textarea></td>'.
+        '<td><textarea name="xresult" value="xresult" class="form-control" rows="2">dasdas</textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
   }?>
