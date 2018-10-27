@@ -62,7 +62,7 @@ class Nurse extends CI_Controller {
 			$row[] = $nurses->address;			
             
             $actions .= anchor('nurse/edit/'.$nurses->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditNurse')));
-            $actions .= anchor('nurse/delete/'.$nurses->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteNurse')));
+            $actions .= anchor('nurse/delete/'.$nurses->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete nurse'));
             $actions .= anchor('nurse/nurseschedule/'.$nurses->id, '<span data-icon="k" class="icon" style="font-size: 20px"></span>',array('title'=>tr('NurseHoursWork')));
             $actions .= anchor('nurse/nurseincentive/'.$nurses->id, '<span data-icon="f" class="icon" style="font-size: 30px; position: relative; top: 6px;"></span>',array('title'=>tr('NurseIncentives')));            
             
@@ -81,6 +81,19 @@ class Nurse extends CI_Controller {
 		echo json_encode($output);
 	}    
     
+    
+  public function total()
+  {      
+        $this->load->model('Dailyincomes','dailyincome');
+        $this->load->model('Doctors_model','doctors');        
+		$data = $this->dailyincome->get_total();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
           
   
   /**

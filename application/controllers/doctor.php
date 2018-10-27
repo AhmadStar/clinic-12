@@ -76,7 +76,18 @@ class Doctor extends CI_Controller {
 		echo json_encode($output);
 	}    
     
-    
+    public function total()
+  {      
+        $this->load->model('Consumes','consumes');
+        $this->load->model('Doctors_model','doctors');        
+		$data = $this->consumes->get_total();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
   
   /**
    * Patient::search()
