@@ -3,7 +3,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">    
         <div class="panel-body" >
-        <?php trP('DailyIncomesCountDuringSpecificDate')?> : <i id="total"></i>
+        <?php trP('DailyIncomesCountDuringSpecificDate')?> : <b id="total"></b>
         </div>            
     </div>
     
@@ -15,14 +15,18 @@
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                    
                     <div class="form-group">                        
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
+                        
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MinimumDate:')?>" required />
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="<?php trP('MaximumDate:')?>" title="<?php trP('MaximumDate:')?>" required />
                         </div>
                         <label for="LastName" class="col-sm-2 control-label"><?php trP('MaximumDate:')?></label>
+
+                        
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MaximumDate:')?>" required />
+                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="<?php trP('MinimumDate:')?>" title="<?php trP('MinimumDate:')?>" required />
                         </div>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
+                        
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">

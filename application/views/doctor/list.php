@@ -1,4 +1,4 @@
-<legend class="legend_colour"><?php echo "- ".trP('DoctorsList');?></legend>
+<legend class="legend_colour">- <?php echo trP('DoctorsList');?></legend>
 <div> 
  <div class="panel panel-default">
             <div class="panel-heading">
@@ -7,14 +7,17 @@
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                    
                     <div class="form-group">                        
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <label for="FirstName" class="col-sm-1 control-label" ><?php trP('Name')?></label>
+                        
                         <div class="col-md-5">
                             <input type="text" class="form-control" id="address">
                         </div>
                         <label for="LastName" class="col-sm-1 control-label"><?php trP('Address')?></label>
+                        
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <label for="FirstName" class="col-sm-1 control-label" ><?php trP('Name')?></label>
+                        
                     </div>                                                           
                     <div class="form-group">                        
                         <div class="col-sm-12">

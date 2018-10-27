@@ -1,11 +1,15 @@
 <legend class="legend_colour">-
     <?php echo trP('NurseIncetivesList');?>
 </legend>
+<div class="row">
+<div class="col col-md-12 well well-sm">
 <div class="form-group">
     <div class="col-md-12">
         <legend class="legend_colour">
             <?php echo  tr('Allincentives').' '.$allincentives ;?>
         </legend>
+    </div>
+</div>
     </div>
 </div>
 <?php //pagination should be added if have time.
