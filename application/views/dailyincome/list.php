@@ -1,7 +1,13 @@
 <legend class="legend_colour">- <?php echo trP('DailyIncomeList');?></legend>
 <div>
-<div class="hidden-print">
-<?php echo anchor('dailyincome/new_dailyincome', tr('NewdailyIncome'),array('class'=>'btn btn-info'))?>
+<div class="panel panel-default">
+    <div class="panel-heading">    
+        <div class="panel-body" >
+        <?php trP(' مجموع المعاينات الكلي خلال  التاريخ المحدد : ')?>
+            <div id="total"></div>
+        </div>            
+    </div>
+    
 </div>
 <div class="panel panel-default">
             <div class="panel-heading">
@@ -18,7 +24,12 @@
                         <div class="col-md-4">
                             <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MaximumDate:')?>" required />
                         </div>
-                    </div>                    
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <?php echo form_dropdown('doctor_id',$doctor_list,'',"id='doctor_id' class='form-control'");?>
+                        </div>
+                    </div>                      
                     <div class="form-group">                        
                         <div class="col-sm-12">
                             <button type="button" id="btn-filter" class="btn btn-primary"><?php trP('Filter')?></button>
@@ -66,6 +77,7 @@ $(document).ready(function() {
             "data": function ( data ) {
                 data.min_date = $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val();
                 data.max_date = $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val();
+                data.doctor_id = $('#doctor_id').val();
             }
         },
 
@@ -81,6 +93,7 @@ $(document).ready(function() {
 
     $('#btn-filter').click(function(){ //button filter event click
         table.ajax.reload();  //just reload table
+        loadTotal();
     });
     $('#btn-reset').click(function(){ //button reset event click
         $('#form-filter')[0].reset();
@@ -91,21 +104,43 @@ $(document).ready(function() {
     </script>
 <script>
     $(document).ready(function(){ 
-        $('#income_list_table a').on('click',function(e){
+        $('#dailyincome_list_table a').on('click',function(e){
             if($(this).attr('title')=='حذف المورد اليومي'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);
                });
             }
-        });
-        $('#income_list_table a').on('click',function(e){
-            if($(this).attr('title')=='Check Availability'){
+        });        
+    });
+    
+    function HandleActions(){
+		$('#dailyincome_list_table').on('click','a',function(e){
+            if($(this).attr('title')=='Delete DailyIncome'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);
                });
             }
-        });
+        });        
+	}
+	
+	function loadTotal(){
+		$.ajax({
+        url: '<?php echo site_url('dailyincome/total')?>',
+        type: 'POST',
+        data: {
+            min_date : $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val(),
+            max_date : $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val(),
+            doctor_id : $('#doctor_id').val()
+        },
+        dataType: 'json',
+        success: function(data) {
+			HandleActions();
+//			alert(data.data[0].total);            
+            $("#total").html(data.data[0].total);
+//            console.log(data);
+        }
     });
+	}
 </script>

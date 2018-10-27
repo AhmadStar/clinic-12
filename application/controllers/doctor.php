@@ -48,19 +48,18 @@ class Doctor extends CI_Controller {
 		$list = $this->doctors->get_datatables();
 		$data = array();
 		$no = $_POST['start'];        
-		foreach ($list as $customers) {
+		foreach ($list as $doctors) {
 			$no++;
             $actions = '';
 			$row = array();
 			$row[] = $no;
-			$row[] = $customers->name;
-			$row[] = $customers->address;
-			$row[] = $customers->phone;			
-			$row[] = $customers->created_date;
+			$row[] = $doctors->name;
+			$row[] = $doctors->address;
+			$row[] = $doctors->phone;			
+			$row[] = $doctors->created_date;
             
-            $actions .= anchor('doctor/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
-            $actions .= anchor('doctor/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteDoctor')));
-            $actions .= anchor('doctor/incomelist/'.$customers->id, '<span class="glyphicon glyphicon-check"></span>',array('title'=>tr('CheckIncome')));
+            $actions .= anchor('doctor/edit/'.$doctors->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
+            $actions .= anchor('doctor/delete/'.$doctors->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Doctor'));
             
             $row[] = $actions;
 
@@ -290,108 +289,7 @@ class Doctor extends CI_Controller {
     }
   } 
   
-
-  
-  public function incomelist($doctor_id=0 , $limit = 12,$page = 1)
-  {
-    if (!$this->bitauth->logged_in())
-    {
-      $this->session->set_userdata('redir', current_url());
-      redirect('account/login');
-    }
-    if(!$this->bitauth->has_role('pharmacy'))
-    {
-      $this->_no_access();
-      return;
-    }
-          
-    $this->load->helper('url');
-    $this->load->helper('form');
-
-      
-    $this->load->model('doctors');
-    $this->load->model('incomes');
-    $this->load->model('patients');
-//      
-    $data['doctorname'] = $this->doctors->get_name($doctor_id);
-////    print_r($this->doctors->get_name($doctor_id));
-    $data['patients'] = $this->patients->get();  
-//    
-//    $data['doctorincomes'] = $this->incomes->get_all_doctor_incomes($doctor_id);  
-    $a  = $this->incomes->get_sum_of_doctor_incomes($doctor_id);
-    $b  = $this->incomes->get_sum_static_doctor_incomes($doctor_id);
-    $c  = $this->incomes->get_sum_normal_doctor_incomes($doctor_id);
-    $data['allmoney'] = $a[0]['amount'];
-    $data['allstatic'] = $b[0]['amount'];
-    $data['allnormal'] = $c[0]['amount'];
-    $data['doctor_id'] = $doctor_id;
-//      
-////    $data['doctorincomes'] = $this->incomes->get();    
-//    $data['title'] = tr('DoctorIncomeList');      
-//    $data['navActiveId']='navbarLiDrug';
-//    
-//    $data['page'] = (int)$page;
-//    $data['per_page'] = (int)$limit;
-//    $this->load->library('pagination');
-//    $this->load->library('my_pagination');
-//    $config['base_url'] = site_url('doctor/incomelist/'.$doctor_id.'/'.$data['per_page']);
-//    $config['total_rows'] = count($data['doctorincomes']);
-//    $config['per_page'] = $data['per_page'];
-//    $this->my_pagination->initialize($config); 
-//    $data['pagination']=$this->my_pagination->create_links();
-//    
-//    $data['type_options'] = $this->type_options();
-//    $path='doctor/list_income';
-//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
-//    {
-//        $this->load->view($path, $data);
-//    }else{
-//        $data['includes']=array($path);
-//        $this->load->view('header',$data);
-//        $this->load->view('index',$data);
-//        $this->load->view('footer',$data);
-//    }
-     
-
-    $data['title'] = tr('DoctorIncomeList');
-    $path='doctor/list_income';
-    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
-    {
-        $this->load->view($path, $data);
-    }else{
-        $data['includes']=array($path);
-        $this->load->view('header',$data);
-        $this->load->view('index',$data);
-        $this->load->view('footer',$data);
-    }
-  }
     
-    
-  public function doctor_list_income()
-  {
-        $this->load->model('Doctors_model','doctors');
-		$list = $this->doctors->get_datatables_doctor_list_income();
-		$data = array();
-		$no = $_POST['start'];        
-		foreach ($list as $customers) {
-			$no++;
-            $actions = '';
-			$row = array();
-			$row[] = $no;
-			$row[] = $customers->amount;
-			$row[] = $customers->date;
-			$data[] = $row;
-		}
-
-		$output = array(
-						"draw" => $_POST['draw'],
-						"recordsTotal" => $this->doctors->count_all_incomes(),
-						"recordsFiltered" => $this->doctors->count_filtered(),
-						"data" => $data,
-				);
-		//output to json format
-		echo json_encode($output);
-	}     
 
   public function _no_access()
   {

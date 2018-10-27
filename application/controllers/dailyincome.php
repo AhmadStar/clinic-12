@@ -28,7 +28,7 @@ class Dailyincome extends CI_Controller {
     
     $this->load->helper('url');
     $this->load->helper('form');
-
+    $data['doctor_list']=$this->_doctor_list();
     $data['title'] = tr('DailyIncomeList');
     $path='dailyincome/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
@@ -44,22 +44,24 @@ class Dailyincome extends CI_Controller {
   
 
   public function ajax_list()
-	{
+  {
         $this->load->model('Dailyincomes','dailyincome');
+        $this->load->model('Doctors_model','doctors');        
 		$list = $this->dailyincome->get_datatables();
 		$data = array();
 		$no = $_POST['start'];        
-		foreach ($list as $customers) {
+		foreach ($list as $dailyincome) {
 			$no++;
+            $doctor_name = $this->doctors->get_doctor_name($dailyincome->doctor_id);
             $actions = '';
 			$row = array();
 			$row[] = $no;
-			$row[] = $customers->doctor_id;
-			$row[] = $customers->date;
-			$row[] = $customers->amount;						
+			$row[] = $doctor_name[0]->name;
+			$row[] = $dailyincome->date;
+			$row[] = $dailyincome->amount;						
             
-            $actions .= anchor('dailyincome/edit/'.$customers->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
-            $actions .= anchor('dailyincome/delete/'.$customers->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'حذف المورد اليومي'));            
+            $actions .= anchor('dailyincome/edit/'.$dailyincome->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
+            $actions .= anchor('dailyincome/delete/'.$dailyincome->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete DailyIncome'));            
             
             $row[] = $actions;
 
@@ -75,6 +77,19 @@ class Dailyincome extends CI_Controller {
 		//output to json format
 		echo json_encode($output);
 	}     
+    
+  public function total()
+  {      
+        $this->load->model('Dailyincomes','dailyincome');
+        $this->load->model('Doctors_model','doctors');        
+		$data = $this->dailyincome->get_total();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}      
     
   /**
    * Patient::edit()

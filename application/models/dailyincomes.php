@@ -108,11 +108,20 @@ class Dailyincomes extends CI_Model {
 	{
 		
 		//add custom filter here		        
-        if($this->input->post('max_date') && $this->input->post('min_date'))
+        if($this->input->post('doctor_id'))
 		{
-			$this->db->where('date >=', $this->input->post('min_date'));
+			$this->db->where('doctor_id', $this->input->post('doctor_id'));
+		}
+        
+		if($this->input->post('max_date'))
+		{
 			$this->db->where('date <=', $this->input->post('max_date'));
 		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
+        
         
 
 		$this->db->from('dailyincome');
@@ -172,4 +181,30 @@ class Dailyincomes extends CI_Model {
 		return $this->db->count_all_results();
 	}
         
+    public function get_total(){
+		
+		$this->db->select('sum(amount) as total');
+		
+        if($this->input->post('doctor_id'))
+		{
+			$this->db->where('doctor_id', $this->input->post('doctor_id'));
+		}
+        
+		if($this->input->post('max_date'))
+		{
+			$this->db->where('date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
+		
+		$this->db->from($this->table);
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
+    
+    
 }

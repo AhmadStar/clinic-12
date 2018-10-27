@@ -181,6 +181,10 @@ class Incomes extends CI_Model {
 		{
 			$this->db->like('name', $this->input->post('name'));
 		}
+        if($this->input->post('doctor_id'))
+		{
+			$this->db->like('doctor_id', $this->input->post('doctor_id'));
+		}
             
 		if($this->input->post('amount'))
 		{
@@ -245,6 +249,11 @@ class Incomes extends CI_Model {
 		
 		$this->db->select('sum(amount) as total');
 		
+        if($this->input->post('doctor_id'))
+		{
+			$this->db->where('doctor_id', $this->input->post('doctor_id'));
+		}
+        
 		if($this->input->post('max_date'))
 		{
 			$this->db->where('date <=', $this->input->post('max_date'));

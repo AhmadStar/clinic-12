@@ -30,7 +30,7 @@ class Nurse extends CI_Controller {
     $this->load->helper('url');
     $this->load->helper('form');
 
-    $data['title'] = tr('IncomeList');
+    $data['title'] = tr('NursesList');
     $path='nurse/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {

@@ -31,6 +31,7 @@ class Income extends CI_Controller {
     $this->load->helper('url');
     $this->load->helper('form');
 
+    $data['doctor_list']=$this->_doctor_list();   
     $data['title'] = tr('IncomeList');
     $path='income/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
@@ -64,7 +65,7 @@ class Income extends CI_Controller {
 			$row[] = $incomes->date;			
             
             $actions .= anchor('income/edit/'.$incomes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditIncome')));
-            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteIncome')));            
+            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Income'));            
             
             $row[] = $actions;
 
@@ -81,7 +82,7 @@ class Income extends CI_Controller {
 		echo json_encode($output);
 	}    
     
-    public function total()
+  public function total()
   {      
         $this->load->model('Incomes','incomes');
         $this->load->model('Doctors_model','doctors');        

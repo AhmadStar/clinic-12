@@ -20,32 +20,54 @@ class Consume extends CI_Controller {
    */
   public function index($limit = 15,$page = 1)
   {
+//    if (!$this->bitauth->logged_in())
+//    {
+//      $this->session->set_userdata('redir', current_url());
+//      redirect('account/login');
+//    }
+//    
+//    $this->load->model('consumes');
+//    $this->load->model('doctors');
+//    
+//    $data['consumes'] = $this->consumes->get();
+//    $data['doctors'] = $this->doctors->get();
+//    $data['title'] = tr('ConsumeList');
+////    $data['title'] =  trP('ConsumeList');
+//      
+//    $data['navActiveId']='navbarLiDrug';
+//    
+//    $data['page'] = (int)$page;
+//    $data['per_page'] = (int)$limit;
+//    $this->load->library('pagination');
+//    $this->load->library('my_pagination');
+//    $config['base_url'] = site_url('consume/index/'.$data['per_page']);
+//    $config['total_rows'] = count($data['consumes']);
+//    $config['per_page'] = $data['per_page'];
+//    $this->my_pagination->initialize($config); 
+//    $data['pagination']=$this->my_pagination->create_links();
+//    
+//    $path='consume/list';
+//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+//    {
+//        $this->load->view($path, $data);
+//    }else{
+//        $data['includes']=array($path);
+//        $this->load->view('header',$data);
+//        $this->load->view('index',$data);
+//        $this->load->view('footer',$data);
+//    }
+      
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
       redirect('account/login');
     }
     
-    $this->load->model('consumes');
-    $this->load->model('doctors');
-    
-    $data['consumes'] = $this->consumes->get();
-    $data['doctors'] = $this->doctors->get();
+    $this->load->helper('url');
+    $this->load->helper('form');
+
+    $data['doctor_list']=$this->_doctor_list();   
     $data['title'] = tr('ConsumeList');
-//    $data['title'] =  trP('ConsumeList');
-      
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('consume/index/'.$data['per_page']);
-    $config['total_rows'] = count($data['consumes']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();
-    
     $path='consume/list';
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
@@ -56,8 +78,61 @@ class Consume extends CI_Controller {
         $this->load->view('index',$data);
         $this->load->view('footer',$data);
     }
+      
   }
   
+  
+  public function ajax_list()
+  {      
+        $this->load->model('Consumes','consumes');
+        $this->load->model('Doctors_model','doctors');        
+		$list = $this->consumes->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $consumes) {
+			$no++;
+            $doctor_name = $this->doctors->get_doctor_name($consumes->doctor_id);
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $doctor_name[0]->name;
+			$row[] = $consumes->count;
+			$row[] = $consumes->date;			
+            
+            $actions .= anchor('consume/edit/'.$consumes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditConsume')));
+            $actions .= anchor('consume/delete/'.$consumes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('Delete Consume')));            
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->consumes->count_all(),
+						"recordsFiltered" => $this->consumes->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}  
+    
+    
+    public function total()
+  {      
+        $this->load->model('Consumes','consumes');
+        $this->load->model('Doctors_model','doctors');        
+		$data = $this->consumes->get_total();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}        
+    
+    
+    
   /**
    * Patient::search()
    */

@@ -19,23 +19,7 @@
                         <div class="col-md-4">
                             <input type="text" class="form-control" id="address">
                         </div>                        
-                    </div>
-                    <div class="form-group">                        
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
-                        <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MinimumDate:')?>" required />
-                        </div>
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MaximumDate:')?></label>
-                        <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MaximumDate:')?>" required />
-                        </div>
-<!--
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('CreatedDate')?></label>
-                        <div class="col-md-4">
-                            <input type="date" class="form-control" id="created_date">
-                        </div>
--->
-                    </div>                    
+                    </div>                                      
                     <div class="form-group">                        
                         <div class="col-sm-12">
                             <button type="button" id="btn-filter" class="btn btn-primary"><?php trP('Filter')?></button>
@@ -104,6 +88,7 @@ $(document).ready(function() {
 
     $('#btn-filter').click(function(){ //button filter event click
         table.ajax.reload();  //just reload table
+        loadTotal();
     });
     $('#btn-reset').click(function(){ //button reset event click
         $('#form-filter')[0].reset();
@@ -116,19 +101,39 @@ $(document).ready(function() {
 <script>
 $(document).ready(function(){ 
     $('#doctor_list_table a').on('click',function(e){
-        if($(this).attr('title')==tr('DeleteDoctor')){
+        if($(this).attr('title')=='Delete Doctor'){
            e.preventDefault();
            $.get($(this).attr('href'),'',function(data){
                $('#tmpDiv').html(data);
            });
         }
     });
-    $('#doctor_list_table a').on('click',function(e){
-        if($(this).attr('title')=='Check Availability'){
-           e.preventDefault();
-           $.get($(this).attr('href'),'',function(data){
-               $('#tmpDiv').html(data);
-           });
+    
+    function HandleActions(){
+		$('#doctor_list_table').on('click','a',function(e){
+            if($(this).attr('title')=='Delete Doctor'){
+               e.preventDefault();
+               $.get($(this).attr('href'),'',function(data){
+                   $('#tmpDiv').html(data);
+               });
+            }
+        });
+	}
+    
+    function loadTotal(){
+		$.ajax({
+        url: '<?php echo site_url('doctor/ajax_list')?>',
+        type: 'POST',
+        data: {
+            min_date : $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val(),
+            max_date : $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val(),
+        },
+        dataType: 'json',
+        success: function(data) {
+			HandleActions();
+//			alert(data.data[0].total);            
+//            $("#total").html(data.data[0].total);
+//            console.log(data);
         }
     });
 });
