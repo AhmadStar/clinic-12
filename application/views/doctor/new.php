@@ -7,8 +7,11 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo $this->input->post('name');?>" class='form-control' placeholder="<?php trP('DoctorName')?>" title="<?php trP('DoctorName')?>" required /></div>
+                    
                     <div class="col-md-6"><input type="text" name='address' id='address' value="<?php echo $this->input->post('address');?>" class='form-control' placeholder="<?php trP('Address')?>" title="<?php trP('Address')?>" required /></div>
+                    
+                    <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo $this->input->post('name');?>" class='form-control' placeholder="<?php trP('DoctorName')?>" title="<?php trP('DoctorName')?>" required /></div>
+                    
                 </div>
             </div>
             <div class="form-group">
@@ -18,7 +21,7 @@
             <div class="clearfix"></div>
         </fieldset>
         <div class="form-group">
-            <div class="col-md-6"><input type="submit" name='submit' id='submit' value=<?php trp('update')?> class="form-control btn btn-info" /></div>
+            <div class="col-md-6"><input type="submit" name='submit' id='submit' value=<?php trp('Add')?> class="form-control btn btn-info" /></div>
             <div class="col-md-6">
                 <?php echo anchor('doctor',tr('cancel'),array('class'=>'form-control btn btn-info'));?>
             </div>

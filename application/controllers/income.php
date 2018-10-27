@@ -65,7 +65,7 @@ class Income extends CI_Controller {
 			$row[] = $incomes->date;			
             
             $actions .= anchor('income/edit/'.$incomes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditIncome')));
-            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Income'));            
+            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteIncome')));            
             
             $row[] = $actions;
 
@@ -262,7 +262,7 @@ class Income extends CI_Controller {
                 );
         $this->incomes->save_income($data_to_store);
         unset($_POST);
-        $data['script'] = '<script>alert("'. html_escape($this->incomes->doctor_id). ' has been registered successfuly.");</script>';
+        $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.tr('DoctorIncome').' '.tr('successfuly').'");</script>';
 //        redirect('income');
       }else{
         $data['error']=validation_errors();

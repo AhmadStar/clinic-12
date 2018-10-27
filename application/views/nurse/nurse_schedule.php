@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-12">
         <legend class="legend_colour">
-            <?php echo  tr('allhourworks').' '.$allnurseincome ;?>
+            <?php echo  tr('allnurseincome').' '.$allnurseincome ;?>
         </legend>
     </div>
 </div> 

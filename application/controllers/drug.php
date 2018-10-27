@@ -464,7 +464,7 @@ class Drug extends CI_Controller {
           $this->purchased_drugs->user_id = $this->session->userdata('ba_user_id');
           if($this->purchased_drugs->save()){
               foreach($_POST as $key => $value) unset($_POST[$key]);
-              $data['script'] = '<script>alert("Items have been added to DB successfuly.");</script>';
+              $data['script'] = '<script>alert("'.tr('ItemshavebeenaddedtoDBsuccessfuly').'");</script>';
           }else{
               $data['error'] = '<div class="alert alert-danger">Some errors happaned. Please try agin later.</div>';
           }
@@ -523,7 +523,7 @@ class Drug extends CI_Controller {
           $this->returned_drugs->user_id = $this->session->userdata('ba_user_id');
           if($this->returned_drugs->save()){
               foreach($_POST as $key => $value) unset($_POST[$key]);
-              $data['script'] = '<script>alert("Items have been returned successfuly.");</script>';
+              $data['script'] = '<script>alert("'.tr('Itemshavebeenreturnedsuccessfuly').'");</script>';
           }else{
               $data['error'] = '<div class="alert alert-danger">Some errors happaned. Please try agin later.</div>';
           }
