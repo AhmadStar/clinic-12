@@ -104,25 +104,25 @@ $(document).ready(function() {
     </script>
 <script>
     $(document).ready(function(){ 
-        $('#dailyincome_list_table a').on('click',function(e){
-            if($(this).attr('title')=='حذف المورد اليومي'){
+        $('#dailyincome_list_table').on('click','a',function(e){
+            if($(this).attr('title')=='Delete dailyIncome'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);
                });
             }
-        });        
+        });
     });
-    
-    function HandleActions(){
+	
+	function HandleActions(){
 		$('#dailyincome_list_table').on('click','a',function(e){
-            if($(this).attr('title')=='Delete DailyIncome'){
+            if($(this).attr('title')=='Delete dailyIncome'){
                e.preventDefault();
                $.get($(this).attr('href'),'',function(data){
                    $('#tmpDiv').html(data);
                });
             }
-        });        
+        });
 	}
 	
 	function loadTotal(){
@@ -144,3 +144,6 @@ $(document).ready(function() {
     });
 	}
 </script>
+
+
+</div>

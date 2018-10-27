@@ -108,5 +108,29 @@ class Doctors_model extends CI_Model {
         return $query->result(); 
         
     }
+    
+    public function get_total(){
+		
+		$this->db->select('sum(id) as total');
+		
+        if($this->input->post('doctor_id'))
+		{
+			$this->db->where('doctor_id', $this->input->post('doctor_id'));
+		}
+        
+		if($this->input->post('max_date'))
+		{
+			$this->db->where('date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
+		
+		$this->db->from('doctors');
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 }

@@ -61,7 +61,7 @@ class Dailyincome extends CI_Controller {
 			$row[] = $dailyincome->amount;						
             
             $actions .= anchor('dailyincome/edit/'.$dailyincome->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
-            $actions .= anchor('dailyincome/delete/'.$dailyincome->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete DailyIncome'));            
+            $actions .= anchor('dailyincome/delete/'.$dailyincome->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete dailyIncome'));            
             
             $row[] = $actions;
 
