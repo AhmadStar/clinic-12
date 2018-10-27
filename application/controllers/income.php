@@ -65,7 +65,7 @@ class Income extends CI_Controller {
 			$row[] = $incomes->date;			
             
             $actions .= anchor('income/edit/'.$incomes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditIncome')));
-            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteIncome')));            
+            $actions .= anchor('income/delete/'.$incomes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Income'));            
             
             $row[] = $actions;
 

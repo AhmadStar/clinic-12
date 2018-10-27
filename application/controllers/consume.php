@@ -65,7 +65,7 @@ class Consume extends CI_Controller {
 			$row[] = $consumes->date;			
             
             $actions .= anchor('consume/edit/'.$consumes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditConsume')));
-            $actions .= anchor('consume/delete/'.$consumes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteConsume')));            
+            $actions .= anchor('consume/delete/'.$consumes->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Consume'));            
             
             $row[] = $actions;
 

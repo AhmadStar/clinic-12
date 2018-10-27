@@ -59,7 +59,7 @@ class Doctor extends CI_Controller {
 			$row[] = $doctors->created_date;
             
             $actions .= anchor('doctor/edit/'.$doctors->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditDoctor')));
-            $actions .= anchor('doctor/delete/'.$doctors->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>tr('DeleteDoctor')));
+            $actions .= anchor('doctor/delete/'.$doctors->id, '<span class="glyphicon glyphicon-remove"></span>',array('title'=>'Delete Doctor'));
             
             $row[] = $actions;
 
