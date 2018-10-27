@@ -3,8 +3,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">    
         <div class="panel-body" >
-        <?php trP(' مجموع المعاينات الكلي خلال  التاريخ المحدد : ')?>
-            <div id="total"></div>
+        <?php trP('DailyIncomesCountDuringSpecificDate')?> : <i id="total"></i>
         </div>            
     </div>
     

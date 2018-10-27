@@ -8,11 +8,12 @@
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
 
-                    <div class="form-group">
-                        <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo $this->input->post('name');?>" class='form-control' placeholder='<?php trP('Name')?>' title='Name' required /></div>
-                    </div>
+                    
                     <div class="form-group">
                         <div class="col-md-6"><input type="number" name='age' id='age' value="<?php echo $this->input->post('age');?>" class='form-control' placeholder='<?php trP('Age')?>' title='Age' required /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo $this->input->post('name');?>" class='form-control' placeholder='<?php trP('Name')?>' title='Name' required /></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -31,9 +32,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="Go to Nurses">
+    <div class="pull-right" title="<?php trP('GoToNurses')?>">
 
-        <?php echo anchor('nurse', '<button class="btn btn-return"><span>العودة إلى قائمة الممرضين </span></button>');?>
+        <?php echo anchor('nurse', '<button class="btn btn-return"><span>'.tr('GoToNurses').'</span></button>');?>
     </div>
 </div>
 <script>

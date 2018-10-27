@@ -10,14 +10,19 @@
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                   
                     <div class="form-group">
-                        <label for="FirstName" class="col-sm-2 control-label" ><?php trP('Name')?></label>
-                        <div class="col-md-4">
+                        
+                        
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <label for="LastName" class="col-sm-1 control-label"><?php trP('Address')?></label>
+                        
+                        
+                        <div class="col-md-5">
                             <input type="text" class="form-control" id="name">
                         </div>
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Address')?></label>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="address">
-                        </div>                        
+                        <label for="FirstName" class="col-sm-1 control-label" ><?php trP('Name')?></label>
+                        
                     </div>                      
                     <div class="form-group">                        
                         <div class="col-sm-12">

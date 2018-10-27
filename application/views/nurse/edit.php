@@ -8,8 +8,11 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo set_value('name', $nurse[0]['name']);?>" class='form-control' placeholder="<?php trP('name')?>" title="<?php trP('name')?>" required /></div>
+                    
                     <div class="col-md-6"><input type="number" name='age' id='age' value="<?php echo set_value('age', $nurse[0]['age']);?>" class='form-control' placeholder="<?php trP('age')?>" title="<?php trP('age')?>" required /></div>
+                    
+                    <div class="col-md-6"><input type="text" name='name' id='name' value="<?php echo set_value('name', $nurse[0]['name']);?>" class='form-control' placeholder="<?php trP('name')?>" title="<?php trP('name')?>" required /></div>
+                    
                 </div>
                 <div class="form-group">
                     <div class="col-md-6"><input type="text" name='phone' id='phone' value="<?php echo set_value('phone', $nurse[0]['phone']);?>" class='form-control' placeholder="<?php trP('phone')?>" title="<?php trP('phone')?>" required /></div>

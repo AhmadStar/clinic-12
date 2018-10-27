@@ -13,6 +13,8 @@
       if($this->bitauth->has_role('xray'))
         include_once 'cp/nurse.php';
       if($this->bitauth->has_role('xray'))
+        include_once 'cp/income.php';
+      if($this->bitauth->has_role('xray'))
         include_once 'cp/diagnose.php';
       if($this->bitauth->has_role('pharmacy'))
         include_once 'cp/pharmacy.php';
@@ -20,8 +22,6 @@
         include_once 'cp/lab.php';
       if($this->bitauth->has_role('xray'))
         include_once 'cp/xray.php';
-      if($this->bitauth->has_role('xray'))
-        include_once 'cp/income.php';
       if($this->bitauth->has_role('xray'))
         include_once 'cp/dailyincome.php';
       if($this->bitauth->has_role('xray'))
