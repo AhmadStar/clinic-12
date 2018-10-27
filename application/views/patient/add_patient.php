@@ -6,18 +6,18 @@
                 <?php trP('PatientInformation')?>:</legend>
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
-                <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='first_name' id="first_name" value="<?php echo $this->input->post('first_name');?>" class='form-control' placeholder="<?php trP('FirstName')?>" title="<?php trP('FirstName')?>" required autofocus /></div>
+                <div class="form-group">                   
                     <div class="col-md-6"><input type="text" name='last_name' id='last_name' value="<?php echo $this->input->post('last_name');?>" class='form-control' placeholder="<?php trP('LastName')?>" title="<?php trP('LastName')?>" /></div>
+                     <div class="col-md-6"><input type="text" name='first_name' id="first_name" value="<?php echo $this->input->post('first_name');?>" class='form-control' placeholder="<?php trP('FirstName')?>" title="<?php trP('FirstName')?>" required autofocus /></div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-6"><input type="text" name='fname' id='fname' value="<?php echo $this->input->post('fname');?>" class='form-control' placeholder="<?php trP('FatherName')?>" title="<?php trP('FatherName')?>" /></div>
+                <div class="form-group">                    
                     <div class="col-md-6">
                         <label class="radio-inline"><input type="radio" name='gender' value="1" title="<?php trP('Male')?>" <?php echo isset($_POST['gender'])?($this->input->post('gender')?'checked':''):'';?> />
                             <?php trP('Male')?></label>
                         <label class="radio-inline"><input type="radio" name='gender' value="0" title="<?php trP('Female')?>" <?php echo isset($_POST['gender'])?($this->input->post('gender')?'':'checked'):'';?> />
                             <?php trP('Female')?></label>
                     </div>
+                    <div class="col-md-6"><input type="text" name='fname' id='fname' value="<?php echo $this->input->post('fname');?>" class='form-control' placeholder="<?php trP('FatherName')?>" title="<?php trP('FatherName')?>" /></div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="form-group">
@@ -39,6 +39,7 @@
                 <div class="form-group">
                     <div class="col-md-12"><input type="text" name='address' id='address' value="<?php echo $this->input->post('address');?>" class='form-control' placeholder="<?php trP('Address')?>" title="<?php trP('Address')?>" /></div>
                 </div>
+<!--
                 <div class="form-group">
                     <div class="col-md-6"><input type="text" name='social_id' id='social_id' value="<?php echo $this->input->post('social_id')?>" class='form-control' placeholder='Social ID' title='Social ID' /></div>
                 </div>
@@ -47,6 +48,7 @@
                         <?php echo form_dropdown('id_type',$id_type_options,$this->input->post('id_type'),"class='form-control' title='ID Type'");?>
                     </div>
                 </div>
+-->
             </div>
         </fieldset>
         <fieldset>

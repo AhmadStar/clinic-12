@@ -2,7 +2,7 @@
 
 class Consumes extends MY_Model {
     
-    var $table = 'consumes';
+//    var $table = 'consumes';
 	var $column_order = array(null, 'id','name','count','doctor_id','date','price'); //set column field database for datatable orderable
 	var $column_search = array( 'id','name','count','doctor_id','date','price'); //set column field database for datatable searchable 
 	var $order = array('id' => 'asc'); // default order 
@@ -61,7 +61,7 @@ class Consumes extends MY_Model {
 			$this->db->where('date >=', $this->input->post('min_date'));
 		}
 
-		$this->db->from($this->table);
+		$this->db->from('consumes');
 		$i = 0;
 	
 		foreach ($this->column_search as $item) // loop column 
@@ -123,7 +123,7 @@ class Consumes extends MY_Model {
 			$this->db->where('date >=', $this->input->post('min_date'));
 		}
 		
-		$this->db->from($this->table);
+		$this->db->from('consumes');
 		
 		$query = $this->db->get();
 		return $query->result();
@@ -139,7 +139,7 @@ class Consumes extends MY_Model {
 
 	public function count_all()
 	{
-		$this->db->from($this->table);
+		$this->db->from('consumes');
 		return $this->db->count_all_results();
 	}
     

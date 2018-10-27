@@ -2,8 +2,10 @@
 <?php 
 if(!empty($patient->patient_id)){
 ?>
+<div class="panel panel-default">
 <div id="ticket">
   <div class="ticketHeader"></div>
+  <div class="panel-body">
   <div class="row">
     <div class='col col-xs-6'>
       <label>Name: </label> <?php echo html_escape($patient->first_name.' '.$patient->last_name);?><br/>
@@ -23,7 +25,9 @@ if(!empty($patient->patient_id)){
 -->
     </div>
   </div>
-</div>
+  </div>
+    </div>
+    </div>
 <div class="pull-right hidden-print">
   <?php echo anchor('patient', '<span class="glyphicon glyphicon-arrow-left"></span>');?> <a href="#" onclick="javascript:window.print();" title="Print Ticket"><span class="glyphicon glyphicon-print"></span></a>
 </div>

@@ -321,7 +321,7 @@ class Patient extends CI_Controller {
     $this->patient_doctor->get_by_fkey('patient_id',$patient_id);
       // here u should get data from doctor
 //    $doc_info=$this->bitauth->get_user_by_id($this->patient_doctor->doctor_id);
-    echo $this->patient_doctor->doctor_id;
+//    echo $this->patient_doctor->doctor_id;
     $doc_info=$this->doctors->get_doctor($this->patient_doctor->doctor_id);
       
       
