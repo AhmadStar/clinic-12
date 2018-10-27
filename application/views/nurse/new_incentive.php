@@ -27,9 +27,9 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="<?php trP('GotoNurses')?>">
+    <div class="pull-right" title="<?php trP('GoToNurses')?>">
 
-        <?php echo anchor('nurse', '<button class="btn btn-return"><span>'.tr('GotoNurses').'</span></button>');?>
+        <?php echo anchor('nurse', '<button class="btn btn-return"><span>'.tr('GoToNurses').'</span></button>');?>
     </div>
 </div>
 <script>

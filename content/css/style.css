@@ -102,6 +102,8 @@ article .well-md {
     height: 80px;
     margin-right: 8px;
     margin-bottom: 8px;
+    margin-top: 10px;
+    margin-left: 10px;
     border-radius: 10px;
     font-size: medium;
     padding: 15px
@@ -192,8 +194,8 @@ th {
 
 .btn-xray {
     color: #fff;
-    background-color: #c09853;
-    border-color: #c09853;
+    background-color: #a08f71;
+    border-color: #a08f71;
 }
 
 .btn-xray:hover,
@@ -208,8 +210,8 @@ th {
 
 .btn-income {
     color: #fff;
-    background-color: #789e4e;
-    border-color: #789e4e;
+    background-color: #66af86;
+    border-color: #66af86;
 }
 
 .btn-income:hover,
@@ -218,8 +220,8 @@ th {
 .btn-xray.income,
 .open .dropdown-toggle.btn-income {
     color: #fff;
-    background-color: #46691f;
-    border-color: #46691f;
+    background-color: #48775e;
+    border-color: #48775e;
 }
 
 .btn-consume {

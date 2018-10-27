@@ -37,7 +37,7 @@
         </div>
         <?php echo form_close(); ?>
     </div>
-    <div class="pull-right" title="<?php trP('GotoIncomes');?>">
+    <div class="pull-right" title="<?php trP('GoToIncomes');?>">
 
         <?php echo anchor('income', '<button class="btn btn-return"><span>'.tr('GoToIncomes').' </span></button>');?>
     </div>
