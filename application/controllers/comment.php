@@ -50,12 +50,12 @@ class Comment extends CI_Controller {
       $this->form_validation->set_rules(array(
         array( 'field' => 'patient_doctor_id', 'label' => 'Patient Doctor ID', 'rules' => 'required|has_no_schar', ),
         array( 'field' => 'patient_id', 'label' => 'Patient ID', 'rules' => 'required|has_no_schar', ),
-        array( 'field' => 'comment', 'label' => 'Comment', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'spressur', 'label' => 'spressur', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'ppressure', 'label' => 'ppressure', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'hrate', 'label' => 'hrate', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'heate', 'label' => 'heate', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'oxidation', 'label' => 'oxidation', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'comment', 'label' => 'Comment', 'rules' => 'trim|has_no_schar', ),
+        array( 'field' => 'spressur', 'label' => 'spressur', 'rules' => 'trim|has_no_schar', ),
+        array( 'field' => 'ppressure', 'label' => 'ppressure', 'rules' => 'trim|has_no_schar', ),
+        array( 'field' => 'hrate', 'label' => 'hrate', 'rules' => 'trim|has_no_schar', ),
+        array( 'field' => 'heate', 'label' => 'heate', 'rules' => 'trim|has_no_schar', ),
+        array( 'field' => 'oxidation', 'label' => 'oxidation', 'rules' => 'trim|has_no_schar', ),
       ));
 
       if($this->form_validation->run())

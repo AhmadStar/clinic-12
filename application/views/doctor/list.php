@@ -88,7 +88,7 @@ $(document).ready(function() {
 
     $('#btn-filter').click(function(){ //button filter event click
         table.ajax.reload();  //just reload table
-        loadTotal();
+        HandleActions();
     });
     $('#btn-reset').click(function(){ //button reset event click
         $('#form-filter')[0].reset();
@@ -99,16 +99,7 @@ $(document).ready(function() {
 </script>
 
 <script>
-$(document).ready(function(){ 
-    $('#doctor_list_table a').on('click',function(e){
-        if($(this).attr('title')=='Delete Doctor'){
-           e.preventDefault();
-           $.get($(this).attr('href'),'',function(data){
-               $('#tmpDiv').html(data);
-           });
-        }
-    });
-    
+$(document).ready(function(){    
     function HandleActions(){
 		$('#doctor_list_table').on('click','a',function(e){
             if($(this).attr('title')=='Delete Doctor'){
@@ -118,24 +109,7 @@ $(document).ready(function(){
                });
             }
         });
-	}
-    
-    function loadTotal(){
-		$.ajax({
-        url: '<?php echo site_url('doctor/ajax_list')?>',
-        type: 'POST',
-        data: {
-            min_date : $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val(),
-            max_date : $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val(),
-        },
-        dataType: 'json',
-        success: function(data) {
-			HandleActions();
-//			alert(data.data[0].total);            
-//            $("#total").html(data.data[0].total);
-//            console.log(data);
-        }
-    });
+	}        
 });
 </script>  
                         

@@ -107,7 +107,7 @@ class Consumes extends MY_Model {
 	
 	public function get_total(){
 		
-		$this->db->select('sum(count) as total');
+		$this->db->select('sum(price) as total');
 		
         if($this->input->post('doctor_id'))
 		{

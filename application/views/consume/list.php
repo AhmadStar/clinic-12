@@ -43,9 +43,10 @@
   <table id="consume_list_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th><?php trP('Number')?></th>
                     <th><?php trP('DoctorName')?></th>
-                    <th><?php trP('amount')?></th>
+                    <th><?php trP('Name')?></th>
+                    <th><?php trP('amount')?></th>                    
                     <th><?php trP('Date')?></th>                    
                     <th></th>                    
                 </tr>

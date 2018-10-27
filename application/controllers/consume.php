@@ -96,7 +96,8 @@ class Consume extends CI_Controller {
 			$row = array();
 			$row[] = $no;
 			$row[] = $doctor_name[0]->name;
-			$row[] = $consumes->count;
+			$row[] = $consumes->name;
+            $row[] = $consumes->price;			
 			$row[] = $consumes->date;			
             
             $actions .= anchor('consume/edit/'.$consumes->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditConsume')));

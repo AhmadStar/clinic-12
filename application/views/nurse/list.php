@@ -9,16 +9,16 @@
             </div>
             <div class="panel-body">
                 <form id="form-filter" class="form-horizontal filter-body">                   
-                    <div class="form-group">                        
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MinimumDate:')?></label>
+                    <div class="form-group">
+                        <label for="FirstName" class="col-sm-2 control-label" ><?php trP('Name')?></label>
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="min" id="min" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MinimumDate:')?>" required />
+                            <input type="text" class="form-control" id="name">
                         </div>
-                        <label for="LastName" class="col-sm-2 control-label"><?php trP('MaximumDate:')?></label>
+                        <label for="LastName" class="col-sm-2 control-label"><?php trP('Address')?></label>
                         <div class="col-md-4">
-                            <input type="text" data-date-format="yyyy-mm-dd" autocomplete="off" name="max" id="max" class="form-control" placeholder="انقر لتدخل التاريخ" title="<?php trP('MaximumDate:')?>" required />
-                        </div>
-                    </div>                    
+                            <input type="text" class="form-control" id="address">
+                        </div>                        
+                    </div>                      
                     <div class="form-group">                        
                         <div class="col-sm-12">
                             <button type="button" id="btn-filter" class="btn btn-primary"><?php trP('Filter')?></button>
@@ -65,8 +65,8 @@ $(document).ready(function() {
             "url": "<?php echo site_url('nurse/ajax_list')?>",
             "type": "POST",
             "data": function ( data ) {                
-                data.min_date = $('#min').datepicker({ dateFormat: 'yy-mm-dd' }).val();
-                data.max_date = $('#max').datepicker({ dateFormat: 'dd-mm-yy' }).val();
+                data.name = $('#name').val();
+                data.address = $('#address').val();
             }
         },
 
@@ -101,15 +101,7 @@ $(document).ready(function() {
                     $('#tmpDiv').html(data);
                 });
             }
-        });
-        $('#nurse_list_table a').on('click', function(e) {
-            if ($(this).attr('title') == 'Check Availability') {
-                e.preventDefault();
-                $.get($(this).attr('href'), '', function(data) {
-                    $('#tmpDiv').html(data);
-                });
-            }
-        });
+        });        
     });
 
 </script>

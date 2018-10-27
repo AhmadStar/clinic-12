@@ -29,16 +29,16 @@
         <div class="col-md-12"><input type="text" name='comment' id='comment' value="<?php echo $this->input->post('comment');?>" class='form-control' placeholder="<?php trP('comment')?>" title='comment' /></div>        
       </div>
       <div class="form-group">
-        <div class="col-md-6"><input type='Number' name='ppressure' id='ppressure' class='form-control' placeholder="<?php trP('ppressur')?>" title='ppressure' required/></div>
+        <div class="col-md-6"><input type='Number' name='ppressure' id='ppressure' class='form-control' placeholder="<?php trP('ppressur')?>" title='ppressure' /></div>
         <div class="col-md-6"><input type="Number" name='spressur' id='spressur' value="<?php echo $this->input->post('spressur');?>" class='form-control' placeholder="<?php trP('spressur')?>" title='spressur' /></div>
       </div>
       <div class="form-group">
-       <div class="col-md-6"><input type='Number' name='hrate' id='hrate' class='form-control' placeholder="<?php trP('hrate')?>" title='hrate' required /></div>
-        <div class="col-md-6"><input type='Number' step=0.1 name='heate' id='heate' class='form-control' placeholder="<?php trP('heate')?>" title='heate' required/></div>        
+       <div class="col-md-6"><input type='Number' name='hrate' id='hrate' class='form-control' placeholder="<?php trP('hrate')?>" title='hrate'  /></div>
+        <div class="col-md-6"><input type='Number' step=0.1 name='heate' id='heate' class='form-control' placeholder="<?php trP('heate')?>" title='heate' /></div>        
       </div>
       <div class="form-group">
-        <div class="col-md-6"><input type='Number' name='nbreathing' id='nbreathing' class='form-control' placeholder="<?php trP('nbreathing')?>" title='nbreathing' required/></div>
-        <div class="col-md-6"><input type='Number' name='oxidation' id='oxidation' class='form-control' placeholder="<?php trP('oxidation')?>" title='oxidation' required /></div>
+        <div class="col-md-6"><input type='Number' name='nbreathing' id='nbreathing' class='form-control' placeholder="<?php trP('nbreathing')?>" title='nbreathing' /></div>
+        <div class="col-md-6"><input type='Number' name='oxidation' id='oxidation' class='form-control' placeholder="<?php trP('oxidation')?>" title='oxidation'  /></div>
       </div>
       <div class="clearfix"></div>
     </div>
@@ -51,13 +51,13 @@
 <!--      echo form_open('comment/add/'.$doctor->patient_doctor_id,array('id'=>'commentBox'));-->
 <!--      echo form_hidden('patient_doctor_id',$doctor->patient_doctor_id);      -->
 <!--      echo form_hidden('patient_id',$doctor->patient_id);      -->
-<!--      echo form_input('comment','','class="form-control" id="comment" required placeholder='.tr('WYCommentAP').'');    -->
-<!--      echo form_input('spressur','','class="form-control" id="spressur" required placeholder='.tr('spressur').'');    -->
-<!--      echo form_input('ppressure','','class="form-control" id="ppressure" required placeholder='.tr('ppressur').'');-->
-<!--      echo form_input('hrate','','class="form-control" id="hrate" required placeholder='.tr('hrate').'');  -->
-<!--      echo form_input('heate','','class="form-control" id="heate" required placeholder='.tr('heate').'');-->
-<!--      echo form_input('oxidation','','class="form-control" id="heate" required placeholder='.tr('oxidation').'');-->
-<!--      echo form_input('nbreathing','','class="form-control" id="heate" required placeholder='.tr('nbreathing').'');-->
+<!--      echo form_input('comment','','class="form-control" id="comment"  placeholder='.tr('WYCommentAP').'');    -->
+<!--      echo form_input('spressur','','class="form-control" id="spressur"  placeholder='.tr('spressur').'');    -->
+<!--      echo form_input('ppressure','','class="form-control" id="ppressure"  placeholder='.tr('ppressur').'');-->
+<!--      echo form_input('hrate','','class="form-control" id="hrate"  placeholder='.tr('hrate').'');  -->
+<!--      echo form_input('heate','','class="form-control" id="heate"  placeholder='.tr('heate').'');-->
+<!--      echo form_input('oxidation','','class="form-control" id="heate"  placeholder='.tr('oxidation').'');-->
+<!--      echo form_input('nbreathing','','class="form-control" id="heate"  placeholder='.tr('nbreathing').'');-->
 <!--
       echo form_submit('submit',tr('Add'));
       echo form_close();
