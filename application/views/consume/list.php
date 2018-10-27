@@ -5,7 +5,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">    
         <div class="panel-body" >
-        <?php trP('consumesCountDuringSpecificDate')?> : <i id="total"></i>
+        <?php trP('consumesCountDuringSpecificDate')?> : <b id="total"></b>
         </div>            
     </div>
     
