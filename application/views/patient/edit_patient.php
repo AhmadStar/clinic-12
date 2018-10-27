@@ -30,7 +30,7 @@ if(!empty($patient->patient_id)){
                         <div class="text-center">
                             <span class="btn btn-file btn-default"><span class="fileupload-new"><?php trP('SelectImage')?></span><span class="fileupload-exists"><?php trP('Change')?></span>
                                 <input type="file" name="picture" id="picture" /></span>
-                            <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none" title="<?php trP('Removetheselectedpicture')?>" &times;</a>
+                            <a href="#" class=" fileupload-exists" data-dismiss="fileupload" style="float: none" title="<?php trP('Removetheselectedpicture')?>" &times;</a>
                         </div>
                     </div>
                 </div>

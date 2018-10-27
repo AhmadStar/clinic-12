@@ -1,4 +1,16 @@
 <legend class="legend_colour">- <?php echo trP('NurseSceduleList');?></legend>
+<div class="form-group">
+    <div class="col-md-12">
+        <legend class="legend_colour">
+            <?php echo  tr('allhourworks').' '.$allhourworks ;?>
+        </legend>
+    </div>
+    <div class="col-md-12">
+        <legend class="legend_colour">
+            <?php echo  tr('allhourworks').' '.$allnurseincome ;?>
+        </legend>
+    </div>
+</div> 
 <?php //pagination should be added if have time.
 if($nurseschedules)
 {
@@ -7,6 +19,7 @@ if($nurseschedules)
            <th>".tr('Date')."</th>
            <th>".tr('WorkHours')."</th>           
            <th>".tr('HourPrice')."</th>
+           <th>".tr('DayFare')."</th>
            <th></th>
        </tr></thead><tbody>";
   $start = ($page-1) * $per_page;
@@ -25,6 +38,7 @@ if($nurseschedules)
           '<td>'.html_escape($_nurse_schedule->work_date).'</td>'.              
           '<td>'.html_escape($_nurse_schedule->work_hours).'</td>'.          
           '<td>'.html_escape($_nurse_schedule->hour_price).'</td>'.
+          '<td>'.html_escape($_nurse_schedule->day_fare).'</td>'.
           '<td class="hidden-print">'.$actions.'</td>'.
         '</tr>';
     }

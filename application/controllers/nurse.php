@@ -308,6 +308,7 @@ class Nurse extends CI_Controller {
                     'work_date' => $this->input->post('work_date'),
                     'work_hours' => $this->input->post('work_hours'),
                     'hour_price' => $this->input->post('hour_price'),
+                    'day_fare' => $this->input->post('hour_price') * $this->input->post('work_hours'),
                 );
         $this->nurses->save_nurse_schedule($data_to_store);
         unset($_POST);
@@ -358,12 +359,12 @@ class Nurse extends CI_Controller {
         
         unset($_POST['submit']);
         $nurse=$this->input->post();          
-        $this->load->model('nurses');        
+        $this->load->model('incentives');        
         $data_to_store = array(
                     'nurse_id' => $this->input->post('nurse_id'),
                     'amount' => $this->input->post('amount'),
                 );
-        $this->nurses->save_nurse_incentive($data_to_store);
+        $this->incentives->save_nurse_incentive($data_to_store);
         unset($_POST);
         $data['script'] = '<script>alert("'.tr('hasbeenregistered').' '.tr('newIncentive').' '.tr('successfuly').'");</script>';
        // redirect('nurse');
@@ -436,10 +437,13 @@ class Nurse extends CI_Controller {
       return;
     }
     
-    $this->load->model('nurses');    
+    $this->load->model('schedules');    
     
-    $data['nurseschedules'] = $this->nurses->get_all_nurse_schedule($nurse_id);      
-      
+    $data['nurseschedules'] = $this->schedules->get_all_nurse_schedule($nurse_id);      
+    $sum_hour_work = $this->schedules->get_sum_of_nurse_hour_work($nurse_id);
+    $data['allhourworks'] = $sum_hour_work[0]['work_hours'];
+    $sum_nurse_income = $this->schedules->get_sum_of_nurse_income($nurse_id);
+    $data['allnurseincome'] = $sum_nurse_income[0]['day_fare'];
     $data['title'] = tr('NurseSceduleList');      
     $data['navActiveId']='navbarLiDrug';
     
@@ -478,10 +482,10 @@ class Nurse extends CI_Controller {
       return;
     }
     
-    $this->load->model('nurses');    
+    $this->load->model('incentives');    
     
-    $data['nurseincentives'] = $this->nurses->get_all_nurse_incentive($nurse_id);      
-    $incentives = $this->nurses->get_sum_of_nurse_incentives($nurse_id);
+    $data['nurseincentives'] = $this->incentives->get_all_nurse_incentive($nurse_id);      
+    $incentives = $this->incentives->get_sum_of_nurse_incentives($nurse_id);
     $data['allincentives'] = $incentives[0]['amount'];
     $data['title'] = tr('NurseIncetivesList');      
     $data['navActiveId']='navbarLiDrug';
@@ -520,8 +524,8 @@ class Nurse extends CI_Controller {
       $this->_no_access();
       return;
     }
-    $this->load->model('nurses');
-    $data['incentive'] = $this->nurses->get_one_incentive($id);
+    $this->load->model('incentives');
+    $data['incentive'] = $this->incentives->get_one_incentive($id);
     //print_r($data['nurse']);
     if($this->input->post())
     {
@@ -539,12 +543,12 @@ class Nurse extends CI_Controller {
         {
             unset($_POST['submit']);
             $nurse=$this->input->post();
-            $this->load->model('nurses');
+            $this->load->model('incentives');
              $data_to_store = array(
 //                    'nurse_id' => $this->input->post('nurse_id'),                   
                     'amount' => $this->input->post('amount'),                   
                 );
-            $this->nurses->update_incentive($id,$data_to_store);
+            $this->incentives->update_incentive($id,$data_to_store);
             
             unset($_POST);
             $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.tr('nurseIncentiveInformations').' '/*. html_escape($nurse['name']).' '*/.tr('successfuly').'");</script>';
@@ -585,8 +589,8 @@ class Nurse extends CI_Controller {
       $this->_no_access();
       return;
     }
-    $this->load->model('nurses');
-    $data['schedule'] = $this->nurses->get_one_schedule($id);
+    $this->load->model('schedules');
+    $data['schedule'] = $this->schedules->get_one_schedule($id);
     //print_r($data['nurse']);
     if($this->input->post())
     {
@@ -606,14 +610,15 @@ class Nurse extends CI_Controller {
         {
             unset($_POST['submit']);
             $nurse=$this->input->post();
-            $this->load->model('nurses');
+            $this->load->model('schedules');
              $data_to_store = array(
 //                    'nurse_id' => $this->input->post('nurse_id'),                   
                     'work_date' => $this->input->post('work_date'),
                     'work_hours' => $this->input->post('work_hours'),
                     'hour_price' => $this->input->post('hour_price'),
+                    'day_fare' => $this->input->post('hour_price') * $this->input->post('work_hours'),
                 );
-            $this->nurses->update_schedule($id,$data_to_store);
+            $this->schedules->update_schedule($id,$data_to_store);
             
             unset($_POST);
             $data['script'] = '<script>alert("'.tr('hasbeenupdated').' '.tr('nurseScheduleInformations').' '/*. html_escape($nurse['name']).' '*/.tr('successfuly').'");</script>';
