@@ -3,12 +3,12 @@
     <div class="col col-md-12 well well-sm">
 <div class="form-group">
     <div class="col-md-12">
-        <legend class="legend_colour">
+        <legend >
             <?php echo  tr('allhourworks')?><b id="work_hours"></b>
         </legend>
     </div>
     <div class="col-md-12">
-        <legend class="legend_colour">
+        <legend >
             <?php echo  tr('allnurseincome')?><b id="day_fare"></b>
         </legend>
     </div>

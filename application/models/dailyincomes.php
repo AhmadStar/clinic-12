@@ -17,7 +17,7 @@ class Dailyincomes extends CI_Model {
     var $table = 'dailyincome';
 	var $column_order = array(null, 'id','doctor_id','date','amount'); //set column field database for datatable orderable
 	var $column_search = array('id','doctor_id','date','amount'); //set column field database for datatable searchable 
-	var $order = array('id' => 'asc'); // default order 
+	var $order = array('date' => 'desc'); // default order 
     
     /**
      * Table unique identifier.

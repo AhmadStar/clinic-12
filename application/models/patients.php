@@ -94,7 +94,7 @@ class Patients extends MY_Model {
     var $column_search = array( 'patient_id','first_name','last_name','fname','gender','email','phone','address','social_id','id_type','birth_date','create_date','picture','picture'); //set column field database for datatable orderable
 //    var $table = 'patients';
 //	var $column_search = array('id','name','address','phone','created_date'); //set column field database for datatable searchable 
-	var $order = array('patient_id' => 'asc'); // default order 
+	var $order = array('patient_id' => 'desc'); // default order 
 
 	public function __construct()
 	{

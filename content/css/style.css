@@ -30,6 +30,7 @@ section .navbar-right {
 }
 
 
+
 /*
 .content section .col-sm-9 {
     float: left;
@@ -117,7 +118,7 @@ th {
 
 
 .legend_colour {
-    /*    color: white;*/
+       color: white;
 }
 
 .hidden-print {

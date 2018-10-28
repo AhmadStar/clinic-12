@@ -1,4 +1,4 @@
-<legend class="legend_colour">- <?php echo trP('Drugs');?></legend>
+<legend >- <?php echo trP('Drugs');?></legend>
 <div>
 <div class="hidden-print">
 <?php echo anchor('drug/new_drug', tr('RegisterNewDrug'),array('class'=>'btn btn-info'))?>
