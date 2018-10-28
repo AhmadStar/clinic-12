@@ -97,9 +97,13 @@ class Schedules extends CI_Model {
 		{
 			$this->db->like('nurse_id', $this->input->post('nurse_id'));
 		}
-		if($this->input->post('work_date'))
+		if($this->input->post('max_date'))
 		{
-			$this->db->like('work_date', $this->input->post('work_date'));
+			$this->db->where('work_date <=', $this->input->post('max_date'));
+		}
+        if($this->input->post('min_date'))
+		{
+			$this->db->where('work_date >=', $this->input->post('min_date'));
 		}
         
 
@@ -161,6 +165,54 @@ class Schedules extends CI_Model {
 		return $this->db->count_all_results();
 	}
     
+    public function get_total_work_hours(){
+		
+		$this->db->select('sum(work_hours) as work_hours');
+		
+        if($this->input->post('nurse_id'))
+		{
+			$this->db->where('nurse_id', $this->input->post('nurse_id'));
+		}
+        
+		if($this->input->post('max_date'))
+		{
+			$this->db->where('work_date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('work_date >=', $this->input->post('min_date'));
+		}
+		
+		$this->db->from('schedule');
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
+   
+    public function get_total_nurse_income(){
+		
+		$this->db->select('sum(day_fare) as day_fare');
+		
+        if($this->input->post('nurse_id'))
+		{
+			$this->db->where('nurse_id', $this->input->post('nurse_id'));
+		}
+        
+		if($this->input->post('max_date'))
+		{
+			$this->db->where('work_date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('work_date >=', $this->input->post('min_date'));
+		}
+		
+		$this->db->from('schedule');
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
+      
     
         
 }

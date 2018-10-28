@@ -18,7 +18,7 @@ if($lab)
 //      '<td>'.html_escape($test->price).'</td>'.
 //      '<td><input type="number" name="no_of_item" value="1"/></td>'.
 //      '<td><input type="text" name="result"/></td>'.
-      '<td><textarea name="result" value="result" class="form-control" rows="2">dasdas</textarea></td>'.
+      '<td><textarea name="result" value="result" class="form-control" rows="2"></textarea></td>'.
       '<td class="hidden-print">'.$actions.'</td>'.
     '</tr>';
   }?>

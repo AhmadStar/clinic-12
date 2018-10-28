@@ -10,7 +10,10 @@
             <div>
                 <?php echo ( !empty($error) ? $error : '' ); ?>
                 <div class="form-group">
-                    <div class="col-md-12"><input type="number" name='amount' id='amount' value="<?php echo set_value('amount', $incentive[0]->amount);?>" class='form-control' placeholder="<?php trP('IncentiveAmount')?>" title="<?php trP('IncentiveAmount')?>" required /></div>
+                    <div class="col-md-6"><input type="number" name='amount' id='amount' value="<?php echo set_value('amount', $incentive[0]->amount);?>" class='form-control' placeholder="<?php trP('IncentiveAmount')?>" title="<?php trP('IncentiveAmount')?>" required /></div>
+                    
+                    
+                    <div class="col-md-6"><input type="date" name='date' id='date' value="<?php echo set_value('date', $incentive[0]->date);?>" class='form-control' placeholder="<?php trP('date')?>" title="<?php trP('date')?>" required /></div>
                 </div>
                 <div class="clearfix"></div>
             </div>

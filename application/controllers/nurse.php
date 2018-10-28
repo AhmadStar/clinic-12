@@ -365,7 +365,8 @@ class Nurse extends CI_Controller {
     {
       $this->form_validation->set_rules(array(
         array( 'field' => 'nurse_id','label' => 'Nurse Name', 'rules' => 'required|trim|has_no_schar', ),
-        array( 'field' => 'amount','label' => 'Incentive amount', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'amount','label' => 'Incentive amount', 'rules' => 'required|trim|has_no_schar', 
+        array( 'field' => 'date','label' => 'Date', 'rules' => 'required|trim|has_no_schar', ),),
       ));
       if($this->form_validation->run() == TRUE)
       {
@@ -376,6 +377,7 @@ class Nurse extends CI_Controller {
         $data_to_store = array(
                     'nurse_id' => $this->input->post('nurse_id'),
                     'amount' => $this->input->post('amount'),
+                    'date' => $this->input->post('date'),
                 );
         $this->incentives->save_nurse_incentive($data_to_store);
         unset($_POST);
@@ -439,38 +441,63 @@ class Nurse extends CI_Controller {
     
  public function nurseschedule($nurse_id=0 , $limit = 12,$page = 1)
   {
+//    if (!$this->bitauth->logged_in())
+//    {
+//      $this->session->set_userdata('redir', current_url());
+//      redirect('account/login');
+//    }
+//    if(!$this->bitauth->has_role('pharmacy'))
+//    {
+//      $this->_no_access();
+//      return;
+//    }
+//    
+//    $this->load->model('schedules');    
+//    
+//    $data['nurseschedules'] = $this->schedules->get_all_nurse_schedule($nurse_id);      
+//    $sum_hour_work = $this->schedules->get_sum_of_nurse_hour_work($nurse_id);
+//    $data['allhourworks'] = $sum_hour_work[0]['work_hours'];
+//    $sum_nurse_income = $this->schedules->get_sum_of_nurse_income($nurse_id);
+//    $data['allnurseincome'] = $sum_nurse_income[0]['day_fare'];
+//    $data['title'] = tr('NurseSceduleList');      
+//    $data['navActiveId']='navbarLiDrug';
+//    
+//    $data['page'] = (int)$page;
+//    $data['per_page'] = (int)$limit;
+//    $this->load->library('pagination');
+//    $this->load->library('my_pagination');
+//    $config['base_url'] = site_url('nurse/nurseschedule/'.$nurse_id.'/'.$data['per_page']);
+//    $config['total_rows'] = count($data['nurseschedules']);
+//    $config['per_page'] = $data['per_page'];
+//    $this->my_pagination->initialize($config); 
+//    $data['pagination']=$this->my_pagination->create_links();        
+//    $path='nurse/nurse_schedule';
+////    print_r($data['nurseschedules']);
+//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+//    {
+//        $this->load->view($path, $data);
+//    }else{
+//        $data['includes']=array($path);
+//        $this->load->view('header',$data);
+//        $this->load->view('index',$data);
+//        $this->load->view('footer',$data);
+//    }
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
       redirect('account/login');
     }
-    if(!$this->bitauth->has_role('pharmacy'))
-    {
-      $this->_no_access();
-      return;
-    }
     
-    $this->load->model('schedules');    
-    
-    $data['nurseschedules'] = $this->schedules->get_all_nurse_schedule($nurse_id);      
-    $sum_hour_work = $this->schedules->get_sum_of_nurse_hour_work($nurse_id);
-    $data['allhourworks'] = $sum_hour_work[0]['work_hours'];
-    $sum_nurse_income = $this->schedules->get_sum_of_nurse_income($nurse_id);
-    $data['allnurseincome'] = $sum_nurse_income[0]['day_fare'];
-    $data['title'] = tr('NurseSceduleList');      
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('nurse/nurseschedule/'.$nurse_id.'/'.$data['per_page']);
-    $config['total_rows'] = count($data['nurseschedules']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();        
+    $this->load->helper('url');
+    $this->load->helper('form');
+    $this->load->model('incentives');
+    $this->load->model('schedules'); 
+     
+    $data['title'] = tr('NurseSceduleList');
+    $data['nurse_id'] = $nurse_id;
+    $nurse_name = $this->incentives->get_nurse_name($nurse_id);
+    $data['nursename'] = $nurse_name[0]->name;
     $path='nurse/nurse_schedule';
-//    print_r($data['nurseschedules']);
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
         $this->load->view($path, $data);
@@ -484,36 +511,63 @@ class Nurse extends CI_Controller {
 
  public function nurseincentive($nurse_id=0 , $limit = 12,$page = 1)
   {
+//    if (!$this->bitauth->logged_in())
+//    {
+//      $this->session->set_userdata('redir', current_url());
+//      redirect('account/login');
+//    }
+//    if(!$this->bitauth->has_role('pharmacy'))
+//    {
+//      $this->_no_access();
+//      return;
+//    }
+//    
+//    $this->load->model('incentives');    
+//    
+//    $data['nurseincentives'] = $this->incentives->get_all_nurse_incentive($nurse_id);      
+//    $incentives = $this->incentives->get_sum_of_nurse_incentives($nurse_id);
+//    $data['allincentives'] = $incentives[0]['amount'];
+//    $doctor_name = $this->incentives->get_nurse_name($nurse_id);
+//    $data['doctorname'] = $doctor_name[0]->name;
+//    $data['title'] = tr('NurseIncetivesList');      
+//    $data['navActiveId']='navbarLiDrug';
+//    
+//    $data['page'] = (int)$page;
+//    $data['per_page'] = (int)$limit;
+//    $this->load->library('pagination');
+//    $this->load->library('my_pagination');
+//    $config['base_url'] = site_url('nurse/nurseincentive/'.$nurse_id.'/'.$data['per_page']);
+//    $config['total_rows'] = count($data['nurseincentives']);
+//    $config['per_page'] = $data['per_page'];
+//    $this->my_pagination->initialize($config); 
+//    $data['pagination']=$this->my_pagination->create_links();        
+//    $path='nurse/nurse_incentive';
+////    print_r($data['nurseschedules']);
+//    if(isset($_GET['ajax'])&&$_GET['ajax']==true)
+//    {
+//        $this->load->view($path, $data);
+//    }else{
+//        $data['includes']=array($path);
+//        $this->load->view('header',$data);
+//        $this->load->view('index',$data);
+//        $this->load->view('footer',$data);
+//    }
+     
     if (!$this->bitauth->logged_in())
     {
       $this->session->set_userdata('redir', current_url());
       redirect('account/login');
     }
-    if(!$this->bitauth->has_role('pharmacy'))
-    {
-      $this->_no_access();
-      return;
-    }
     
-    $this->load->model('incentives');    
-    
-    $data['nurseincentives'] = $this->incentives->get_all_nurse_incentive($nurse_id);      
-    $incentives = $this->incentives->get_sum_of_nurse_incentives($nurse_id);
-    $data['allincentives'] = $incentives[0]['amount'];
-    $data['title'] = tr('NurseIncetivesList');      
-    $data['navActiveId']='navbarLiDrug';
-    
-    $data['page'] = (int)$page;
-    $data['per_page'] = (int)$limit;
-    $this->load->library('pagination');
-    $this->load->library('my_pagination');
-    $config['base_url'] = site_url('nurse/nurseincentive/'.$nurse_id.'/'.$data['per_page']);
-    $config['total_rows'] = count($data['nurseincentives']);
-    $config['per_page'] = $data['per_page'];
-    $this->my_pagination->initialize($config); 
-    $data['pagination']=$this->my_pagination->create_links();        
+    $this->load->helper('url');
+    $this->load->helper('form');
+    $this->load->model('incentives'); 
+     
+    $data['title'] = tr('NurseIncetivesList');
+    $data['nurse_id'] = $nurse_id;
+    $nurse_name = $this->incentives->get_nurse_name($nurse_id);
+    $data['nursename'] = $nurse_name[0]->name;
     $path='nurse/nurse_incentive';
-//    print_r($data['nurseschedules']);
     if(isset($_GET['ajax'])&&$_GET['ajax']==true)
     {
         $this->load->view($path, $data);
@@ -524,6 +578,110 @@ class Nurse extends CI_Controller {
         $this->load->view('footer',$data);
     }
   } 
+    
+ public function ajax_nurse_incentive()
+  {      
+        $this->load->model('Incentives','incentives');
+//        $this->load->model('Doctors_model','doctors');        
+		$list = $this->incentives->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $incentives) {
+			$no++;            
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $incentives->amount;			
+			$row[] = $incentives->date;			
+            
+            $actions .= anchor('nurse/editincentive/'.$incentives->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditNurse')));                       
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->incentives->count_all(),
+						"recordsFiltered" => $this->incentives->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+    
+ public function total_incintive()
+  {      
+        $this->load->model('Incentives','incentives');
+		$data = $this->incentives->get_total_incentive();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+
+ public function ajax_nurse_schedule()
+  {      
+        $this->load->model('Schedules','schedules');     
+//        $this->load->model('Doctors_model','doctors');        
+		$list = $this->schedules->get_datatables();
+		$data = array();
+		$no = $_POST['start'];        
+		foreach ($list as $schedules) {
+			$no++;            
+            $actions = '';
+			$row = array();
+			$row[] = $no;
+			$row[] = $schedules->work_date;
+			$row[] = $schedules->work_hours;
+			$row[] = $schedules->hour_price;
+			$row[] = $schedules->day_fare;            		
+            
+            $actions .= anchor('nurse/editschedule/'.$schedules->id, '<span class="glyphicon glyphicon-edit"></span>',array('title'=>tr('EditSchedule')));                       
+            
+            $row[] = $actions;
+
+			$data[] = $row;
+		}
+
+		$output = array(
+						"draw" => $_POST['draw'],
+						"recordsTotal" => $this->schedules->count_all(),
+						"recordsFiltered" => $this->schedules->count_filtered(),
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+    
+ public function get_total_work_hours()
+  {      
+        $this->load->model('Schedules','schedules');
+		$data = $this->schedules->get_total_work_hours();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	} 
+    
+ public function get_total_nurse_income()
+  {      
+        $this->load->model('Schedules','schedules');
+		$data = $this->schedules->get_total_nurse_income();
+		
+		$output = array(						
+						"data" => $data,
+				);
+		//output to json format
+		echo json_encode($output);
+	}    
+      
+    
     
  public function editincentive($id=0)
   {     
@@ -543,7 +701,7 @@ class Nurse extends CI_Controller {
     if($this->input->post())
     {
       $this->form_validation->set_rules(array(
-//        array( 'field' => 'nurse_id','label' => 'Nurse ID', 'rules' => 'required|trim|has_no_schar', ),
+        array( 'field' => 'date','label' => 'Date', 'rules' => 'required|trim|has_no_schar', ),
         array( 'field' => 'amount','label' => 'Incentive Amount', 'rules' => 'required|trim|has_no_schar', ),
 
       ));
@@ -559,7 +717,8 @@ class Nurse extends CI_Controller {
             $this->load->model('incentives');
              $data_to_store = array(
 //                    'nurse_id' => $this->input->post('nurse_id'),                   
-                    'amount' => $this->input->post('amount'),                   
+                    'amount' => $this->input->post('amount'), 
+                    'date' => $this->input->post('date'),
                 );
             $this->incentives->update_incentive($id,$data_to_store);
             

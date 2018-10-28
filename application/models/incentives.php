@@ -70,7 +70,6 @@ class Incentives extends CI_Model {
 		
 		return $query->result_array();
     }
-    
    
     
     function update_incentive($id, $data)
@@ -89,6 +88,15 @@ class Incentives extends CI_Model {
 			$this->db->like('nurse_id', $this->input->post('nurse_id'));
 		}
 
+        if($this->input->post('max_date'))
+		{
+			$this->db->where('date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
+        
 		$this->db->from($this->table);
 		$i = 0;
 	
@@ -122,8 +130,7 @@ class Incentives extends CI_Model {
 			$order = $this->order;
 			$this->db->order_by(key($order), $order[key($order)]);
 		}
-	}
-    
+	}    
     
     public function get_datatables()
 	{
@@ -147,6 +154,39 @@ class Incentives extends CI_Model {
 		return $this->db->count_all_results();
 	}
     
+    function get_nurse_name($nurse_id)
+    {
+        $this->db->select('name');
+        $this->db->where('id', $nurse_id);
+        $this->db->from('nurses');
+        $query = $this->db->get();
+        
+        return $query->result(); 
+        
+    }
     
+    public function get_total_incentive(){
+		
+		$this->db->select('sum(amount) as allincentives');
+		
+        if($this->input->post('nurse_id'))
+		{
+			$this->db->where('nurse_id', $this->input->post('nurse_id'));
+		}
+        
+		if($this->input->post('max_date'))
+		{
+			$this->db->where('date <=', $this->input->post('max_date'));
+		}
+		if($this->input->post('min_date'))
+		{
+			$this->db->where('date >=', $this->input->post('min_date'));
+		}
+		
+		$this->db->from('incentives');
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
         
 }
