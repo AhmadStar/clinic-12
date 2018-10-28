@@ -6,7 +6,7 @@ class Incomes extends CI_Model {
     var $table = 'incomes';
 	var $column_order = array(null, 'id','doctor_id','amount','date',); //set column field database for datatable orderable
 	var $column_search = array('id','doctor_id','amount','date'); //set column field database for datatable searchable 
-	var $order = array('id' => 'asc'); // default order 
+	var $order = array('id' => 'desc'); // default order 
     
     /**
     * Responsable for auto load the database

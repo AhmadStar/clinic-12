@@ -71,7 +71,7 @@ $(document).ready(function() {
         "serverSide": true, //Feature control DataTables' server-side processing mode.
         "order": [], //Initial no order.
         "searching": false,
-        "bPaginate": false,
+      //  "bPaginate": false,
         "bInfo" : false,
 
 

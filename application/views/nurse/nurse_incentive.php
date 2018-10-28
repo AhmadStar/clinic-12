@@ -5,7 +5,7 @@
     <div class="col col-md-12 well well-sm">
 <div class="form-group">
     <div class="col-md-12">
-        <legend class="legend_colour">
+        <legend >
             <?php echo  tr('Allincentives')?><b id="allincentives"></b>
         </legend>
     </div>    

@@ -1,4 +1,4 @@
-<legend class="legend_colour">- <?php echo trP('DailyIncomeList');?></legend>
+<legend >- <?php echo trP('DailyIncomeList');?></legend>
 <div>
 <div class="panel panel-default">
     <div class="panel-heading">    

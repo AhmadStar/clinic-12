@@ -1,4 +1,4 @@
-<legend class="legend_colour">- <?php echo trP('UsersList');?></legend>
+<legend >- <?php echo trP('UsersList');?></legend>
 <div>
 <div class="hidden-print">
 <?php echo anchor('account/signup', tr('RegisterUser'),array('class'=>'btn btn-info'))?>

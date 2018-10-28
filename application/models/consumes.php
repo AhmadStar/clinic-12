@@ -5,7 +5,7 @@ class Consumes extends MY_Model {
 //    var $table = 'consumes';
 	var $column_order = array(null, 'id','name','count','doctor_id','date','price'); //set column field database for datatable orderable
 	var $column_search = array( 'id','name','count','doctor_id','date','price'); //set column field database for datatable searchable 
-	var $order = array('id' => 'asc'); // default order 
+	var $order = array('id' => 'desc'); // default order 
     
     const DB_TABLE = 'consumes';
     const DB_TABLE_PK = 'id';
